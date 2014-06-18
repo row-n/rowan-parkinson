@@ -34,6 +34,7 @@
 		};
 
 		new UISearch( document.getElementById( 'sb-search' ) );
+
 	</script>
 
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/underscore.js"></script>

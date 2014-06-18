@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'dev_rowanparkinson-wp');
+define('DB_NAME', 'dev-rowanparkinson-wp');
 
 /** MySQL database username */
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'Qb@D#>.BeQ)e.@IbF#$-CdW4?t~A*SXmiTif}La4J z<}}aKRU*HJv]Rh$|,mG=)');
-define('SECURE_AUTH_KEY',  'zJ-io)C|[Y{|-`>q+.P%oJ(M^5`eWcI,y2N@)7}TG:#/T4aF#%I$rhA~0_qjBIMR');
-define('LOGGED_IN_KEY',    'ZnN^ohL5><xBR=-uSB|r2/^IP2-&=D>rrOl9>V!?Q:5_CMo2G+FWx-`F|dVUPTG{');
-define('NONCE_KEY',        'fcrl?qcRR= tppIcK??d^1k][0ndHD< +^A)5@O =7b2#](FHv&]Tqaa!NJ:#O-i');
-define('AUTH_SALT',        'WeNQQ[/-#(r8EgYi]oa;):n<@bUB]LF2*IW/G#>&D^%}|F2&T<H=}[~e!=/jc@.r');
-define('SECURE_AUTH_SALT', '$Y9]xmYh{1qgs&rp;,AwFnaW;Lx7s1wNGeV+#Hh1tSp6T?`(RW/d4+F})$]#b*8#');
-define('LOGGED_IN_SALT',   'w aRhv xz+T~t**E>&(nzN5i0Fi]tG{$XM!xr2+!jxk9FAy8!h,b|MGBW2t~m|=t');
-define('NONCE_SALT',       'o~0@_/}0zJ+d|ZfNz 36ss*LUbG-U}f6Wp5*9rj%Ke!|rUkHRE9nw,>5|F%E:4kk');
+define('AUTH_KEY',         'l%leU,iyAI|q d>z=G= }8D4o)BB6N7OG+/ -M2)Z~j.|BbmYDXwhk#TQJpu~^e5');
+define('SECURE_AUTH_KEY',  'Hq>7oD/+V`-;0{Q(| ;j|kQmw=):ZYcUij=#kuC+IR4!Q._`].Im5c`ui/nWhk:B');
+define('LOGGED_IN_KEY',    'U6yhrqC_ySpEIh8Tc3*Vy]^[0)iM>+.pkUi^%+U*poiH>^EXRo@?{)7Xgcz[@`-m');
+define('NONCE_KEY',        '|-}l79G_n-H3q~eK)u|V.I]*Saf7x^SF.V##cg`s ;X;;v1g(nY!.!:|fiErH(:<');
+define('AUTH_SALT',        '`PER;9x%9,jjce+C^jqALiKX)LU{:6+ctx@mK!A`@,-YhK2~#y++P<V%r0*WpST-');
+define('SECURE_AUTH_SALT', 'z^g16Q`.;y*-acHesBeVP~w]bG5`$VJz*(!A-ag<wOak,?w27vt`|Ugo`2@zv`JP');
+define('LOGGED_IN_SALT',   ')I-p=+^)/Lfl$+96DaQGWdazZr6;a6dTB|]G[7OB?Ma:M<*R@B!2-73V(Zt$5o<m');
+define('NONCE_SALT',       'l!m?+pUg9-u[UUZi`<#U+P}jr,bk AwU}D .SjbcYJGC|#nS`8hL~=s=j4[lKy3i');
 
 /**#@-*/
 

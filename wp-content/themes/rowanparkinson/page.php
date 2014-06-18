@@ -28,6 +28,14 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<h1 class="entry-title"><?php the_title(); ?></h1>
+
+						<ul class="social">
+							<li><a href="https://www.linkedin.com/pub/rowan-parkinson/30/19a/874" class="linkedin" target="_blank">LinkedIn</a></li>
+							<li><a href="http://www.last.fm/user/mispic" class="lastfm" target="_blank">Last.fm</a></li>
+							<li><a href="https://twitter.com/rowanparkinson" class="twitter" target="_blank">Twitter</a></li>
+							<li><a href="https://www.flickr.com/photos/rowanparkinson/" class="flickr" target="_blank">Flickr</a></li>
+						</ul><!-- end ul.social -->
+
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">

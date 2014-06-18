@@ -23,11 +23,13 @@ h6 {
 h1 {
 	font-size: @font-size-large;
 	font-family: @font-heading;
+	font-weight: 100;
 }
 
 h2 {
 	font-size: @font-size-med;
 	font-family: @font-heading;
+	font-weight: 100;
 }
 
 hr {
@@ -64,15 +66,19 @@ dl {
 		clear: left;
 		width: 25%;
 	}
-	dd { 
-		width: 75%; 
+	dd {
+		width: 75%;
 	}
 }
 
 a {
+	color: @black-30;
+	border: 0;
 	outline: 0;
 	text-decoration: none;
 
-	&:active { color: @green-v-dark; }
-	&:hover { text-decoration: underline; }
+	.transition(all .4s ease);
+
+	&:active,
+	&:hover { color: @black-20; text-decoration: underline; }
 }

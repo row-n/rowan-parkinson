@@ -5,7 +5,7 @@
 
 			<div class="posts">
 				<?php if ( have_posts() ) : ?>
-					<ul class="home-list">
+					<ul class="home-list grid" id="grid">
 						<?php /* The loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', get_post_format() ); ?>

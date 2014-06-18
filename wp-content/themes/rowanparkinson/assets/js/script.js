@@ -15,8 +15,8 @@
 			this.$el.each( function(i, el) {
 			    $( el ).css({ 'opacity': 0 });
 			    setTimeout(function(){
-			       $( el ).addClass( 'fadeInUp' );
-			    },500 + ( i * 500 ));
+			       $( el ).addClass( 'fadeInUpBig' );
+			    },25 + ( i * 200 ));
 			});
 		}
 	});
@@ -24,7 +24,7 @@
 	OpenPosts = View.extend({
 		el: '.home-list',
 		events: {
-			'click a': 'openPostsPage'      
+			'click a': 'openPostsPage'
 		},
 		openPostsPage: function(evt) {
 			var href = $(evt.currentTarget).attr('href'),
@@ -32,18 +32,18 @@
 
 			// console.log(id);
 
-			app.router.navigate(id, true);
+			this.expandPost();
+
 			return false;
 		},
-		setState: function(activePost) {
-			console.log(activePost);
+		expandPost: function() {
 
-			if (activePost) {
-				this.$('.home-post').removeClass('active').addClass('inactive');
-				this.$('.home-post.' + activePost + '-nav').removeClass('inactive').addClass('active');              
-			} else {
-				this.$('.home-post').removeClass('active inactive');
-			}
+			this.parent('li').addClass('open-post');
+
+			this.showContent();
+		},
+		showContent: function() {
+			// app.router.navigate(id, true);
 		}
 	});
 
@@ -65,12 +65,15 @@
 	    el: 'body',
 	    events: {
       		// 'click .posts a': 'postClickHandler',
+      		'click a.handle': 'showMenu',
+      		'click .site-main': 'hideMenu'
 		},
 		initialize: function() {
 			window.app = this;
 
 			this.siteContent = new SiteContent();
-			this.router = new Router();	
+			this.router = new Router();
+
 		},
 		// postClickHandler: function(evt) {
 		// 	var href = $(evt.currentTarget).attr('href'),
@@ -84,6 +87,19 @@
 
 		// 	return false;
 		// },
+		showMenu: function(evt) {
+			evt.preventDefault;
+
+			var $el = $(evt.target);
+
+			$el.toggleClass('active');
+
+			$('#site-navigation').toggleClass('open');
+		},
+		hideMenu: function() {
+			$('.handle').removeClass('active');
+			$('#site-navigation').removeClass('open');
+		},
 		showHomePage: function() {
 			var _this = this,
 				href = Site.basePath + '/',
@@ -92,14 +108,13 @@
 			console.log('home');
 
 			this.$el.attr('class', 'home');
-			this.openPosts.setState(false);
 
 			$container.load(href, function(data) {
 		        var $payload = $(data).find('.site-content').children();
 
-		        _this.$('.site-content').html($payload);
+		        // _this.$('.site-content').html($payload);
 
-			});			
+			});
 
 	    },
 	    showPostsPage: function(id) {
@@ -111,7 +126,6 @@
 			console.log(href);
 
 			this.$el.attr('class', id);
-			this.openPosts.setState(id);
 
       		$container.load(href, function(data) {
 		        var $payload = $(data).find('.post-content').children();
@@ -121,10 +135,10 @@
 			});
 
 	    }
-	});	
+	});
 
 	// Routing stuff
-	Router = Backbone.Router.extend({		
+	Router = Backbone.Router.extend({
 		routes: {
 			'(/)': 'home',
 			':id(/)': 'postsPage'
@@ -135,15 +149,15 @@
 		postsPage: function(id) {
 			app.showPostsPage(id);
 		}
-	});	
+	});
 
 	$(document).ready(function() {
 
 		app = new App();
-		app.render();	
+		app.render();
 
 		Backbone.history.start({ pushState: true, root: '/' });
-		
+
 	});
 
 })(jQuery);
