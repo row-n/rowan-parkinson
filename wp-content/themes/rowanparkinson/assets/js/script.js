@@ -8,6 +8,10 @@
 	// View for posts load
 	HomePostLoad = View.extend({
 		el: '.home-post',
+		events: {
+			// 'mouseenter a.post': 'hoverPostOn',
+			// 'mouseleave a.post': 'hoverPostOff'
+		},
 		initialize: function() {
 			var _this = this,
 				$el;
@@ -18,6 +22,16 @@
 			       $( el ).addClass( 'fadeInUpBig' );
 			    },25 + ( i * 200 ));
 			});
+		},
+		hoverPostOn: function(evt) {
+			var _this = $(evt.currentTarget);
+
+			TweenMax.to(_this.find('.post-bg'), 30, {scale:1.5, ease:Linear.easeNone });
+		},
+		hoverPostOff: function(evt) {
+			var _this = $(evt.currentTarget);
+
+			TweenMax.to(_this.find('.post-bg'), 2, {scale:1, ease:Cubic.easeInOut });
 		}
 	});
 
@@ -64,7 +78,7 @@
 	App = View.extend({
 	    el: 'body',
 	    events: {
-      		// 'click .posts a': 'postClickHandler',
+      		'click .posts a': 'postClickHandler',
       		'click a.handle': 'showMenu',
       		'click .site-main': 'hideMenu'
 		},
@@ -72,23 +86,77 @@
 			window.app = this;
 
 			this.siteContent = new SiteContent();
-			this.router = new Router();
+			// this.router = new Router();
 
 		},
-		// postClickHandler: function(evt) {
-		// 	var href = $(evt.currentTarget).attr('href'),
-		// 		id = href.replace(Site.basePath+'/', '');
+		postClickHandler: function(evt) {
+			var _this = this,
+				href = $(evt.currentTarget).attr('href'),
+				id = href.replace(Site.basePath+'/', ''),
+				$parent = $(evt.currentTarget).parent('li');
 
-		// 	if ( this.openPosts ) {
-		// 		app.router.navigate(id, true);
-		// 	} else {
-		// 		window.location = Site.basePath + '/' + id;
-		// 	}
+			evt.preventDefault();
 
-		// 	return false;
-		// },
+			$parent
+				.addClass('open')
+				.siblings('li')
+				.removeClass('active height width fadeInUpBig fadeOutDownBig')
+				.addClass('fadeOutDownBig');
+
+			if ($parent.index() >= 3) {
+				var $prevParent = $parent.prev('li');
+
+				setTimeout(function() {
+					$parent
+						.siblings('li')
+						.addClass('height');
+				}, 300);
+
+				// $parent.each(function(i, el) {
+				// 	if (i % 2 === 0) {
+
+				// 		$prevParent
+				// 			.prevAll('li')
+				// 			.addClass('hide');
+				// 	}
+				// });
+
+				setTimeout(function() {
+					$parent
+						.addClass('active')
+						.siblings('li')
+						.addClass('width');
+				}, 800);
+			} else {
+				setTimeout(function() {
+					$parent
+						.addClass('active')
+						.siblings('li')
+						.addClass('width');
+				}, 400);
+			}
+
+			// if ($(evt.currentTarget).parent('li').hasClass('active')) {
+			// 	return false;
+			// } else {
+			// 	this.$el.each( function(i, el) {
+			// 	    $( el ).css({ 'opacity': 0 });
+			// 	    setTimeout(function(){
+			// 	       $( el ).addClass( 'fadeOutDownBig' );
+			// 	    },25 + ( i * 200 ));
+			// 	});
+			// }
+
+			// if ( this.openPosts ) {
+			// 	app.router.navigate(id, true);
+			// } else {
+			// 	window.location = Site.basePath + '/' + id;
+			// }
+
+			return false;
+		},
 		showMenu: function(evt) {
-			evt.preventDefault;
+			evt.preventDefault();
 
 			var $el = $(evt.target);
 
@@ -117,37 +185,63 @@
 			});
 
 	    },
-	    showPostsPage: function(id) {
+	    showAboutPage: function() {
 	    	var _this = this,
 				href = Site.basePath + '/' + id,
 				$container = $('<div>');
 
-			// console.log('post');
 			console.log(href);
 
 			this.$el.attr('class', id);
 
-      		$container.load(href, function(data) {
-		        var $payload = $(data).find('.post-content').children();
 
-		        // _this.$('.site-content').html($payload);
+	    },
+	    showContactPage: function() {
+	    	var _this = this,
+				href = Site.basePath + '/' + id,
+				$container = $('<div>');
 
-			});
+			console.log(href);
+
+			this.$el.attr('class', id);
+
 
 	    }
+	  //   showPostsPage: function(id) {
+	  //   	var _this = this,
+			// 	href = Site.basePath + '/' + id,
+			// 	$container = $('<div>');
+
+			// // console.log('post');
+			// console.log(href);
+
+			// this.$el.attr('class', id);
+
+   //    		$container.load(href, function(data) {
+		 //        var $payload = $(data).find('.post-content').children();
+
+		 //        // _this.$('.site-content').html($payload);
+
+			// });
+
+	  //   }
 	});
 
 	// Routing stuff
 	Router = Backbone.Router.extend({
 		routes: {
 			'(/)': 'home',
-			':id(/)': 'postsPage'
+			'about(/)': 'aboutPage',
+			'contact(/)': 'contactPage'
 		},
 		home: function() {
 			app.showHomePage();
 		},
-		postsPage: function(id) {
-			app.showPostsPage(id);
+		aboutPage: function(id) {
+			app.showAboutPage(id);
+		},
+		contactPage: function(id) {
+			app.showContactPage(id);
 		}
 	});
 

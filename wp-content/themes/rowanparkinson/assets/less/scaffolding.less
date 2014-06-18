@@ -64,8 +64,6 @@ body, html {
 		}
 
 		.handle {
-			width: @padding * 2.5;
-			height: @padding * 2.5;
 			display: block;
 			float: right;
 			color: @black-60;
@@ -73,6 +71,7 @@ body, html {
 			text-align: center;
 			cursor: pointer;
 
+			.square(@padding * 2.5);
 			.transition(all .4s ease);
 
 			&:before {
@@ -116,12 +115,7 @@ body, html {
 					a {
 						width: 100%;
 						display: inline-block;
-						/*font-size: 0;*/
 						cursor: pointer;
-						/*width: 50px;
-						height: 50px;
-						border-radius: 50%;
-						text-align: center;*/
 						position: relative;
 						z-index: 1;
 						color: @black-50;
@@ -133,54 +127,13 @@ body, html {
 						.box-sizing(border-box);
 						.transition(all .4s ease);
 
-						/*.transition(box-shadow);
-						.transition-duration(0.2s);*/
-
-						/*&:before {
-							font-size: 22px;
-							line-height: 50px !important;
-
-							.icon;
-							.box-sizing(border-box);
-						}
-						&:after {
-							pointer-events: none;
-							position: absolute;
-							top: 0;
-							left: 0;
-							padding: 0;
-							width: 100%;
-							height: 100%;
-							border-radius: 50%;
-							content: '';
-							box-shadow: 0 0 0 3px @black-50;
-
-							.transition(transform);
-							.transition-duration(0.2s);
-							.box-sizing(content-box);
-						}*/
 						&:hover {
 							background: @black-80;
 							color: @white;
 							text-decoration: none;
 							padding-left: @padding;
-							/*box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);*/
-
-							/*&:after {
-								.scale(0.80);
-							}*/
 						}
 					}
-
-					/*&.menu-item-7 {
-						a:before { .icon-screen; }
-					}
-					&.menu-item-8 {
-						a:before { .icon-user; }
-					}
-					&.menu-item-9 {
-						a:before { .icon-chat; }
-					}*/
 				}
 			}
 		}
@@ -238,8 +191,6 @@ body, html {
 
 			.sb-icon-search,
 			.sb-search-submit  {
-				width: @padding * 2.5;
-				height: @padding * 2.5;
 				display: block;
 				position: absolute;
 				right: 0;
@@ -251,6 +202,7 @@ body, html {
 				cursor: pointer;
 				color: @black-60;
 
+				.square(@padding * 2.5);
 				.transition(all .4s ease);
 
 				&:hover { background: @maroon; color: @white; }
@@ -313,8 +265,6 @@ body, html {
 					li { float: left; }
 
 					a {
-						width: @padding * 2.5;
-						height: @padding * 2.5;
 						display: block;
 						float: right;
 						color: @black-60;
@@ -324,6 +274,7 @@ body, html {
 						text-transform: capitalize;
 						font-size: 0;
 
+						.square(@padding * 2.5);
 						.transition(all .4s ease);
 
 						&:before {
@@ -363,6 +314,7 @@ body, html {
 				margin: 0 auto;
 				padding: 0;
 				list-style: none;
+				position: relative;
 
 				li {
 					width: 33.33%;
@@ -376,14 +328,55 @@ body, html {
 					z-index: 20;
 
 					.animated();
+
+					&.active {
+						width: 100%;
+
+						.transition(all .4s ease);
+					}
+					&.open {
+						a.post {
+							.overlay,
+							.gradient {
+								background: rgba(0,0,0,0.1);
+							}
+							h2 {
+								.title-btn {
+									color: @black-80;
+									border-color: @white;
+									z-index: 10;
+
+									&:after {
+										height: 410%;
+										opacity: 1;
+									}
+								}
+							}
+						}
+					}
+					&.hide {
+						display: none;
+					}
+					&.height {
+						height: 1px;
+						visibility: hidden;
+
+						.transition(all .4s ease);
+					}
+					&.width {
+						height: 0;
+						width: 0;
+
+						.transition(all .4s ease);
+					}
 				}
 			}
 
 			a.post {
-				width: 100%;
-				height: 100%;
 				display: block;
 				outline: none;
+
+				.square(100%);
 
 				.post-bg {
 					height: 100%;
@@ -391,11 +384,12 @@ body, html {
 
 					background-repeat: no-repeat;
 					background-position: center center;
-					-webkit-background-size: 100% auto;
-					-moz-background-size: 100% auto;
-					-o-background-size: 100% auto;
-					background-size: 100% auto;
+					-webkit-background-size: cover;
+					-moz-background-size: cover;
+					-o-background-size: cover;
+					background-size: cover;
 
+					.transition(all .4s ease);
 				}
 				.overlay {
 					position: absolute;
@@ -406,31 +400,38 @@ body, html {
 					background: rgba(0,0,0,0.4);
 					.transition(all .4s ease);
 				}
-				h2 {
-					height: 57px;
-					text-align: center;
-					margin: auto;
+				.entry-header {
+					width: 100%;
+					display: table;
 					position: absolute;
 					top: 0;
 					left: 0;
 					right: 0;
 					bottom: 0;
+				}
+				h2 {
+					height: 280px;
+					margin: 0;
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					position: relative;
 					text-transform: lowercase;
 					outline: none;
 
 
-					span {
+					.title-btn {
 						max-width: 300px;
-					 	padding: 10px 35px;
-						color: rgba(255,255,255,0.5);
-						border: 1px solid rgba(255,255,255,0.5);
+						border: none;
 						background: none;
+						color: rgba(255,255,255,0.5);
+					 	border: 1px solid rgba(255,255,255,0.5);
+						cursor: pointer;
+						padding: 10px 35px;
 						display: inline-block;
 						letter-spacing: 1px;
-						position: relative;
-						cursor: pointer;
 						outline: none;
-						overflow: hidden;
+						position: relative;
 
 						.transition(all .4s ease);
 
@@ -447,17 +448,20 @@ body, html {
 							background: @white;
 							opacity: 0;
 
-							.transition(all .4s ease);
-
-							/*.translate(-50%, -50%);
-							.rotate(45deg);*/
-
 							-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
 							-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
 							-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
 							transform: translateX(-50%) translateY(-50%) rotate(45deg);
+
+							.transition(all .4s ease);
+							.box-sizing(border-box);
+
+							/*.translate(-50%, -50%);
+							.rotate(45deg);*/
 						}
 					 }
+
+					 .overflow { overflow: hidden; }
 				}
 				&:hover,
 				&:active {
@@ -466,7 +470,7 @@ body, html {
 						background: rgba(0,0,0,0.1);
 					}
 					h2 {
-						span {
+						.title-btn {
 							color: @black-80;
 							border-color: @white;
 							z-index: 10;
@@ -609,6 +613,9 @@ body, html {
 				.grid {
 					li { height: 180px; }
 				}
+				a.post {
+					h2 { height: 180px; }
+				}
 				.page {
 					width: 90%;
 					padding: @padding;
@@ -647,6 +654,9 @@ body, html {
 			.site-content {
 				.grid {
 					li { width: 100%; height: 160px; }
+				}
+				a.post {
+					h2 { height: 160px; }
 				}
 				.page {
 					width: 100%;
