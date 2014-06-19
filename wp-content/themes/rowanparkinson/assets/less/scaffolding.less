@@ -347,7 +347,8 @@ body, html {
 									z-index: 10;
 
 									&:after {
-										height: 410%;
+										min-height: 240px;
+										height: 400%;
 										opacity: 1;
 									}
 								}
@@ -421,14 +422,14 @@ body, html {
 
 
 					.title-btn {
-						max-width: 300px;
+						max-width: 280px;
 						border: none;
 						background: none;
 						color: rgba(255,255,255,0.5);
 					 	border: 1px solid rgba(255,255,255,0.5);
 						cursor: pointer;
 						padding: 10px 35px;
-						display: inline-block;
+						display: inline-table;
 						letter-spacing: 1px;
 						outline: none;
 						position: relative;
@@ -441,7 +442,7 @@ body, html {
 							content: '';
 							position: absolute;
 							z-index: -1;
-							width: 100%;
+							width: 105%;
 							height: 0;
 							top: 50%;
 							left: 50%;
@@ -476,7 +477,8 @@ body, html {
 							z-index: 10;
 
 							&:after {
-								height: 410%;
+								min-height: 240px;
+								height: 400%;
 								opacity: 1;
 							}
 						}
