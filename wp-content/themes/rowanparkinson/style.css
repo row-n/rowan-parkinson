@@ -3232,7 +3232,8 @@ table {
 p,
 ul,
 ol,
-dl form,
+dl,
+form,
 figure,
 blockquote,
 pre {
@@ -3245,18 +3246,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-weight: 100;
   margin: 0 0 0.820625em 0;
 }
 h1 {
   font-size: 21px;
   font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
 }
 h2 {
   font-size: 16.8px;
   font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
 }
 hr {
   background: 0;

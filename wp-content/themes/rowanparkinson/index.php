@@ -11,6 +11,8 @@
 							<?php get_template_part( 'content', get_post_format() ); ?>
 						<?php endwhile; ?>
 					</ul>
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>
 			</div><!-- end div.posts -->
 
@@ -27,6 +29,7 @@
 			*/ ?>
 
 		</div><!-- #content -->
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

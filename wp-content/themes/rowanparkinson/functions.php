@@ -269,15 +269,15 @@ function twentythirteen_paging_nav() {
 		return;
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'twentythirteen' ); ?></h1>
+		<h4 class="screen-reader-text"><?php _e( 'Posts navigation', 'twentythirteen' ); ?></h4>
 		<div class="nav-links">
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentythirteen' ) ); ?></div>
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-prev"><?php previous_posts_link( __( '<span class="meta-nav">&laquo;</span> Prev', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?></div>
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-next"><?php next_posts_link( __( 'Next <span class="meta-nav">&raquo;</span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -546,3 +546,13 @@ function twentythirteen_customize_preview_js() {
 	wp_enqueue_script( 'twentythirteen-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20130226', true );
 }
 add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
+
+/**
+ * Changing excerpt more
+*/
+
+function new_excerpt_more($more) {
+	global $post;
+	return '… <a class="more-link" href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
