@@ -6,6 +6,19 @@ body, html {
 	font-weight: 300;
 }
 
+.loading {
+	display: none;
+	width: 66px;
+	height: 66px;
+	margin: -33px 0 0 -33px;
+	background-image: url('assets/images/loader.gif');
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	cursor: wait;
+	z-index: 100;
+}
+
 #page {
 	width: 100%;
 	margin: 0 auto;
@@ -31,7 +44,7 @@ body, html {
 			a.home-link {
 				position: relative;
 				width: auto;
-				padding: (@padding / 2) @padding;
+				padding: ((@padding / 2) + .5) @padding;
 				float: left;
 
 				.transition(all .4s ease);
@@ -253,7 +266,20 @@ body, html {
 
 				.box-sizing(border-box);
 
+				a.more-link { font-size: @font-size-small; }
+
 				.entry-header { position: relative; padding: (@padding / 1.5) 0; }
+
+				.entry-summary {
+					border-top: 1px solid @black-60;
+					padding: (@padding / 2) 0;
+
+					p { margin: 0; }
+
+					&:first-of-type {
+						border: none;
+					}
+				}
 
 				.social {
 					margin: 0;
@@ -308,6 +334,17 @@ body, html {
 						}
 					}
 				}
+
+				nav.paging-navigation {
+					margin: @padding 0;
+
+					a { font-size: @font-size-base; }
+
+					.nav-links { width: 200px; }
+
+					.nav-prev { float: left; margin-right: @padding * 2; }
+					.nav-next { float: left; }
+				}
 			}
 
 			.grid {
@@ -318,9 +355,9 @@ body, html {
 				position: relative;
 
 				li {
-					/*width: 33.33%;*/
+					width: 33.33%;
 					height: 300px;
-					/*display: block;*/
+					display: block;
 					float: left;
 					margin: 0;
 					padding: 0;
@@ -328,7 +365,7 @@ body, html {
 					overflow: hidden;
 					z-index: 20;
 
-					/*position: relative;*/
+					position: relative;
 					display: inline-block;
 					text-align: center;
 					cursor: pointer;
@@ -584,7 +621,6 @@ body, html {
 						color: @black-50;
 						font-size: @font-size-base;
 						font-family: @font-heading;
-						border: none;
 						padding: (@padding / 2.2) (@padding / 2);
 						float: left;
 						position: relative;
@@ -620,19 +656,72 @@ body, html {
 				}
 
 				.wpcf7-submit {
-					width: auto;
+					background: none;
 					border: none;
-					padding: (@padding / 2.5) (@padding / 2);
-					text-transform: uppercase;
-					color: @black-60;
-					background: transparent;
+					color: @white;
+					padding: 0;
+					outline: none;
+				}
+
+				.button {
+					width: auto;
+					max-width: 280px;
+					/*padding: (@padding / 2.5) (@padding / 2);*/
+					padding: 10px 15px 10px 35px;
+					text-transform: lowercase;
+					background: none;
 					font-family: @font-heading;
-					font-size: @font-size-med;
-					border: 1px solid @black-60;
+					font-size: @font-size-base;
+					font-weight: 100;
+					border: 1px solid @white;
+					cursor: pointer;
+					display: inline-table;
+					letter-spacing: 1px;
+					outline: none;
+					position: relative;
+					overflow: hidden;
 
 					.transition(all .4s ease);
 
-					&:hover { background: @green-light; color: @white; border-color: @green-light; }
+					.box-sizing(border-box);
+
+					/*&:hover { background: @green-light; color: @white; border-color: @green-light; }*/
+
+					&:after {
+						content: '';
+						position: absolute;
+						z-index: -1;
+						width: 105%;
+						height: 0;
+						top: 50%;
+						left: 50%;
+						background: @white;
+						opacity: 0;
+
+						-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+						-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+						-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+						transform: translateX(-50%) translateY(-50%) rotate(45deg);
+
+						.transition(all .8s ease);
+						.box-sizing(border-box);
+
+						/*.translate(-50%, -50%);
+						.rotate(45deg);*/
+					}
+
+					&:hover {
+						border-color: @white;
+						z-index: 10;
+
+						.wpcf7-submit { color: @black-80; }
+
+						&:after {
+							min-height: 240px;
+							height: 400%;
+							opacity: 1;
+						}
+					}
 				}
 			}
 		}
@@ -732,6 +821,25 @@ body, html {
 							line-height: @padding * 1.5;
 
 							&:before { font-size: @font-size-mini * 1.5; }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and ( max-width: 420px ) {
+	#page {
+		#main {
+			.site-content {
+				.wpcf7 {
+					.form-line {
+						&.short {
+							width: 100%;
+							float: none;
+
+							&.left, &.right { margin-left: 0; margin-right: 0; }
 						}
 					}
 				}

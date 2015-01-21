@@ -2,100 +2,61 @@
 
 	var Model = Backbone.Model,
 		View = Backbone.View,
-		PageHome, PageAbout, PageContact, PagePosts,
+		HomePostLoad,
 		App, app, Router;
 
 	// View for posts load
-	PageHome = View.extend({
-		el: '.home-list li',
+	HomePostLoad = View.extend({
+		el: '.home-post',
 		initialize: function() {
-
 			var _this = this,
 				$el,
-				$container = $('#grid'),
-				columnWidth = 0,
-				columnsHeight = [],
-				columns = 3,
-				hasScrollbar = function() { return 0; };
+				$container = $('#grid');
 
-			columnWidth = ( ( ( $container.innerWidth() - hasScrollbar() ) ) / columns );
+			this.$el.css({ 'opacity': 0 });
 
-			// Let's populate our columns array with empty values to avoid Nan error
-			for( var i = 0; i < columns; i++ ) columnsHeight.push( 0 );
+			$('.loading').show();
 
-			this.$el.each( function( i, e ) {
+			$container.waitForImages().done(function() {
 
-				var currentColumn = i % columns,
-					$next = $( e ).nextAll().eq( columns - 1 );
+				var $post = $('.home-post');
 
-				// Apply CSS
-				$( e ).css( {
+				$('.loading').hide();
 
-					'opacity': 0,
-					'left':	currentColumn * columnWidth,
-					'width': columnWidth
+				$post.each( function(i, el) {
 
-				} );
+					setTimeout(function(){
+						$( el ).addClass( 'fadeInUpBig' ).css({ 'opacity': 1 });
+					},25 + ( i * 200 ));
 
-				thisHeight = $( e ).outerHeight( false );
-
-				// Increase the height of the column
-				columnsHeight[ currentColumn ] += ( thisHeight );
-
-				// Set the height of the element that will follow in that column
-				$next.css( { 'top':	columnsHeight[ currentColumn ] } );
-
-				setTimeout(function(){
-
-					$( e ).addClass( 'fadeInUpBig' );
-
-				},25 + ( i * 200 ));
-
-			} );
-
+				});
+			});
 		}
 	});
 
-	PageAbout = View.extend({
+	OpenPosts = View.extend({
 		el: '.home-list',
-		initialize: function() {
-
-			this.showContent();
-
-
+		events: {
+			'click a': 'openPostsPage'
 		},
-		showContent: function() {
-			app.router.navigate('about', true);
-			return false;
-		}
-	});
+		openPostsPage: function(evt) {
+			var href = $(evt.currentTarget).attr('href'),
+				id = href.replace(Site.basePath+'/', '');
 
-	PageContact = View.extend({
-		el: '.home-list',
-		initialize: function() {
+			// console.log(id);
+
+			this.expandPost();
+
+			return false;
+		},
+		expandPost: function() {
+
+			this.parent('li').addClass('open-post');
 
 			this.showContent();
 		},
 		showContent: function() {
-			app.router.navigate('contact', true);
-		}
-	});
-
-	PagePosts = View.extend({
-		el: '.home-list',
-		initialize: function(section) {
-			var _this = this,
-				$el,
-				section = _this.$el.data('section');
-
-			this.showContent(section);
-
-			alert(section);
-
-			return false;
-		},
-		showContent: function(section) {
-			app.router.navigate(section, true);
+			// app.router.navigate(id, true);
 		}
 	});
 
@@ -105,7 +66,7 @@
 		initialize: function() {
 			var _this = this;
 
-			this.pageHome = new PageHome();
+			this.openPosts = new OpenPosts();
 
 			this.render();
 		}
@@ -113,61 +74,43 @@
 
 	// 'global' App view
 	App = View.extend({
-		el: 'body',
-		events: {
-			'click .posts a': 'postClickHandler',
-			'click a.handle': 'showMenu',
-			'click .site-main': 'hideMenu'
+	    el: 'body',
+	    events: {
+      		'click .posts a': 'postClickHandler',
+      		'click a.handle': 'showMenu',
+      		'click .site-main': 'hideMenu'
 		},
-		currentUri: '',
-		pages: {},
 		initialize: function() {
 			window.app = this;
+			var _this = this,
+				$el;
+
+			if (this.$el.hasClass('home')) {
+
+				this.homePostLoad = new HomePostLoad();
+
+			};
 
 			this.siteContent = new SiteContent();
-			this.router = new Router();
+			// this.router = new Router();
 
 		},
-		render: function() {
-
+		postClickHandler: function(evt) {
 			var _this = this,
-				$el,
-				section = this.$el.data('section');
-
-			console.log(section);
-
-			this.router.addPageRoutes(section);
-
-			Backbone.history.start({ pushState: true, root: '/' });
-
-		},
-		postClickHandler: function(evt, el) {
-			var _this = this,
-				$el,
 				href = $(evt.currentTarget).attr('href'),
 				id = href.replace(Site.basePath+'/', ''),
-				$parent = $(evt.currentTarget).parent('li')
-				$i = $parent.index();
+				$parent = $(evt.currentTarget).parent('li');
+
+			evt.preventDefault();
 
 			$parent
 				.siblings('li')
-				.toggleClass('fadeInUpBig fadeOutDownBig');
+				.removeClass('active height width fadeInUpBig fadeOutDownBig')
+				.addClass('fadeOutDownBig');
 
-			$parent.animate({'top': 0});
-
-			setTimeout( function () {
-
-				$parent.animate({'left': '33.33%'});
-
-				setTimeout( function () {
-
-					$parent.toggleClass('open');
-
-				}, 550 );
-
-			}, 500 );
-
-			this.pagePosts = new PagePosts();
+			setTimeout(function() {
+				window.location = Site.basePath + '/' + id;
+			}, 1000);
 
 			return false;
 		},
@@ -183,7 +126,64 @@
 		hideMenu: function() {
 			$('.handle').removeClass('active');
 			$('#site-navigation').removeClass('open');
-		}
+		},
+		showHomePage: function() {
+			var _this = this,
+				href = Site.basePath + '/',
+				$container = $('<div>');
+
+			console.log('home');
+
+			this.$el.attr('class', 'home');
+
+			$container.load(href, function(data) {
+		        var $payload = $(data).find('.site-content').children();
+
+		        // _this.$('.site-content').html($payload);
+
+			});
+
+	    },
+	    showAboutPage: function() {
+	    	var _this = this,
+				href = Site.basePath + '/' + id,
+				$container = $('<div>');
+
+			console.log(href);
+
+			this.$el.attr('class', id);
+
+
+	    },
+	    showContactPage: function() {
+	    	var _this = this,
+				href = Site.basePath + '/' + id,
+				$container = $('<div>');
+
+			console.log(href);
+
+			this.$el.attr('class', id);
+
+
+	    }
+	  //   showPostsPage: function(id) {
+	  //   	var _this = this,
+			// 	href = Site.basePath + '/' + id,
+			// 	$container = $('<div>');
+
+			// // console.log('post');
+			// console.log(href);
+
+			// this.$el.attr('class', id);
+
+   //    		$container.load(href, function(data) {
+		 //        var $payload = $(data).find('.post-content').children();
+
+		 //        // _this.$('.site-content').html($payload);
+
+			// });
+
+	  //   }
 	});
 
 	// Routing stuff
@@ -191,46 +191,16 @@
 		routes: {
 			'(/)': 'home',
 			'about(/)': 'aboutPage',
-			'contact(/)': 'contactPage',
-			':section(/)': 'postPage'
-		},
-		initialize: function() {
-			this.bind('all', this.onAll);
-		},
-		pageConstructor: function() {
-			app.currentUri = Backbone.history.fragment;
+			'contact(/)': 'contactPage'
 		},
 		home: function() {
-			this.pageConstructor();
-			app.page = new PageHome();
+			app.showHomePage();
 		},
-		aboutPage: function() {
-			this.pageConstructor();
-			if ( ! app.page ) app.page = new PageAbout();
+		aboutPage: function(id) {
+			app.showAboutPage(id);
 		},
-		contactPage: function() {
-			this.pageConstructor();
-			if ( ! app.page ) app.page = new PageContact();
-		},
-		postPage: function(section) {
-			this.pageConstructor();
-			if ( ! app.page ) app.page = new PagePosts();
-		},
-		addPageRoutes: function(section) {
-			switch ( section ) {
-				case 'home':
-				this.route('(/)', 'home');
-				break;
-				case 'about':
-				this.route('(/)', 'about');
-				break;
-				case 'contact':
-				this.route('(/)', 'contact');
-				break;
-				case 'posts':
-				this.route('(/)(:section)(/)', 'posts');
-				break;
-			}
+		contactPage: function(id) {
+			app.showContactPage(id);
 		}
 	});
 
@@ -238,6 +208,8 @@
 
 		app = new App();
 		app.render();
+
+		Backbone.history.start({ pushState: true, root: '/' });
 
 	});
 

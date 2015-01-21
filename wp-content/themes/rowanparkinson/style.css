@@ -3325,6 +3325,18 @@ html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
+.loading {
+  display: none;
+  width: 66px;
+  height: 66px;
+  margin: -33px 0 0 -33px;
+  background-image: url('assets/images/loader.gif');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: wait;
+  z-index: 100;
+}
 #page {
   width: 100%;
   margin: 0 auto;
@@ -3360,7 +3372,7 @@ html {
 #page header#masthead .header-banner a.home-link {
   position: relative;
   width: auto;
-  padding: 10px 20px;
+  padding: 10.5px 20px;
   float: left;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -3633,9 +3645,22 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#page #main .site-content .page a.more-link {
+  font-size: 11.9px;
+}
 #page #main .site-content .page .entry-header {
   position: relative;
   padding: 13.33333333px 0;
+}
+#page #main .site-content .page .entry-summary {
+  border-top: 1px solid #666666;
+  padding: 10px 0;
+}
+#page #main .site-content .page .entry-summary p {
+  margin: 0;
+}
+#page #main .site-content .page .entry-summary:first-of-type {
+  border: none;
 }
 #page #main .site-content .page .social {
   margin: 0;
@@ -3712,6 +3737,22 @@ html {
 #page #main .site-content .page .social a.flickr:hover {
   background: #ff0084;
 }
+#page #main .site-content .page nav.paging-navigation {
+  margin: 20px 0;
+}
+#page #main .site-content .page nav.paging-navigation a {
+  font-size: 14px;
+}
+#page #main .site-content .page nav.paging-navigation .nav-links {
+  width: 200px;
+}
+#page #main .site-content .page nav.paging-navigation .nav-prev {
+  float: left;
+  margin-right: 40px;
+}
+#page #main .site-content .page nav.paging-navigation .nav-next {
+  float: left;
+}
 #page #main .site-content .grid {
   width: 100%;
   margin: 0 auto;
@@ -3720,16 +3761,16 @@ html {
   position: relative;
 }
 #page #main .site-content .grid li {
-  /*width: 33.33%;*/
+  width: 33.33%;
   height: 300px;
-  /*display: block;*/
+  display: block;
   float: left;
   margin: 0;
   padding: 0;
   position: absolute;
   overflow: hidden;
   z-index: 20;
-  /*position: relative;*/
+  position: relative;
   display: inline-block;
   text-align: center;
   cursor: pointer;
@@ -3994,7 +4035,6 @@ html {
   color: #808080;
   font-size: 14px;
   font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: none;
   padding: 9.09090909px 10px;
   float: left;
   position: relative;
@@ -4051,24 +4091,73 @@ html {
   font-size: 11.9px;
 }
 #page #main .site-content .wpcf7 .wpcf7-submit {
-  width: auto;
+  background: none;
   border: none;
-  padding: 8px 10px;
-  text-transform: uppercase;
-  color: #666666;
-  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  outline: none;
+}
+#page #main .site-content .wpcf7 .button {
+  width: auto;
+  max-width: 280px;
+  /*padding: (@padding / 2.5) (@padding / 2);*/
+  padding: 10px 15px 10px 35px;
+  text-transform: lowercase;
+  background: none;
   font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16.8px;
-  border: 1px solid #666666;
+  font-size: 14px;
+  font-weight: 100;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  display: inline-table;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*&:hover { background: @green-light; color: @white; border-color: @green-light; }*/
 }
-#page #main .site-content .wpcf7 .wpcf7-submit:hover {
-  background: #94a05e;
-  color: #ffffff;
-  border-color: #94a05e;
+#page #main .site-content .wpcf7 .button:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 105%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: #ffffff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*.translate(-50%, -50%);
+						.rotate(45deg);*/
+}
+#page #main .site-content .wpcf7 .button:hover {
+  border-color: #ffffff;
+  z-index: 10;
+}
+#page #main .site-content .wpcf7 .button:hover .wpcf7-submit {
+  color: #333333;
+}
+#page #main .site-content .wpcf7 .button:hover:after {
+  min-height: 240px;
+  height: 400%;
+  opacity: 1;
 }
 #page footer.site-footer {
   width: 100%;
@@ -4147,5 +4236,16 @@ html {
   }
   #page #main .site-content .page .social a:before {
     font-size: 15.75px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #page #main .site-content .wpcf7 .form-line.short {
+    width: 100%;
+    float: none;
+  }
+  #page #main .site-content .wpcf7 .form-line.short.left,
+  #page #main .site-content .wpcf7 .form-line.short.right {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

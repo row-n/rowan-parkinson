@@ -37,9 +37,9 @@
 
 	</script>
 
-	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/min/tweenmax.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/underscore.js"></script>
-	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/backbone.js"></script>
+	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.waitforimages.js"></script>
+	<script type="application/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/underscore.js"></script>
+	<script type="application/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/backbone.js"></script>
 	<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/assets/js/script.js"></script>
 </body>
 </html>
