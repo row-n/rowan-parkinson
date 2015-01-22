@@ -3368,6 +3368,9 @@ html {
 #page header#masthead .header-banner:after {
   clear: both;
 }
+#page header#masthead .header-banner a {
+  outline: none;
+}
 #page header#masthead .header-banner a.home-link {
   position: relative;
   width: auto;
@@ -3723,6 +3726,12 @@ html {
 }
 #page #main .site-content .page .social a.linkedin:hover {
   background: #0976b4;
+}
+#page #main .site-content .page .social a.github:before {
+  content: "\e628";
+}
+#page #main .site-content .page .social a.github:hover {
+  background: #800080;
 }
 #page #main .site-content .page .social a.lastfm:before {
   content: "\e633";
@@ -4238,6 +4247,9 @@ html {
   }
 }
 @media only screen and (max-width: 420px) {
+  #page #main .site-content .page .social {
+    top: 11.11111111px;
+  }
   #page #main .site-content .wpcf7 .form-line.short {
     width: 100%;
     float: none;

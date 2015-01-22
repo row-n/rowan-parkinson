@@ -41,6 +41,8 @@ body, html {
 			.box-sizing(border-box);
 			.clearfix;
 
+			a { outline: none; }
+
 			a.home-link {
 				position: relative;
 				width: auto;
@@ -323,6 +325,10 @@ body, html {
 						&.linkedin {
 							&:before { .icon-linkedin; }
 							&:hover { background: @linkedin; }
+						}
+						&.github {
+							&:before { .icon-github; }
+							&:hover { background: @github; }
 						}
 						&.lastfm {
 							&:before { .icon-lastfm; }
@@ -833,6 +839,10 @@ body, html {
 	#page {
 		#main {
 			.site-content {
+				.page {
+
+					.social { top: (@padding / 1.8); }
+				}
 				.wpcf7 {
 					.form-line {
 						&.short {

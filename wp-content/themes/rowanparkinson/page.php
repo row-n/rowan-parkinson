@@ -31,6 +31,7 @@ get_header(); ?>
 
 						<ul class="social">
 							<li><a href="https://www.linkedin.com/pub/rowan-parkinson/30/19a/874" class="linkedin" target="_blank">LinkedIn</a></li>
+							<li><a href="https://github.com/row-n" class="github" target="_blank">GitHub</a></li>
 							<li><a href="http://www.last.fm/user/mispic" class="lastfm" target="_blank">Last.fm</a></li>
 							<li><a href="https://twitter.com/rowanparkinson" class="twitter" target="_blank">Twitter</a></li>
 							<li><a href="https://www.flickr.com/photos/rowanparkinson/" class="flickr" target="_blank">Flickr</a></li>
