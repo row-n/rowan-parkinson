@@ -1,17 +1,36 @@
-<?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
+<?php get_header(); ?>
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define('WP_USE_THEMES', true);
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+			<div class="posts">
+				<?php if ( have_posts() ) : ?>
+					<ul class="home-list grid" id="grid">
+						<?php /* The loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php endwhile; ?>
+					</ul>
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
+				<?php endif; ?>
+			</div><!-- end div.posts -->
+
+			<?php /* $pages = get_pages();
+			foreach ($pages as $page_data) {
+			    $content = apply_filters('the_content', $page_data->post_content);
+			    $title = $page_data->post_title;
+				$slug = $page_data->post_name;
+			   	echo "<div class='page $slug'>";
+				echo "<h2>$title</h2>";
+				echo $content;
+				echo "</div>";
+			}
+			*/ ?>
+
+		</div><!-- #content -->
+
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
