@@ -1,5 +1,5 @@
 # Rowan Parkinson
-===============
+
 [Hugo](https://gohugo.io) theme for rowanparkinson.com. It is a port of HTML5 UP [Multiverse template](https://html5up.net/multiverse).
 
 ## Development dependencies
