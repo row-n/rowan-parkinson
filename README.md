@@ -13,6 +13,7 @@
 * Install theme by cloning the repo
 ``` bash
 git clone git@github.com:row-n/rowan-parkinson.git themes/rowan-parkinson
+```
 
 ## Configuration
 
