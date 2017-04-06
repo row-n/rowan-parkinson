@@ -1,4 +1,5 @@
 // Colours
+// ---------
 
 // Grayscale
 $white:               #fff;
@@ -58,9 +59,45 @@ $dropbox:             #007ee5;
 $evernote:            #7ac142;
 $soundcloud:          #f80f80;
 
-$body-background: $black-80;
-$body-font-colour: $black-50;
+
+// Global
+// ---------
+
 $global-font-size: 100%;
 $global-lineheight: 1.5;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$body-background: $black-80;
+$body-font-colour: $black-50;
 $body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+
+// Base Typography
+// ------------------
+
 $header-font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-weight: $global-weight-normal;
+$header-font-style: normal;
+$font-family-monospace: $font-family-monospace;
+$header-color: $black-30;
+$header-lineheight: 1.4;
+$header-margin-bottom: .5rem;
+$x-small-font-size: 75%;
+$small-font-size: 87.5%;
+$large-font-size: 112.5%;
+$paragraph-lineheight: 1.6;
+$paragraph-margin-bottom: 1rem;
+$anchor-color: $blue;
+$anchor-color-hover: $blue-dark;
+$anchor-text-decoration: underline;
+$anchor-text-decoration-hover: none;
+$hr-width: 100%;
+$hr-border: .0625em solid $black-50;
+$hr-margin: rem-calc(20) auto;
+$list-lineheight: $paragraph-lineheight;
+$list-margin-bottom: $paragraph-margin-bottom;
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;

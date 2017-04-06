@@ -208,10 +208,12 @@ template {
 html,body {
   background-color: #333;
   color: gray;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 100%;
   line-height: 1.5;
 }
 
 .navbar {
   background-color: #1a1a1a;
+  font-size: modular-scale(2);
 }
