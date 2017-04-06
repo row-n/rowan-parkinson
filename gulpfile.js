@@ -18,6 +18,7 @@ var sassLint      = require('gulp-sass-lint');
 var shell         = require('gulp-shell');
 var sourcemaps    = require('gulp-sourcemaps');
 var uglify        = require('gulp-uglify');
+var neat          = require("bourbon-neat").includePaths;
 var runSequence   = require('run-sequence');
 var vinylBuffer   = require('vinyl-buffer');
 var vinylSource   = require('vinyl-source-stream');
@@ -42,6 +43,7 @@ gulp.task('styles', ['styles:lint'], function() {
   return gulp.src('./assets/sass/styles.s+(a|c)ss')
     .pipe(changed('./static/css'))
     .pipe(sass({
+      includePaths: [neat],
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(autoprefixer({
