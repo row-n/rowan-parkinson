@@ -14,8 +14,11 @@
 @import 'generic/fonts';
 @import 'generic/typography';
 @import 'generic/icons';
+@import 'generic/spinner';
 
 // Site specific
 @import 'layout/forms';
+@import 'layout/header';
+@import 'layout/footer';
 @import 'layout/navbar';
 @import 'layout/tiles';

@@ -213,7 +213,364 @@ html,body {
   line-height: 1.5;
 }
 
-.navbar {
+body {
+  padding-top: 4em;
+}
+
+body.modal-active .page {
+  filter: blur(8px);
+}
+
+body.modal-active .page:after {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  z-index: 10003;
+}
+
+body.content-active .page {
+  filter: blur(6px);
+}
+
+body.content-active .page:after {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+body.loading .page:before {
+  opacity: .25;
+  top: 50%;
+  transition: opacity 1s ease-out;
+  transition-delay: .5s;
+  visibility: visible;
+}
+
+body.loading .page .tile {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page {
+  position: relative;
+  transition: filter .5s ease;
+}
+
+.page:before {
+  animation: spinner 1s infinite linear;
+  background-image: url("images/spinner.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: block;
+  font-size: 2em;
+  height: 2em;
+  left: 50%;
+  line-height: 2em;
+  margin: -1em 0 0 -1em;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  top: 75%;
+  transition: top .75s ease-in-out, opacity .35s ease-out, visibility .35s;
+  visibility: hidden;
+  width: 2em;
+}
+
+.page:after {
+  background: rgba(36,38,41,0.5);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity .5s ease, visibility .5s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  transition: filter .5s ease;
+}
+
+.content:before {
+  background: rgba(36,38,41,0.25);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity .5s ease, visibility .5s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.content:after {
+  background: rgba(36,38,41,0.25);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity .5s ease, visibility .5s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.header {
   background-color: #1a1a1a;
-  font-size: modular-scale(2);
+  height: 4em;
+  left: 0;
+  line-height: 4em;
+  padding: 0 1em;
+  position: fixed;
+  top: 0;
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  transition: transform 1s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  z-index: 10002;
+}
+
+.loading .header {
+  -ms-transform: translateY(-3.4em);
+  transform: translateY(-3.4em);
+}
+
+.header .header__title {
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 87.5%;
+  line-height: 1;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.header .header__home-link {
+  border: 0;
+  color: inherit;
+  padding: 0 1.15em;
+}
+
+.header .header__home-link:hover {
+  color: inherit;
+}
+
+.footer .copyright {
+  color: gray;
+  font-size: 87.5%;
+}
+
+.footer .copyright a {
+  color: inherit;
+}
+
+.navbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.navbar>.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navbar__item {
+  display: inline-block;
+  padding: 0;
+}
+
+.navbar .navbar__item .navbar__link {
+  border: 0;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: .1em;
+  padding: 0 1.65em;
+  text-transform: uppercase;
+  transition: background-color .5s ease;
+}
+
+.navbar .navbar__item .navbar__link:hover {
+  color: #fff;
+}
+
+.navbar .navbar__item .navbar__link.active {
+  background-color: #ca9c66;
+}
+
+.navbar .navbar__item .icon:before {
+  color: gray;
+  float: right;
+  margin-left: .75em;
+}
+
+.tile {
+  height: calc(33vh - 1em);
+  opacity: 1;
+  overflow: hidden;
+  pointer-events: auto;
+  position: relative;
+  transition: opacity 1.25s ease-in-out;
+  transition-delay: 2.525s;
+  width: 100%;
+}
+
+.tile:nth-child(0) {
+  transition-delay: 0s;
+}
+
+.tile:nth-child(1) {
+  transition-delay: .25s;
+}
+
+.tile:nth-child(2) {
+  transition-delay: .5s;
+}
+
+.tile:nth-child(3) {
+  transition-delay: .75s;
+}
+
+.tile:nth-child(4) {
+  transition-delay: 1s;
+}
+
+.tile:nth-child(5) {
+  transition-delay: 1.25s;
+}
+
+.tile:nth-child(6) {
+  transition-delay: 1.5s;
+}
+
+.tile:nth-child(7) {
+  transition-delay: 1.75s;
+}
+
+.tile:nth-child(8) {
+  transition-delay: 2s;
+}
+
+.tile:nth-child(9) {
+  transition-delay: 2.25s;
+}
+
+.tile:nth-child(10) {
+  transition-delay: 2.5s;
+}
+
+.tile:nth-child(11) {
+  transition-delay: 2.75s;
+}
+
+.tile:nth-child(12) {
+  transition-delay: 3s;
+}
+
+.tile:after {
+  background-image: linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
+  background-size: cover;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tile .tile__link {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tile .tile__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tile .tile__title {
+  bottom: 1.875em;
+  font-size: 87.5%;
+  left: 2.1875em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 48em) {
+  body {
+    padding-bottom: 4em;
+    padding-top: 0;
+  }
+
+  .header {
+    bottom: -1em;
+    height: 5em;
+    padding: 0 1.5em;
+    top: auto;
+  }
+
+  .loading .header {
+    -ms-transform: translateY(4em);
+    transform: translateY(4em);
+  }
+
+  .header .header__title {
+    font-size: 100%;
+  }
+
+  .header .header__home-link {
+    padding: 0;
+  }
+
+  .tile {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .tile {
+    width: 33.33%;
+  }
 }

@@ -5,19 +5,17 @@
 {{ partial "head.html" . }}
 <head>
 <body>
-        
-    <div id="wrapper">
+    <main class="page">
 
     {{ partial "header.html" . }}
-        
+
         {{ block "main" . }}
 
         {{ end }}
 
     {{ partial "footer.html" . }}
 
-    </div>
-
+    </main>
 {{ partial "scripts.html" . }}
 
 </body>
