@@ -1,0 +1,71 @@
+.tile {
+  height: calc(33vh - 1em);
+  opacity: 1;
+  overflow: hidden;
+  pointer-events: auto;
+  position: relative;
+  transition: opacity 1.25s ease-in-out;
+  transition-delay: 2.525s;
+  width: 100%;
+
+  @media #{$tablet} {
+    width: 50%;
+  }
+
+  @media #{$desktop} {
+    width: 33.33%;
+  }
+
+  @for $i from 0 through 12 {
+    &:nth-child(#{$i}) {
+      transition-delay: $i * .25s;
+    }
+  }
+
+  &:after {
+    background-image: linear-gradient(to top, rgba(10, 17, 25, .35) 5%, rgba(10, 17, 25, 0) 35%);
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .tile__link {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .tile__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .tile__title {
+    bottom: 1.875em;
+    font-size: $small-font-size;
+    left: 2.1875em;
+    margin: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+  }
+}

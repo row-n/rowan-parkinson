@@ -1,8 +1,10 @@
 {{ define "main" }}
-    <div id="main">
+    <div class="content">
         {{ range .Data.Pages.ByDate.Reverse }}
-            <article class="thumb">
-                <a href="{{ .Permalink }}" class="link"><img src="{{ .Params.albumthumb }}" alt="{{ .Title }}" /></a>
+            <article class="tile">
+                <a href="{{ .Permalink }}" class="tile__link">
+                  <img src="{{ .Params.albumthumb }}" alt="{{ .Title }}" class="tile__image" />
+                </a>
                 <h2>{{ .Title }}</h2>
             </article>
         {{ end }}
