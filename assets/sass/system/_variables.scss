@@ -1,5 +1,5 @@
 // Colours
-// ---------
+// ----------
 
 // Grayscale
 $white:               #fff;
@@ -102,3 +102,29 @@ $list-style-type: disc;
 $list-style-position: outside;
 $list-side-margin: 1.25rem;
 $list-nested-side-margin: 1.25rem;
+
+// Media Queries
+// ----------------
+
+// Extra small screen / phone
+$screen-xs:           30em; // 480px
+
+// Small screen / tablet
+$screen-sm:           48em; // 768px
+
+// Medium screen / desktop
+$screen-md:           62em; // 992px
+
+// Large screen / wide desktop
+$screen-lg:           75em; // 1200px
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:       ($screen-sm - 1);
+$screen-sm-max:       ($screen-md - 1);
+$screen-md-max:       ($screen-lg - 1);
+
+$phone: 'only screen and (max-width: #{$screen-xs - 1})'; //- 480px
+$mobile: 'only screen and (min-width: #{$screen-xs})'; //480px
+$tablet: 'only screen and (min-width: #{$screen-sm})'; //768px
+$desktop: 'only screen and (min-width: #{$screen-md})'; //992px
+$screen: 'only screen and (min-width: #{$screen-lg})'; //1200px
