@@ -27,16 +27,12 @@
       }
 
       &.active {
-        background-color: $orange;
+        background-color: $black-80;
       }
     }
 
     .icon {
-      &:before {
-        color: $black-50;
-        float: right;
-        margin-left: .75em;
-      }
+      fill: $black-50;
     }
   }
 }
