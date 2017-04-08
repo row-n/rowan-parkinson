@@ -20,7 +20,7 @@
 
 		var	$window = $(window),
 			$body = $('body'),
-			$wrapper = $('#wrapper');
+			$wrapper = $('.page');
 
 		// Hack: Enable IE workarounds.
 			if (skel.vars.IEVersion < 12)
@@ -164,7 +164,7 @@
 					});
 
 		// Header.
-			var $header = $('#header');
+			var $header = $('.header');
 
 			// Links.
 				$header.find('a').each(function() {
@@ -193,7 +193,7 @@
 				});
 
 		// Footer.
-			var $footer = $('#footer');
+			var $footer = $('.footer');
 
 			// Copyright.
 			// This basically just moves the copyright line to the end of the *last* sibling of its current parent
@@ -215,13 +215,13 @@
 				});
 
 		// Main.
-			var $main = $('#main');
+			var $main = $('.content');
 
 			// Thumbs.
-				$main.children('.thumb').each(function() {
+				$main.children('.tile').each(function() {
 
 					var	$this = $(this),
-						$image = $this.find('.image'), $image_img = $image.children('img'),
+						$image = $this.find('.tile__image'), $image_img = $image.children('img'),
 						x;
 
 					// No image? Bail.
@@ -255,10 +255,10 @@
 				});
 
 			// Thumbs Index.
-				$main.children('.thumb').each(function() {
+				$main.children('.tile').each(function() {
 
 					var	$this = $(this),
-						$link = $this.find('.link'), $link_img = $link.children('img'),
+						$link = $this.find('.tile__link'), $link_img = $link.children('img'),
 						x;
 
 					// No link? Bail.
@@ -290,7 +290,7 @@
 								});
 
 				});
-			
+
 			// Poptrox.
 				$main.poptrox({
 					baseZIndex: 20000,
@@ -314,7 +314,7 @@
 					popupLoaderText: '',
 					popupSpeed: 300,
 					popupWidth: 150,
-					selector: '.thumb > a.image',
+					selector: '.tile > a.tile__image',
 					usePopupCaption: true,
 					usePopupCloser: true,
 					usePopupDefaultStyling: false,
