@@ -2,7 +2,12 @@
 		<ul class="navbar__list">
 		{{ range .Site.Params.header.links }}
 			<li class="navbar__item">
-        <a href="{{ .url }}" class="navbar__link icon {{ .icon }}">{{ .name }}</a>
+        <a href="{{ .url }}" class="navbar__link">
+          {{ .name }}
+          <svg role="img" class="icon icon--{{ .icon }} icon--lg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
+          </svg>
+        </a>
       </li>
 		{{ end }}
 		</ul>
