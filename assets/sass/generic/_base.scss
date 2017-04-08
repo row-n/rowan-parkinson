@@ -15,44 +15,14 @@ body {
     padding-top: 0;
   }
 
-  &.modal-active {
-    .page {
-      filter: blur(8px);
-
-      &:after {
-        opacity: 1;
-        pointer-events: auto;
-        visibility: visible;
-        z-index: 10003;
-      }
-    }
-  }
-
   &.content-active {
-    .page {
+    .content {
       filter: blur(6px);
 
       &:after {
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
-      }
-    }
-  }
-
-  &.loading {
-    .page {
-      &:before {
-        opacity: .25;
-        top: 50%;
-        transition: opacity 1s ease-out;
-        transition-delay: .5s;
-        visibility: visible;
-      }
-
-      .tile {
-        opacity: 0;
-        pointer-events: none;
       }
     }
   }
@@ -100,6 +70,32 @@ body {
     width: 100%;
     z-index: 1;
   }
+
+  .modal-active & {
+    filter: blur(8px);
+
+    &:after {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      z-index: 10003;
+    }
+  }
+
+  .loading & {
+    &:before {
+      opacity: .25;
+      top: 50%;
+      transition: opacity 1s ease-out;
+      transition-delay: .5s;
+      visibility: visible;
+    }
+
+    .tile {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 }
 
 .content {
@@ -138,4 +134,15 @@ body {
     width: 100%;
     z-index: 1;
   }
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

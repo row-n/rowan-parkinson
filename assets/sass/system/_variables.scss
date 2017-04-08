@@ -2,129 +2,135 @@
 // ----------
 
 // Grayscale
-$white:               #fff;
-$black-10:            darken($white, 10%);
-$black-20:            darken($white, 20%);
-$black-30:            darken($white, 30%);
-$black-40:            darken($white, 40%);
-$black-50:            darken($white, 50%);
-$black-60:            darken($white, 60%);
-$black-70:            darken($white, 70%);
-$black-80:            darken($white, 80%);
-$black-90:            darken($white, 90%);
-$black:               #000;
+$white:                 #fff;
+$black-10:              darken($white, 10%);
+$black-20:              darken($white, 20%);
+$black-30:              darken($white, 30%);
+$black-40:              darken($white, 40%);
+$black-50:              darken($white, 50%);
+$black-60:              darken($white, 60%);
+$black-70:              darken($white, 70%);
+$black-80:              darken($white, 80%);
+$black-90:              darken($white, 90%);
+$black:                 #000;
 
 // Green Scale
-$green:               #94a05e;
-$green-v-light:       lighten(desaturate(adjust-hue($green, .6572), 16.5799), 11.9608);
-$green-light:         lighten(desaturate(adjust-hue($green, .7792), 9.8297), 8.0392);
-$green-dark:          darken(desaturate(adjust-hue($green, 1.0909), .2111), 11.7647);
-$green-v-dark:        darken(desaturate(adjust-hue($green, -.9091), .1027), 31.7647);
+$green:                 #94a05e;
+$green-v-light:         lighten(desaturate(adjust-hue($green, .6572), 16.5799), 11.9608);
+$green-light:           lighten(desaturate(adjust-hue($green, .7792), 9.8297), 8.0392);
+$green-dark:            darken(desaturate(adjust-hue($green, 1.0909), .2111), 11.7647);
+$green-v-dark:          darken(desaturate(adjust-hue($green, -.9091), .1027), 31.7647);
 
 // Blue Scale
-$blue:                #46576e;
-$blue-v-light:        lighten(desaturate(adjust-hue($blue, -.2143), 67.8768), 44.902);
-$blue-light:          lighten(desaturate(adjust-hue($blue, -.4701), 10.4607), 24.5098);
-$blue-dark:           lighten(desaturate(adjust-hue($blue, .1667), .1658), 4.1176);
-$blue-v-dark:         darken(desaturate(adjust-hue($blue, -.5), .4831), 8.2353);
+$blue:                  #46576e;
+$blue-v-light:          lighten(desaturate(adjust-hue($blue, -.2143), 67.8768), 44.902);
+$blue-light:            lighten(desaturate(adjust-hue($blue, -.4701), 10.4607), 24.5098);
+$blue-dark:             lighten(desaturate(adjust-hue($blue, .1667), .1658), 4.1176);
+$blue-v-dark:           darken(desaturate(adjust-hue($blue, -.5), .4831), 8.2353);
 
 // Maroon Scale
-$maroon:              #7b5e5a;
-$maroon-v-light:      lighten(desaturate(adjust-hue($maroon, -.4803), 16.6283), 25.8824);
-$maroon-light:        lighten(desaturate(adjust-hue($maroon, .8354), .2517), 4.3137);
-$maroon-dark:         darken(desaturate(adjust-hue($maroon, 1.958), .0168), 8.8235);
-$maroon-v-dark:       darken(desaturate(adjust-hue($maroon, .2273), .1933), 21.7647);
+$maroon:                #7b5e5a;
+$maroon-v-light:        lighten(desaturate(adjust-hue($maroon, -.4803), 16.6283), 25.8824);
+$maroon-light:          lighten(desaturate(adjust-hue($maroon, .8354), .2517), 4.3137);
+$maroon-dark:           darken(desaturate(adjust-hue($maroon, 1.958), .0168), 8.8235);
+$maroon-v-dark:         darken(desaturate(adjust-hue($maroon, .2273), .1933), 21.7647);
 
 // Orange Scale
-$orange:              #ca9c66;
-$orange-v-light:      lighten(desaturate(adjust-hue($orange, .1), 32.5374), 11.3725);
-$orange-light:        lighten(desaturate(adjust-hue($orange, -.0106), 19.121), 7.6471);
-$orange-dark:         darken(desaturate(adjust-hue($orange, .1926), 15.7502), 11.1765);
-$orange-v-dark:       darken(desaturate(adjust-hue($orange, .6612), 16.0934), 30);
+$orange:                #ca9c66;
+$orange-v-light:        lighten(desaturate(adjust-hue($orange, .1), 32.5374), 11.3725);
+$orange-light:          lighten(desaturate(adjust-hue($orange, -.0106), 19.121), 7.6471);
+$orange-dark:           darken(desaturate(adjust-hue($orange, .1926), 15.7502), 11.1765);
+$orange-v-dark:         darken(desaturate(adjust-hue($orange, .6612), 16.0934), 30);
 
 // Social
-$linkedin:            #0976b4;
-$twitter:             #55acee;
-$lastfm:              #c3000d;
-$flickr:              #ff0084;
-$facebook:            #3b5998;
-$github:              #800080;
-$github2:             #f93f93;
-$behance:             #1769ff;
-$vimeo:               #1ab7ea;
-$googleplus:          #dd4b39;
-$tumblr:              #35465c;
-$instagram:           #3f729b;
-$dropbox:             #007ee5;
-$evernote:            #7ac142;
-$soundcloud:          #f80f80;
+$linkedin:              #0976b4;
+$twitter:               #55acee;
+$lastfm:                #c3000d;
+$flickr:                #ff0084;
+$facebook:              #3b5998;
+$github:                #800080;
+$github2:               #f93f93;
+$behance:               #1769ff;
+$vimeo:                 #1ab7ea;
+$googleplus:            #dd4b39;
+$tumblr:                #35465c;
+$instagram:             #3f729b;
+$dropbox:               #007ee5;
+$evernote:              #7ac142;
+$soundcloud:            #f80f80;
+$npm:                   #cb3837;
+
+// Skills
+$css3:                  #008dd2;
+$html5:                 #f16529;
+$terminal:              $black-70;
 
 
 // Global
 // ---------
 
-$global-font-size: 100%;
-$global-lineheight: 1.5;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
-$body-background: $black-80;
-$body-font-colour: $black-50;
-$body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$global-font-size:      100%;
+$global-lineheight:     1.5;
+$global-weight-normal:  normal;
+$global-weight-bold:    bold;
+$body-background:       $black-70;
+$body-font-colour:      $black-50;
+$body-font-family:      'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 
 // Base Typography
 // ------------------
 
-$header-font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font-weight: $global-weight-normal;
-$header-font-style: normal;
+$header-font-family:    'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-weight:    $global-weight-normal;
+$header-font-style:     normal;
 $font-family-monospace: $font-family-monospace;
-$header-color: $black-30;
-$header-lineheight: 1.4;
-$header-margin-bottom: .5rem;
-$x-small-font-size: 75%;
-$small-font-size: 87.5%;
-$large-font-size: 112.5%;
-$x-large-font-size: 125%;
-$paragraph-lineheight: 1.6;
+$header-color:          $black-30;
+$header-lineheight:     1.4;
+$header-margin-bottom:  .5rem;
+$x-small-font-size:     75%;
+$small-font-size:       87.5%;
+$large-font-size:       112.5%;
+$x-large-font-size:     125%;
+$paragraph-lineheight:  1.6;
 $paragraph-margin-bottom: 1rem;
-$anchor-color: $blue;
-$anchor-color-hover: $blue-dark;
+$anchor-color:          $blue;
+$anchor-color-hover:    $blue-dark;
 $anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
-$hr-width: 100%;
-$hr-border: .0625em solid $black-50;
-$hr-margin: 1.25rem auto;
-$list-lineheight: $paragraph-lineheight;
-$list-margin-bottom: $paragraph-margin-bottom;
-$list-style-type: disc;
-$list-style-position: outside;
-$list-side-margin: 1.25rem;
+$hr-width:              100%;
+$hr-border:             .0625em solid $black-50;
+$hr-margin:             1.25rem auto;
+$list-lineheight:       $paragraph-lineheight;
+$list-margin-bottom:    $paragraph-margin-bottom;
+$list-style-type:       disc;
+$list-style-position:   outside;
+$list-side-margin:      1.25rem;
 $list-nested-side-margin: 1.25rem;
 
 // Media Queries
 // ----------------
 
 // Extra small screen / phone
-$screen-xs:           30em; // 480px
+$screen-xs:             30em; // 480px
 
 // Small screen / tablet
-$screen-sm:           48em; // 768px
+$screen-sm:             48em; // 768px
 
 // Medium screen / desktop
-$screen-md:           62em; // 992px
+$screen-md:             62em; // 992px
 
 // Large screen / wide desktop
-$screen-lg:           75em; // 1200px
+$screen-lg:             75em; // 1200px
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:       ($screen-sm - 1);
-$screen-sm-max:       ($screen-md - 1);
-$screen-md-max:       ($screen-lg - 1);
+$screen-xs-max:         ($screen-sm - 1);
+$screen-sm-max:         ($screen-md - 1);
+$screen-md-max:         ($screen-lg - 1);
 
-$phone: 'only screen and (max-width: #{$screen-xs - 1})'; //- 480px
-$mobile: 'only screen and (min-width: #{$screen-xs})'; //480px
-$tablet: 'only screen and (min-width: #{$screen-sm})'; //768px
-$desktop: 'only screen and (min-width: #{$screen-md})'; //992px
-$screen: 'only screen and (min-width: #{$screen-lg})'; //1200px
+$phone:                 'only screen and (max-width: #{$screen-xs - 1})'; //- 480px
+$mobile:                'only screen and (min-width: #{$screen-xs})'; //480px
+$tablet:                'only screen and (min-width: #{$screen-sm})'; //768px
+$desktop:               'only screen and (min-width: #{$screen-md})'; //992px
+$screen:                'only screen and (min-width: #{$screen-lg})'; //1200px

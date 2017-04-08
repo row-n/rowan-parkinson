@@ -28,15 +28,15 @@
   }
 
   .header__title {
-    color: $black-10;
+    color: $header-color;
     display: inline-block;
-    font-size: $small-font-size;
+    font-size: $x-small-font-size;
     line-height: 1;
     margin: 0;
     vertical-align: middle;
 
     @media #{$tablet} {
-      font-size: $global-font-size;
+      font-size: $small-font-size;
     }
   }
 
