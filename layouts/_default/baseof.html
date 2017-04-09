@@ -1,24 +1,25 @@
 <!DOCTYPE HTML>
-{{ partial "lang.html" . }}
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-{{ partial "head.html" . }}
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
 <head>
 <body>
-    <main class="page">
+  <main class="page">
 
     {{ partial "header.html" . }}
 
-        {{ block "main" . }}
+    {{ block "main" . }}
 
-        {{ end }}
+    {{ end }}
 
     {{ partial "about.html" . }}
     {{ partial "contact.html" . }}
 
-    </main>
-{{ partial "icons.html" . }}
-{{ partial "scripts.html" . }}
+  </main>
+
+  {{ partial "icons.html" . }}
+  {{ partial "scripts.html" . }}
 
 </body>
 </html>

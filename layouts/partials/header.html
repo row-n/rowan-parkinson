@@ -1,10 +1,10 @@
 <header class="header">
-{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-{{ $.Scratch.Add "path" .Site.BaseURL }}
-    <h1 class="header__title">
-        <a href="{{ .Site.BaseURL }}" class="header__home-link">
-            <strong>{{ .Site.Title }}</strong>
-        </a>
+  {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+  {{ $.Scratch.Add "path" .Site.BaseURL }}
+  <h1 class="header__title">
+    <a href="{{ .Site.BaseURL }}" class="header__home-link">
+      <strong>{{ .Site.Title }}</strong>
+    </a>
     {{ range $index, $element := split $url "/" }}
     {{ $.Scratch.Add "path" $element }}
     {{ if ne $element "" }}
@@ -12,7 +12,7 @@
     {{ $.Scratch.Add "path" "/" }}
     {{ end }}
     {{ end }}
-    </h1>
-{{ partial "navigation.html" . }}
+  </h1>
+  {{ partial "navigation.html" . }}
 
 </header>
