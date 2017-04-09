@@ -98,44 +98,6 @@ body {
   }
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  transition: filter .5s ease;
-
-  &:before {
-    background: rgba(36, 38, 41, .25);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 1;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    transition: opacity .5s ease, visibility .5s;
-    visibility: hidden;
-    width: 100%;
-    z-index: 1;
-  }
-
-  &:after {
-    background: rgba(36, 38, 41, .25);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 1;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    transition: opacity .5s ease, visibility .5s;
-    visibility: hidden;
-    width: 100%;
-    z-index: 1;
-  }
-}
-
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
