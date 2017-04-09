@@ -1,5 +1,5 @@
 {{ "<!-- Contact -->" | safeHTML }}
-    <footer id="contact" class="footer panel">
+    <footer id="contact" class="footer section">
         <div class="inner split">
             <div>
                 <section>
@@ -22,7 +22,7 @@
                     </ul>
                 </section>
                 <p class="copyright">
-                    &copy; {{ with .Site.Params.footer.copyright.name }}{{ . | markdownify }}{{ end }}. Design: <a href="http://html5up.net">HTML5 UP</a>. Ported to Hugo by <a href="//github.com/aerohub">AEROHUB</a>.
+                    Copyright &copy; {{ with .Site.Params.footer.copyright.name }}{{ . | markdownify }}{{ end }} {{ .Now.Year }}. All rights reserved.
                 </p>
             </div>
             <div>

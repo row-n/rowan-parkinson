@@ -66,7 +66,7 @@
 			$('form').placeholder();
 
 		// Panels.
-			var $panels = $('.panel');
+			var $panels = $('.section');
 
 			$panels.each(function() {
 

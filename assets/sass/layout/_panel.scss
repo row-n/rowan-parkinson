@@ -1,0 +1,91 @@
+.section {
+  background: rgba(36, 38, 41, .975);
+  bottom: auto;
+  left: 0;
+  max-height: calc(80vh - 4em);
+  overflow-y: auto;
+  padding: 4em 2em 2em;
+  position: fixed;
+  top: calc(4em - 1px);
+  transform: translateY(-100vh);
+  transition: transform .5s ease;
+  width: 100%;
+  z-index: 10001;
+
+  @media #{$tablet} {
+    bottom: 4em;
+    padding: 3em 3em 1em;
+    top: auto;
+    transform: translateY(100vh);
+  }
+
+  @media #{$screen} {
+    padding: 4em 4em 2em;
+  }
+
+  &.active {
+    transform: translateY(0);
+
+    @media #{$tablet} {
+      transform: translateY(1px);
+    }
+  }
+
+  > .inner {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 75em;
+
+    &.split {
+      display: flex;
+      flex-direction: column;
+
+      @media #{$desktop} {
+        flex-direction: initial;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      > div {
+        margin-left: 0;
+        width: 100%;
+
+        @media #{$desktop} {
+          margin-left: 3em;
+          width: 50%;
+        }
+
+        @media #{$screen} {
+          margin-left: 4em;
+        }
+      }
+    }
+  }
+
+  > .closer {
+    background-image: url('images/close.svg');
+    background-position: 75% 25%;
+    background-repeat: no-repeat;
+    background-size: 2.5em;
+    cursor: pointer;
+    height: 5em;
+    opacity: .25;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .2s ease-in-out;
+    width: 5em;
+    z-index: 2;
+
+    @media #{$screen} {
+      background-position: center;
+      background-size: 3em;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
