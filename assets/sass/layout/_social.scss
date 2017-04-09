@@ -12,6 +12,28 @@
 
   .social__link {
     border-bottom: 0;
+
+    &:hover {
+      .icon--npm {
+        fill: $npm;
+      }
+
+      .icon--github {
+        fill: $github2;
+      }
+
+      .icon--lastfm {
+        fill: $lastfm;
+      }
+
+      .icon--linkedin {
+        fill: $linkedin;
+      }
+
+      .icon--twitter {
+        fill: $twitter;
+      }
+    }
   }
 
   .icon {
