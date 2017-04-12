@@ -227,72 +227,9 @@ body.content-active .content:after {
   visibility: visible;
 }
 
-.page {
-  position: relative;
-  transition: filter .5s ease;
-}
-
-.page:before {
-  animation: spinner 1s infinite linear;
-  background-image: url("images/spinner.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: '';
-  display: block;
-  font-size: 2em;
-  height: 2em;
-  left: 50%;
-  line-height: 2em;
-  margin: -1em 0 0 -1em;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  text-align: center;
-  top: 75%;
-  transition: top .75s ease-in-out, opacity .35s ease-out, visibility .35s;
-  visibility: hidden;
-  width: 2em;
-}
-
-.page:after {
-  background: rgba(36,38,41,0.5);
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  transition: opacity .5s ease, visibility .5s;
-  visibility: hidden;
-  width: 100%;
-  z-index: 1;
-}
-
-.modal-active .page {
-  filter: blur(8px);
-}
-
-.modal-active .page:after {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-  z-index: 10003;
-}
-
-.loading .page:before {
-  opacity: .25;
-  top: 50%;
-  transition: opacity 1s ease-out;
-  transition-delay: .5s;
-  visibility: visible;
-}
-
-.loading .page .tile {
-  opacity: 0;
-  pointer-events: none;
+body.is-loading .header,body.is-loading .tile {
+  animation: none;
+  transition: none;
 }
 
 .sr-only {
@@ -333,6 +270,67 @@ body.content-active .content:after {
   width: 1.5rem;
 }
 
+.spinner {
+  animation: spinner 1s infinite linear;
+  background-image: url("../icons/spinner.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  font-size: 2em;
+  height: 2em;
+  left: 50%;
+  line-height: 2em;
+  margin: -1em 0 0 -1em;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  top: 75%;
+  transition: top .75s ease-in-out, opacity .35s ease-out, visibility .35s;
+  visibility: hidden;
+  width: 2em;
+}
+
+.is-loading .spinner {
+  opacity: 1;
+  top: 50%;
+  transition: none;
+  visibility: visible;
+}
+
+.page {
+  position: relative;
+  transition: filter .5s ease;
+}
+
+.page:after {
+  background: rgba(26,26,26,0.5);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity .5s ease, visibility .5s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10;
+}
+
+.modal-active .page {
+  filter: blur(0.5em);
+}
+
+.modal-active .page:after {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  z-index: 30;
+}
+
 .header {
   background-color: #1a1a1a;
   height: 4em;
@@ -349,10 +347,10 @@ body.content-active .content:after {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  z-index: 10002;
+  z-index: 20;
 }
 
-.loading .header {
+.is-loading .header {
   -ms-transform: translateY(-3.4em);
   transform: translateY(-3.4em);
 }
@@ -425,80 +423,72 @@ body.content-active .content:after {
 }
 
 .tile {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInUpBig;
   float: left;
-  height: calc(33vh - 1.1761em);
-  opacity: 1;
+  height: calc(40vh - 2em);
   overflow: hidden;
   pointer-events: auto;
   position: relative;
-  transition: opacity 1.25s ease-in-out;
-  transition-delay: 2.525s;
   width: 100%;
+}
+
+.is-loading .tile {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .tile:nth-child(0) {
-  transition-delay: 0s;
+  animation-delay: 0s;
 }
 
 .tile:nth-child(1) {
-  transition-delay: .25s;
+  animation-delay: .25s;
 }
 
 .tile:nth-child(2) {
-  transition-delay: .5s;
+  animation-delay: .5s;
 }
 
 .tile:nth-child(3) {
-  transition-delay: .75s;
+  animation-delay: .75s;
 }
 
 .tile:nth-child(4) {
-  transition-delay: 1s;
+  animation-delay: 1s;
 }
 
 .tile:nth-child(5) {
-  transition-delay: 1.25s;
+  animation-delay: 1.25s;
 }
 
 .tile:nth-child(6) {
-  transition-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 .tile:nth-child(7) {
-  transition-delay: 1.75s;
+  animation-delay: 1.75s;
 }
 
 .tile:nth-child(8) {
-  transition-delay: 2s;
+  animation-delay: 2s;
 }
 
 .tile:nth-child(9) {
-  transition-delay: 2.25s;
+  animation-delay: 2.25s;
 }
 
 .tile:nth-child(10) {
-  transition-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 
 .tile:nth-child(11) {
-  transition-delay: 2.75s;
+  animation-delay: 2.75s;
 }
 
 .tile:nth-child(12) {
-  transition-delay: 3s;
-}
-
-.tile:after {
-  background-image: linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-  background-size: cover;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  animation-delay: 3s;
 }
 
 .tile .tile__link {
@@ -536,7 +526,7 @@ body.content-active .content:after {
 }
 
 .section {
-  background: rgba(36,38,41,0.975);
+  background: #333;
   bottom: auto;
   left: 0;
   max-height: calc(80vh - 4em);
@@ -548,7 +538,7 @@ body.content-active .content:after {
   transform: translateY(-100vh);
   transition: transform .5s ease;
   width: 100%;
-  z-index: 10001;
+  z-index: 10;
 }
 
 .section.active {
@@ -579,7 +569,7 @@ body.content-active .content:after {
 }
 
 .section>.closer {
-  background-image: url("images/close.svg");
+  background-image: url("../icons/close.svg");
   background-position: 75% 25%;
   background-repeat: no-repeat;
   background-size: 2.5em;
@@ -652,7 +642,7 @@ body.content-active .content:after {
     top: auto;
   }
 
-  .loading .header {
+  .is-loading .header {
     -ms-transform: translateY(4em);
     transform: translateY(4em);
   }
@@ -711,5 +701,27 @@ body.content-active .content:after {
   .section>.closer {
     background-position: center;
     background-size: 3em;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 65em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }

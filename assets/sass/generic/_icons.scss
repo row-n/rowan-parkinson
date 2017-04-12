@@ -1,4 +1,5 @@
-.icon {
+.icon,
+%icon {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -10,17 +11,20 @@
   }
 }
 
-.icon--sm {
+.icon--sm,
+%icon--sm {
   height: .5rem;
   width: .5rem;
 }
 
-.icon--md {
+.icon--md,
+%icon--md {
   height: 1rem;
   width: 1rem;
 }
 
-.icon--lg {
+.icon--lg,
+%icon--lg {
   height: 1.5rem;
   width: 1.5rem;
 }
