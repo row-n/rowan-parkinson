@@ -1,12 +1,28 @@
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 65em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .tile {
+  // animation-delay: 2.525s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInUpBig;
   float: left;
-  height: calc(33vh - 1.1761em);
-  opacity: 1;
+  // height: 33.33%;
+  height: calc(40vh - 2em);
+  // opacity: 1;
   overflow: hidden;
   pointer-events: auto;
   position: relative;
-  transition: opacity 1.25s ease-in-out;
-  transition-delay: 2.525s;
+  // transition: opacity 1.25s ease-in-out;
   width: 100%;
 
   @media #{$tablet} {
@@ -17,23 +33,15 @@
     width: 33.33%;
   }
 
-  @for $i from 0 through 12 {
-    &:nth-child(#{$i}) {
-      transition-delay: $i * .25s;
-    }
+  .is-loading & {
+    opacity: 0;
+    pointer-events: none;
   }
 
-  &:after {
-    background-image: linear-gradient(to top, rgba(10, 17, 25, .35) 5%, rgba(10, 17, 25, 0) 35%);
-    background-size: cover;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  @for $i from 0 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * .25s;
+    }
   }
 
   .tile__link {
