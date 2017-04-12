@@ -33,12 +33,12 @@
 		// Transitions supported?
 			if (skel.canUse('transition')) {
 
-				// Add (and later, on load, remove) "loading" class.
-					$body.addClass('loading');
+				// Add (and later, on load, remove) "is-loading" class.
+					$body.addClass('is-loading');
 
 					$window.on('load', function() {
 						window.setTimeout(function() {
-							$body.removeClass('loading');
+							$body.removeClass('is-loading');
 						}, 100);
 					});
 

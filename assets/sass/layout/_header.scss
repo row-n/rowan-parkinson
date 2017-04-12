@@ -10,7 +10,7 @@
   transition: transform 1s ease;
   user-select: none;
   width: 100%;
-  z-index: 10002;
+  z-index: 20;
 
   @media #{$tablet} {
     bottom: -1em;
@@ -19,7 +19,7 @@
     top: auto;
   }
 
-  .loading & {
+  .is-loading & {
     transform: translateY(-3.4em);
 
     @media #{$tablet} {
