@@ -1,0 +1,15 @@
+// Responsive font sizes
+// ------------------------
+//## Responsive font map which calculates correct font-size for each breakpoint.
+
+@mixin font-size-map($font-size-map) {
+  @each $breakpoint, $font-size in $font-size-map {
+    @if $breakpoint == null {
+      font-size: $font-size;
+    } @else {
+      @include media($breakpoint) {
+        font-size: $font-size;
+      }
+    }
+  }
+}
