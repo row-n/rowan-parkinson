@@ -12,18 +12,37 @@ var eslint        = require('gulp-eslint');
 var hash          = require('gulp-hash');
 var htmlmin       = require('gulp-htmlmin');
 var gulpif        = require('gulp-if');
+var imagemin      = require('gulp-imagemin');
 var rename        = require('gulp-rename');
 var sass          = require('gulp-sass');
 var sassLint      = require('gulp-sass-lint');
 var shell         = require('gulp-shell');
 var sourcemaps    = require('gulp-sourcemaps');
 var uglify        = require('gulp-uglify');
-var neat          = require("bourbon-neat").includePaths;
+var neat          = require('bourbon-neat').includePaths;
 var runSequence   = require('run-sequence');
 var vinylBuffer   = require('vinyl-buffer');
 var vinylSource   = require('vinyl-source-stream');
 
 var isProduction  = false;
+
+// Icons
+gulp.task('clean:icons', function() {
+  return del(['./static/icons/**/*']);
+});
+
+gulp.task('icons', function() {
+  return gulp.src(['./assets/icons/spinner.svg', './assets/icons/cross.svg'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('./static/icons'));
+});
+
+// Images
+gulp.task('images', function() {
+  return gulp.src(['./static/images/**/*'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('../../public/images/**/*'));
+});
 
 // Styles
 gulp.task('clean:styles', function() {
@@ -105,13 +124,13 @@ gulp.task('html', function() {
 });
 
 gulp.task('clean:assets', function(){
-  return del(['../../public/css/**/*.css', '../../public/js/**/*.js'], {
+  return del(['../../public/css/**/*.css', '../../public/js/**/*.js', '../../public/images/**/*'], {
     force: true,
   });
 });
 
 // Clean
-gulp.task('clean', ['clean:assets', 'clean:styles', 'clean:scripts']);
+gulp.task('clean', ['clean:assets', 'clean:icons', 'clean:styles', 'clean:scripts']);
 
 // Watch
 gulp.task('watch', function() {
@@ -131,12 +150,12 @@ gulp.task('hugo:build', shell.task([
 // Environment Build
 gulp.task('dev', function() {
   isProduction = false;
-  runSequence('styles', 'scripts', 'watch', 'hugo:server');
+  runSequence('icons', 'styles', 'scripts', 'watch', 'hugo:server');
 });
 
 gulp.task('prod', function() {
   isProduction = true;
-  runSequence('clean', 'styles', 'scripts', 'hugo:build', 'html');
+  runSequence('clean','icons', 'images', 'styles', 'scripts', 'hugo:build', 'html');
 });
 
 // Default Task
