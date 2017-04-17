@@ -299,6 +299,31 @@ body.is-loading .header,body.is-loading .tile {
   visibility: visible;
 }
 
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #94a05e;
+  border: 0.125em solid #94a05e;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 3em;
+  letter-spacing: .1em;
+  line-height: 3em;
+  padding: 0 2.5em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+  white-space: nowrap;
+}
+
+.btn.btn--bordered {
+  background-color: transparent;
+}
+
 .page {
   position: relative;
   transition: filter .5s ease;
@@ -381,6 +406,101 @@ body.is-loading .header,body.is-loading .tile {
 
 .footer .copyright a {
   color: inherit;
+}
+
+.form {
+  margin: 0 0 2em;
+}
+
+.form .form__field {
+  margin: 0 0 1.3em;
+}
+
+.form .form__field.form__field--half {
+  width: 100%;
+}
+
+.form>.actions {
+  margin: 1.5em 0 0;
+}
+
+.form label {
+  color: #fff;
+  display: block;
+  font-size: .9em;
+  font-weight: 300;
+  margin: 0 0 1em;
+}
+
+.form input[type='text'],.form input[type='password'],.form input[type='email'],.form input[type='tel'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #4d4d4d;
+  border: 0.125em solid #4d4d4d;
+  border-radius: 0;
+  color: #ccc;
+  display: block;
+  height: 2.75em;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+}
+
+.form input[type='text']:focus,.form input[type='password']:focus,.form input[type='email']:focus,.form input[type='tel']:focus {
+  border-color: #94a05e;
+}
+
+.form input[type='checkbox'],.form input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2em;
+  opacity: 0;
+  width: 1em;
+  z-index: -1;
+}
+
+.form input[type='checkbox']+label,.form input[type='radio']+label {
+  color: #ccc;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 300;
+  padding-left: 2.4em;
+  padding-right: .75em;
+  position: relative;
+  text-decoration: none;
+}
+
+.form select,.form textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #4d4d4d;
+  border: 0.125em solid #4d4d4d;
+  border-radius: 0;
+  color: #ccc;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+}
+
+.form select:focus,.form textarea:focus {
+  border-color: #94a05e;
+}
+
+.form select {
+  height: 2.75em;
+}
+
+.form textarea {
+  padding: .75em 1em;
 }
 
 .navbar {
@@ -653,6 +773,17 @@ body.is-loading .header,body.is-loading .tile {
 
   .header .header__home-link {
     padding: 0;
+  }
+
+  .form .form__field.form__field--half {
+    float: left;
+    padding-left: .65em;
+    width: 50%;
+  }
+
+  .form .form__field.form__field--half:first-child {
+    padding-left: 0;
+    padding-right: .65em;
   }
 
   .tile {
