@@ -1,0 +1,22 @@
+.btn {
+  appearance: none;
+  background-color: $green;
+  border: .125em solid $green;
+  border-radius: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  height: 3em;
+  letter-spacing: .1em;
+  line-height: 3em;
+  padding: 0 2.5em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+  white-space: nowrap;
+
+  &.btn--bordered {
+    background-color: transparent;
+  }
+}
