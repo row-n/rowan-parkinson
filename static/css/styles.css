@@ -214,7 +214,7 @@ html,body {
 }
 
 body {
-  padding-top: 4em;
+  padding: 4em 0;
 }
 
 body.content-active .content {
@@ -739,6 +739,10 @@ body.is-loading .header,body.is-loading .tile {
 
 .social .social__link:hover .icon--linkedin {
   fill: #0976b4;
+}
+
+.social .social__link:hover .icon--stackoverflow {
+  fill: #f4842c;
 }
 
 .social .social__link:hover .icon--twitter {
