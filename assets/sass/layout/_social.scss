@@ -1,17 +1,19 @@
 .social {
   list-style: none;
-  margin-bottom: 2em;
+  margin-bottom: $social-margin;
   margin-left: 0;
+  margin-top: $social-margin / 2;
   padding: 0;
 
   .social__item {
     display: inline;
-    margin-right: 1em;
+    margin-right: $social-icon-spacing;
     padding-left: 0;
   }
 
   .social__link {
     border-bottom: 0;
+    text-decoration: none;
 
     &:hover {
       .icon--npm {
@@ -41,6 +43,7 @@
   }
 
   .icon {
-    fill: $black-60;
+    fill: $social-icon-fill;
+    transition: fill $global-duration ease;
   }
 }
