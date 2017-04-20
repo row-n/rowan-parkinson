@@ -66,13 +66,13 @@
 			$('form').placeholder();
 
 		// Panels.
-			var $panels = $('.section');
+			var $panels = $('.panel');
 
 			$panels.each(function() {
 
 				var $this = $(this),
 					$toggles = $('[href="#' + $this.attr('id') + '"]'),
-					$closer = $('<div class="closer" />').appendTo($this);
+					$closer = $('<div class="close" />').appendTo($this);
 
 				// Closer.
 					$closer
