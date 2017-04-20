@@ -1,10 +1,9 @@
-.section {
+.panel {
   background: $black-80;
   bottom: auto;
   left: 0;
-  max-height: calc(80vh - 4em);
   overflow-y: auto;
-  padding: 4em 2em 2em;
+  padding: 2em;
   position: fixed;
   top: calc(4em - 1px);
   transform: translateY(-100vh);
@@ -12,60 +11,45 @@
   width: 100%;
   z-index: 10;
 
-  @media #{$tablet} {
-    bottom: 4em;
-    padding: 3em 3em 1em;
-    top: auto;
-    transform: translateY(100vh);
-  }
-
   @media #{$screen} {
-    padding: 4em 4em 2em;
+    padding: 4em;
   }
 
   &.active {
     transform: translateY(0);
-
-    @media #{$tablet} {
-      transform: translateY(1px);
-    }
   }
 
-  > .inner {
+  > .panel__body {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    max-width: 100%;
-    width: 75em;
+    max-width: 75em;
 
-    &.split {
-      display: flex;
-      flex-direction: column;
+    @media #{$desktop} {
+      flex-direction: initial;
+    }
 
-      @media #{$desktop} {
-        flex-direction: initial;
-      }
+    > .panel__col {
+      margin-left: 0;
+      width: 100%;
 
       &:first-child {
         margin-left: 0;
       }
 
-      > div {
-        margin-left: 0;
-        width: 100%;
+      @media #{$desktop} {
+        margin-left: 3em;
+        width: 50%;
+      }
 
-        @media #{$desktop} {
-          margin-left: 3em;
-          width: 50%;
-        }
-
-        @media #{$screen} {
-          margin-left: 4em;
-        }
+      @media #{$screen} {
+        margin-left: 4em;
       }
     }
   }
 
-  > .closer {
-    background-image: url('../icons/close.svg');
+  > .close {
+    background-image: url('../icons/cross.svg');
     background-position: 75% 25%;
     background-repeat: no-repeat;
     background-size: 2.5em;
@@ -77,7 +61,7 @@
     top: 0;
     transition: opacity .2s ease-in-out;
     width: 5em;
-    z-index: 2;
+    z-index: 40;
 
     @media #{$screen} {
       background-position: center;
