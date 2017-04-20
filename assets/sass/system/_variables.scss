@@ -75,9 +75,11 @@ $global-font-size:      100%;
 $global-lineheight:     1.5;
 $global-weight-normal:  normal;
 $global-weight-bold:    bold;
+$global-duration:       .4s;
 $body-background:       $black-70;
 $body-font-colour:      $black-50;
-$body-font-family:      'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font-family:      'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-border-box:       true;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 
@@ -85,20 +87,28 @@ $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 // ------------------
 
 $header-font-family:    'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font-weight:    $global-weight-normal;
+$header-x-light-font-weight: 200;
+$header-light-font-weight: 300;
 $header-font-style:     normal;
 $font-family-monospace: $font-family-monospace;
-$header-color:          $black-30;
+$header-color:          $black-50;
 $header-lineheight:     1.4;
+$header-letter-spacing: .1em;
 $header-margin-bottom:  .5rem;
+$h1-font-size:          1.602em;
+$h2-font-size:          1.424em;
+$h3-font-size:          1.266em;
+$h4-font-size:          1.125em;
+$h5-font-size:          1em;
+$h6-font-size:          .889em;
 $x-small-font-size:     75%;
 $small-font-size:       87.5%;
 $large-font-size:       112.5%;
 $x-large-font-size:     125%;
 $paragraph-lineheight:  1.6;
 $paragraph-margin-bottom: 1rem;
-$anchor-color:          $blue;
-$anchor-color-hover:    $blue-dark;
+$anchor-color:          $orange;
+$anchor-color-hover:    $orange-dark;
 $anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
 $hr-width:              100%;
@@ -136,3 +146,65 @@ $mobile:                'only screen and (min-width: #{$screen-xs})'; //480px
 $tablet:                'only screen and (min-width: #{$screen-sm})'; //768px
 $desktop:               'only screen and (min-width: #{$screen-md})'; //992px
 $screen:                'only screen and (min-width: #{$screen-lg})'; //1200px
+
+// Navbar
+// ---------
+
+$navbar-font-family:    $header-font-family;
+$navbar-font-size:      $small-font-size;
+$navbar-font-weight:    $header-x-light-font-weight;
+$navbar-item-color:     $black-30;
+$navbar-item-color-hover: $white;
+$navbar-item-1-background-hover: $maroon;
+$navbar-item-1-background-active: $black-80;
+$navbar-item-2-background-hover: $blue;
+$navbar-item-2-background-active: $black-80;
+$navbar-link-padding:   0 1.25em;
+
+// Buttons
+// ----------
+
+$button-font-family:    $header-font-family;
+$button-letter-spacing: $header-letter-spacing;
+$button-color:          $white;
+$button-background-color: $orange;
+$button-background-color-hover: $orange-dark;
+$button-bordered-color-hover: $orange-dark;
+$button-bordered-background-color: transparent;
+$button-bordered-background-color-hover: transparent;
+$button-border-color: $orange;
+$button-border-color-hover: $orange-dark;
+$button-border:         .125em solid $button-border-color;
+$button-padding:        .75em 2.5em;
+
+// Header
+// ---------
+
+$site-header-height:    4em;
+$site-header-width:     100%;
+$site-header-background: $black-90;
+$site-header-link-color: $black-50;
+$site-header-link-color-hover: $black-10;
+$site-header-link-background-hover: $black-80;
+$site-header-font-size: $large-font-size;
+$site-header-font-family: $header-font-family;
+$site-header-line-height:    $site-header-height;
+$site-header-text-decoration: none;
+$site-header-padding:   0 1.15em;
+
+// Forms
+// --------
+
+$form-font-family:      $body-font-family;
+
+// Z-index
+// ----------
+
+$site-header-zindex:    20;
+
+// Social
+// ---------
+
+$social-margin:         2em;
+$social-icon-fill:      $black-60;
+$social-icon-spacing:   1em;
