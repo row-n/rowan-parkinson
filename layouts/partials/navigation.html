@@ -3,7 +3,7 @@
 		{{ range .Site.Params.header.links }}
 			<li class="navbar__item">
         <a href="{{ .url }}" class="navbar__link">
-          {{ .name }}
+          <span class="sr-only">{{ .name }}</span>
           <svg role="img" class="icon icon--{{ .icon }} icon--lg">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
           </svg>
