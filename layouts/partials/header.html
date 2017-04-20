@@ -1,7 +1,7 @@
 <header class="header">
   {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
   {{ $.Scratch.Add "path" .Site.BaseURL }}
-  <h1 class="header__title">
+  <div class="header__title">
     <a href="{{ .Site.BaseURL }}" class="header__home-link">
       <strong>{{ .Site.Title }}</strong>
     </a>
@@ -12,7 +12,7 @@
     {{ $.Scratch.Add "path" "/" }}
     {{ end }}
     {{ end }}
-  </h1>
+  </div>
   {{ partial "navigation.html" . }}
 
 </header>
