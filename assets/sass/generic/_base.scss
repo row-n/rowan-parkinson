@@ -1,3 +1,13 @@
+* {
+  &,
+  &:before,
+  &:after {
+    @if ($body-border-box) {
+      box-sizing: border-box;
+    }
+  }
+}
+
 html,
 body {
   background-color: $body-background;
@@ -9,11 +19,6 @@ body {
 
 body {
   padding: 4em 0;
-
-  @media #{$tablet} {
-    padding-bottom: 4em;
-    padding-top: 0;
-  }
 
   &.content-active {
     .content {
@@ -34,10 +39,6 @@ body {
       transition: none;
     }
   }
-}
-
-.content {
-  // height: calc(100vh - 4em);
 }
 
 .sr-only {

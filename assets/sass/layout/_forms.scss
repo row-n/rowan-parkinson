@@ -45,14 +45,16 @@
       border-radius: 0;
       color: $black-20;
       display: block;
+      font-family: $form-font-family;
       height: 2.75em;
       outline: 0;
       padding: 0 1em;
       text-decoration: none;
+      transition: border-color .4s ease;
       width: 100%;
 
       &:focus {
-        border-color: $green;
+        border-color: $orange;
       }
     }
 
@@ -88,13 +90,15 @@
     border-radius: 0;
     color: $black-20;
     display: block;
+    font-family: $form-font-family;
     outline: 0;
     padding: 0 1em;
     text-decoration: none;
+    transition: border-color .4s ease;
     width: 100%;
 
     &:focus {
-      border-color: $green;
+      border-color: $orange;
     }
   }
 
