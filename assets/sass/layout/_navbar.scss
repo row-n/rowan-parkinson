@@ -1,7 +1,5 @@
 .navbar {
-  position: absolute;
-  right: 0;
-  top: 0;
+  float: right;
 
   > .navbar__list {
     list-style: none;
@@ -10,29 +8,54 @@
   }
 
   .navbar__item {
-    display: inline-block;
+    display: block;
+    float: right;
     padding: 0;
 
+    &:first-child {
+      .navbar__link {
+        &:hover {
+          background-color: $navbar-item-1-background-hover;
+        }
+
+        &.active {
+          background-color: $navbar-item-1-background-active;
+        }
+      }
+    }
+
+    &:last-child {
+      .navbar__link {
+        &:hover {
+          background-color: $navbar-item-2-background-hover;
+        }
+
+        &.active {
+          background-color: $navbar-item-2-background-active;
+        }
+      }
+    }
+
     .navbar__link {
-      border: 0;
-      color: $white;
-      display: inline-block;
-      letter-spacing: .1em;
-      padding: 0 1.65em;
-      text-transform: uppercase;
-      transition: background-color .5s ease;
+      color: $navbar-item-color;
+      display: block;
+      font-family: $navbar-font-family;
+      font-style: $navbar-font-size;
+      font-weight: $navbar-font-weight;
+      padding: $navbar-link-padding;
+      transition: background-color $global-duration ease, color $global-duration ease;
 
       &:hover {
-        color: $white;
-      }
+        color: $navbar-item-color-hover;
 
-      &.active {
-        background-color: $black-80;
+        .icon {
+          fill: $navbar-item-color-hover;
+        }
       }
     }
 
     .icon {
-      fill: $black-50;
+      fill: $navbar-item-color;
     }
   }
 }
