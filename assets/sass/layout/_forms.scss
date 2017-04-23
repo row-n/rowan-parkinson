@@ -1,37 +1,31 @@
 .form {
-  margin: 0 0 2em;
-
   .form__field {
-    margin: 0 0 1.3em;
+    margin-bottom: $form-field-spacing;
 
     &.form__field--half {
       width: 100%;
 
       @media #{$tablet} {
         float: left;
-        padding-left: .65em;
+        padding-left: $form-field-spacing / 2;
         width: 50%;
       }
 
       &:first-child {
         @media #{$tablet} {
           padding-left: 0;
-          padding-right: .65em;
+          padding-right: $form-field-spacing / 2;
         }
       }
     }
   }
 
-  > .actions {
-    margin: 1.5em 0 0;
-  }
-
   label {
     color: $white;
     display: block;
-    font-size: .9em;
-    font-weight: 300;
-    margin: 0 0 1em;
+    font-size: $form-label-font-size;
+    font-weight: $form-label-font-weight;
+    margin-bottom: $form-field-spacing / 2;
   }
 
   input {
@@ -40,21 +34,20 @@
     &[type='email'],
     &[type='tel'] {
       appearance: none;
-      background-color: $black-70;
-      border: .125em solid $black-70;
+      background-color: $form-input-background;
+      border: $form-input-border;
       border-radius: 0;
-      color: $black-20;
+      color: $form-input-color;
       display: block;
-      font-family: $form-font-family;
-      height: 2.75em;
+      font-family: $form-input-font-family;
       outline: 0;
-      padding: 0 1em;
+      padding: $form-input-padding;
       text-decoration: none;
-      transition: border-color .4s ease;
+      transition: border-color $global-duration ease;
       width: 100%;
 
       &:focus {
-        border-color: $orange;
+        border-color: $form-input-border-hover;
       }
     }
 
@@ -69,11 +62,11 @@
       z-index: -1;
 
       & + label {
-        color: $black-20;
+        color: $form-input-color;
         cursor: pointer;
         display: inline-block;
-        font-size: 1em;
-        font-weight: 300;
+        font-size: $form-label-font-size;
+        font-weight: $form-label-font-weight;
         padding-left: 2.4em;
         padding-right: .75em;
         position: relative;
@@ -85,28 +78,20 @@
   select,
   textarea {
     appearance: none;
-    background-color: $black-70;
-    border: .125em solid $black-70;
+    background-color: $form-input-background;
+    border: $form-input-border;
     border-radius: 0;
-    color: $black-20;
+    color: $form-input-color;
     display: block;
-    font-family: $form-font-family;
+    font-family: $form-input-font-family;
     outline: 0;
-    padding: 0 1em;
+    padding: $form-input-padding;
     text-decoration: none;
-    transition: border-color .4s ease;
+    transition: border-color $global-duration ease;
     width: 100%;
 
     &:focus {
-      border-color: $orange;
+      border-color: $form-input-border-hover;
     }
-  }
-
-  select {
-    height: 2.75em;
-  }
-
-  textarea {
-    padding: .75em 1em;
   }
 }
