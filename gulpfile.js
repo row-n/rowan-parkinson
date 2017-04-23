@@ -32,7 +32,7 @@ gulp.task('clean:icons', function() {
 });
 
 gulp.task('icons', function() {
-  return gulp.src(['./assets/icons/spinner.svg', './assets/icons/cross.svg'])
+  return gulp.src(['./assets/icons/spinner.svg'])
     .pipe(imagemin())
     .pipe(gulp.dest('./static/icons'));
 });

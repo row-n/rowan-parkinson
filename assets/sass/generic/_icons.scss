@@ -13,18 +13,18 @@
 
 .icon--sm,
 %icon--sm {
-  height: .5rem;
-  width: .5rem;
-}
-
-.icon--md,
-%icon--md {
   height: 1rem;
   width: 1rem;
 }
 
-.icon--lg,
-%icon--lg {
+.icon--md,
+%icon--md {
   height: 1.5rem;
   width: 1.5rem;
+}
+
+.icon--lg,
+%icon--lg {
+  height: 2rem;
+  width: 2rem;
 }
