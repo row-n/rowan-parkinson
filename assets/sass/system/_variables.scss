@@ -147,20 +147,6 @@ $tablet:                'only screen and (min-width: #{$screen-sm})'; //768px
 $desktop:               'only screen and (min-width: #{$screen-md})'; //992px
 $screen:                'only screen and (min-width: #{$screen-lg})'; //1200px
 
-// Navbar
-// ---------
-
-$navbar-font-family:    $header-font-family;
-$navbar-font-size:      $small-font-size;
-$navbar-font-weight:    $header-x-light-font-weight;
-$navbar-item-color:     $black-30;
-$navbar-item-color-hover: $white;
-$navbar-item-1-background-hover: $maroon;
-$navbar-item-1-background-active: $black-80;
-$navbar-item-2-background-hover: $blue;
-$navbar-item-2-background-active: $black-80;
-$navbar-link-padding:   0 1.25em;
-
 // Buttons
 // ----------
 
@@ -177,6 +163,14 @@ $button-border-color-hover: $orange-dark;
 $button-border:         .125em solid $button-border-color;
 $button-padding:        .75em 2.5em;
 
+// Close
+// --------
+
+$close-color:           $black-30;
+$close-color-hover:     $white;
+$close-width:           4em;
+$close-height:          $close-width;
+
 // Header
 // ---------
 
@@ -192,15 +186,42 @@ $site-header-line-height:    $site-header-height;
 $site-header-text-decoration: none;
 $site-header-padding:   0 1.15em;
 
+// Navbar
+// ---------
+
+$navbar-font-family:    $header-font-family;
+$navbar-font-size:      $small-font-size;
+$navbar-font-weight:    $header-x-light-font-weight;
+$navbar-item-color:     $black-30;
+$navbar-item-color-hover: $white;
+$navbar-item-1-background-hover: $maroon;
+$navbar-item-1-background-active: $black-80;
+$navbar-item-2-background-hover: $blue;
+$navbar-item-2-background-active: $black-80;
+$navbar-link-padding:   0 1.25em;
+
+// Panel
+// --------
+
+$panel-background:      $black-80;
+$panel-padding:         4em;
+$panel-width:           75em;
+$panel-top-position:    $site-header-height;
+
 // Forms
 // --------
 
-$form-font-family:      $body-font-family;
-
-// Z-index
-// ----------
-
-$site-header-zindex:    20;
+$form-label-font-family: $header-font-family;;
+$form-label-font-size:  $small-font-size;
+$form-label-font-weight: $header-x-light-font-weight;
+$form-input-font-family: $body-font-family;
+$form-input-color:      $black-20;
+$form-input-background: $black-70;
+$form-input-border-color: $black-70;
+$form-input-border-hover: $orange;
+$form-input-border:     .125em solid $form-input-border-color;
+$form-input-padding:    .75em 1em;
+$form-field-spacing:    1.5em;
 
 // Social
 // ---------
@@ -208,3 +229,22 @@ $site-header-zindex:    20;
 $social-margin:         2em;
 $social-icon-fill:      $black-60;
 $social-icon-spacing:   1em;
+
+// Tiles
+// --------
+
+$tile-background:        $blue-v-dark;
+$tile-caption-padding:   1.5em;
+$tile-caption-color:     $black-30;
+$tile-title-color-hover: $white;
+$tile-title-font-size:   $global-font-size;
+$title-tagline-font-family: $header-font-family;
+$title-tagline-font-size: $small-font-size;
+
+// Z-index
+// ----------
+
+$close-zindex:          40;
+$site-header-zindex:    30;
+$panel-zindex:          20;
+$tile-zindex:           10;
