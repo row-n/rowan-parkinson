@@ -18,9 +18,11 @@ body {
 }
 
 body {
-  padding: 4em 0;
+  padding-top: 4em;
 
   &.content-active {
+    overflow-y: hidden;
+
     .content {
       filter: blur(6px);
 
@@ -39,6 +41,18 @@ body {
       transition: none;
     }
   }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.global-icons {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
 }
 
 .sr-only {
