@@ -72,7 +72,7 @@
 
 				var $this = $(this),
 					$toggles = $('[href="#' + $this.attr('id') + '"]'),
-					$closer = $('<div class="close" />').appendTo($this);
+					$closer = $this.find('.close');
 
 				// Closer.
 					$closer
@@ -193,7 +193,7 @@
 				});
 
 		// Footer.
-			var $footer = $('.footer');
+			var $footer = $('.panel');
 
 			// Copyright.
 			// This basically just moves the copyright line to the end of the *last* sibling of its current parent
@@ -216,80 +216,6 @@
 
 		// Main.
 			var $main = $('.content');
-
-			// Thumbs.
-				$main.children('.tile').each(function() {
-
-					var	$this = $(this),
-						$image = $this.find('.tile__image'), $image_img = $image.children('img'),
-						x;
-
-					// No image? Bail.
-						if ($image.length == 0)
-							return;
-
-					// Image.
-					// This sets the background of the "image" <span> to the image pointed to by its child
-					// <img> (which is then hidden). Gives us way more flexibility.
-
-						// Set background.
-							$image.css('background-image', 'url(' + $image_img.attr('src') + ')');
-
-						// Set background position.
-							if (x = $image_img.data('position'))
-								$image.css('background-position', x);
-
-						// Hide original img.
-							$image_img.hide();
-
-					// Hack: IE<11 doesn't support pointer-events, which means clicks to our image never
-					// land as they're blocked by the thumbnail's caption overlay gradient. This just forces
-					// the click through to the image.
-						if (skel.vars.IEVersion < 11)
-							$this
-								.css('cursor', 'pointer')
-								.on('click', function() {
-									$image.trigger('click');
-								});
-
-				});
-
-			// Thumbs Index.
-				$main.children('.tile').each(function() {
-
-					var	$this = $(this),
-						$link = $this.find('.tile__link'), $link_img = $link.children('img'),
-						x;
-
-					// No link? Bail.
-						if ($link.length == 0)
-							return;
-
-					// link.
-					// This sets the background of the "link" <span> to the link pointed to by its child
-					// <img> (which is then hidden). Gives us way more flexibility.
-
-						// Set background.
-							$link.css('background-image', 'url(' + $link_img.attr('src') + ')');
-
-						// Set background position.
-							if (x = $link_img.data('position'))
-								$link.css('background-position', x);
-
-						// Hide original img.
-							$link_img.hide();
-
-					// Hack: IE<11 doesn't support pointer-events, which means clicks to our link never
-					// land as they're blocked by the thumbnail's caption overlay gradient. This just forces
-					// the click through to the link.
-						if (skel.vars.IEVersion < 11)
-							$this
-								.css('cursor', 'pointer')
-								.on('click', function() {
-									$link.trigger('click');
-								});
-
-				});
 
 			// Poptrox.
 				$main.poptrox({
