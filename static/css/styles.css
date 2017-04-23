@@ -218,7 +218,11 @@ html,body {
 }
 
 body {
-  padding: 4em 0;
+  padding-top: 4em;
+}
+
+body.content-active {
+  overflow-y: hidden;
 }
 
 body.content-active .content {
@@ -234,6 +238,20 @@ body.content-active .content:after {
 body.is-loading .header,body.is-loading .tile {
   animation: none;
   transition: none;
+}
+
+.content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.global-icons {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
 }
 
 .sr-only {
@@ -340,18 +358,18 @@ a:active,a:focus,a:hover {
 }
 
 .icon--sm {
-  height: .5rem;
-  width: .5rem;
-}
-
-.icon--md {
   height: 1rem;
   width: 1rem;
 }
 
-.icon--lg {
+.icon--md {
   height: 1.5rem;
   width: 1.5rem;
+}
+
+.icon--lg {
+  height: 2rem;
+  width: 2rem;
 }
 
 .spinner {
@@ -421,6 +439,26 @@ a:active,a:focus,a:hover {
   width: 100%;
 }
 
+.close {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 4em;
+  outline: none;
+  padding: 0;
+  width: 4em;
+  z-index: 40;
+}
+
+.close:hover .icon {
+  fill: #fff;
+}
+
+.close .icon {
+  fill: #b3b3b3;
+  transition: fill .4s ease-in-out;
+}
+
 .page {
   position: relative;
   transition: filter .5s ease;
@@ -468,7 +506,7 @@ a:active,a:focus,a:hover {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  z-index: 20;
+  z-index: 30;
 }
 
 .is-loading .header {
@@ -496,28 +534,20 @@ a:active,a:focus,a:hover {
   color: #e6e6e6;
 }
 
-.form {
-  margin: 0 0 2em;
-}
-
 .form .form__field {
-  margin: 0 0 1.3em;
+  margin-bottom: 1.5em;
 }
 
 .form .form__field.form__field--half {
   width: 100%;
 }
 
-.form>.actions {
-  margin: 1.5em 0 0;
-}
-
 .form label {
   color: #fff;
   display: block;
-  font-size: .9em;
-  font-weight: 300;
-  margin: 0 0 1em;
+  font-size: 87.5%;
+  font-weight: 200;
+  margin-bottom: .75em;
 }
 
 .form input[type='text'],.form input[type='password'],.form input[type='email'],.form input[type='tel'] {
@@ -530,9 +560,8 @@ a:active,a:focus,a:hover {
   color: #ccc;
   display: block;
   font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
-  height: 2.75em;
   outline: 0;
-  padding: 0 1em;
+  padding: 0.75em 1em;
   text-decoration: none;
   transition: border-color .4s ease;
   width: 100%;
@@ -558,8 +587,8 @@ a:active,a:focus,a:hover {
   color: #ccc;
   cursor: pointer;
   display: inline-block;
-  font-size: 1em;
-  font-weight: 300;
+  font-size: 87.5%;
+  font-weight: 200;
   padding-left: 2.4em;
   padding-right: .75em;
   position: relative;
@@ -577,7 +606,7 @@ a:active,a:focus,a:hover {
   display: block;
   font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
   outline: 0;
-  padding: 0 1em;
+  padding: 0.75em 1em;
   text-decoration: none;
   transition: border-color .4s ease;
   width: 100%;
@@ -585,14 +614,6 @@ a:active,a:focus,a:hover {
 
 .form select:focus,.form textarea:focus {
   border-color: #ca9c66;
-}
-
-.form select {
-  height: 2.75em;
-}
-
-.form textarea {
-  padding: .75em 1em;
 }
 
 .navbar {
@@ -650,15 +671,23 @@ a:active,a:focus,a:hover {
 }
 
 .tile {
-  animation-duration: 1s;
+  animation-duration: .8s;
   animation-fill-mode: both;
-  animation-name: fadeInUpBig;
-  float: left;
+  animation-name: tileAnimation;
+  background-color: #364354;
   height: calc(40vh - 2em);
+  margin: 0;
+  min-height: 20em;
   overflow: hidden;
   pointer-events: auto;
   position: relative;
+  transition: opacity 1.2s ease-in-out;
   width: 100%;
+  z-index: 10;
+}
+
+.tile:hover .tile__title {
+  color: #fff;
 }
 
 .is-loading .tile {
@@ -671,100 +700,127 @@ a:active,a:focus,a:hover {
 }
 
 .tile:nth-child(1) {
-  animation-delay: .25s;
+  animation-delay: .2s;
 }
 
 .tile:nth-child(2) {
-  animation-delay: .5s;
+  animation-delay: .4s;
 }
 
 .tile:nth-child(3) {
-  animation-delay: .75s;
+  animation-delay: .6s;
 }
 
 .tile:nth-child(4) {
-  animation-delay: 1s;
+  animation-delay: .8s;
 }
 
 .tile:nth-child(5) {
-  animation-delay: 1.25s;
+  animation-delay: 1s;
 }
 
 .tile:nth-child(6) {
-  animation-delay: 1.5s;
+  animation-delay: 1.2s;
 }
 
 .tile:nth-child(7) {
-  animation-delay: 1.75s;
+  animation-delay: 1.4s;
 }
 
 .tile:nth-child(8) {
-  animation-delay: 2s;
+  animation-delay: 1.6s;
 }
 
 .tile:nth-child(9) {
-  animation-delay: 2.25s;
+  animation-delay: 1.8s;
 }
 
 .tile:nth-child(10) {
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 
 .tile:nth-child(11) {
-  animation-delay: 2.75s;
+  animation-delay: 2.2s;
 }
 
 .tile:nth-child(12) {
-  animation-delay: 3s;
+  animation-delay: 2.4s;
+}
+
+.tile .tile__caption {
+  height: 100%;
+  left: 0;
+  padding: 1.5em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .tile .tile__link {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border: 0;
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
 }
 
 .tile .tile__image {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border: 0;
-  height: 100%;
-  left: 0;
+  display: block;
+  left: 50%;
+  margin: inherit;
+  min-height: 100%;
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity .4s,transform .4s;
+  width: calc(100% + 1.25em);
 }
 
 .tile .tile__title {
-  bottom: 1.875em;
-  font-size: 87.5%;
-  left: 2.1875em;
+  color: #b3b3b3;
+  font-size: 100%;
   margin: 0;
+  overflow: hidden;
+  padding-bottom: 1.5em;
   pointer-events: none;
+  position: relative;
+  transition: color .4s ease;
+}
+
+.tile .tile__title:after {
+  background-color: #fff;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 0;
   position: absolute;
-  z-index: 1;
+  transition: transform .4s;
+  width: 100%;
+}
+
+.tile .tile__tagline {
+  color: #b3b3b3;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 87.5%;
+  text-transform: uppercase;
+  transition: opacity .4s,transform .4s;
 }
 
 .panel {
-  background: #333;
-  bottom: auto;
+  background-color: #333;
   left: 0;
-  overflow-y: auto;
+  max-height: calc(100vh - calc(4em - 1px));
+  overflow-y: scroll;
   padding: 2em;
   position: fixed;
   top: calc(4em - 1px);
   -ms-transform: translateY(-100vh);
   transform: translateY(-100vh);
-  transition: transform .5s ease;
+  transition: transform .4s ease;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
 }
 
 .panel.active {
@@ -791,23 +847,9 @@ a:active,a:focus,a:hover {
 }
 
 .panel>.close {
-  background-image: url("../icons/cross.svg");
-  background-position: 75% 25%;
-  background-repeat: no-repeat;
-  background-size: 2.5em;
-  cursor: pointer;
-  height: 5em;
-  opacity: .25;
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity .2s ease-in-out;
-  width: 5em;
-  z-index: 40;
-}
-
-.panel>.close:hover {
-  opacity: 1;
 }
 
 .social {
@@ -869,17 +911,40 @@ a:active,a:focus,a:hover {
 @media only screen and (min-width: 48em) {
   .form .form__field.form__field--half {
     float: left;
-    padding-left: .65em;
+    padding-left: .75em;
     width: 50%;
   }
 
   .form .form__field.form__field--half:first-child {
     padding-left: 0;
-    padding-right: .65em;
+    padding-right: .75em;
   }
 
   .tile {
     width: 50%;
+  }
+
+  .tile:hover .tile__image {
+    opacity: .4;
+    transform: translate3d(-49%, -50%, 0);
+  }
+
+  .tile:hover .tile__title:after {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .tile:hover .tile__tagline {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .tile .tile__title:after {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  .tile .tile__tagline {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
   }
 }
 
@@ -894,7 +959,7 @@ a:active,a:focus,a:hover {
   }
 
   .panel>.panel__body>.panel__col {
-    margin-left: 3em;
+    margin-left: 2em;
     width: 50%;
   }
 }
@@ -906,11 +971,6 @@ a:active,a:focus,a:hover {
 
   .panel>.panel__body>.panel__col {
     margin-left: 4em;
-  }
-
-  .panel>.close {
-    background-position: center;
-    background-size: 3em;
   }
 }
 
@@ -924,7 +984,7 @@ a:active,a:focus,a:hover {
   }
 }
 
-@keyframes fadeInUpBig {
+@keyframes tileAnimation {
   0% {
     opacity: 0;
     transform: translate3d(0, 65em, 0);
