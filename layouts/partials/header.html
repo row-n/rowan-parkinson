@@ -3,15 +3,8 @@
   {{ $.Scratch.Add "path" .Site.BaseURL }}
   <div class="header__title">
     <a href="{{ .Site.BaseURL }}" class="header__home-link">
-      <strong>{{ .Site.Title }}</strong>
+      {{ .Site.Title }}
     </a>
-    {{ range $index, $element := split $url "/" }}
-    {{ $.Scratch.Add "path" $element }}
-    {{ if ne $element "" }}
-    / {{ . | humanize }}
-    {{ $.Scratch.Add "path" "/" }}
-    {{ end }}
-    {{ end }}
   </div>
   {{ partial "navigation.html" . }}
 

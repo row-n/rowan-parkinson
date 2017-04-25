@@ -1,12 +1,12 @@
 {{ define "main" }}
-    <div class="content">
-        {{ range .Data.Pages.ByDate.Reverse }}
-            <figure class="tile">
+    <div class="tile-list">
+        {{ range $index, $element := (where .Site.Pages "Kind" "section").ByDate.Reverse }}
+            <figure class="tile {{ if .Params.background }}tile--bg-{{ .Params.background }}{{ end }} {{ if .Params.color }}tile--fg-{{ .Params.color }}{{ end }}" id="tile-{{ $index }}">
                 <a href="{{ .Permalink }}" class="tile__link">
                   <img src="{{ .Params.albumthumb }}" alt="{{ .Title }}" class="tile__image" />
                     <figcaption class="tile__caption">
                         <h2 class="tile__title">{{ .Title }}<span class="tile__sub-title"></span></h2>
-                        <p class="tile__tagline">This is the tagline</p>
+                        <p class="tile__tagline">{{ .Params.tagline }}</p>
                     </figcaption>
                 </a>
             </figure>
