@@ -1,3 +1,5 @@
+// sass-lint:disable no-color-keywords
+
 // Colours
 // ----------
 
@@ -177,8 +179,8 @@ $close-height:          $close-width;
 $site-header-height:    4em;
 $site-header-width:     100%;
 $site-header-background: $black-90;
-$site-header-link-color: $black-50;
-$site-header-link-color-hover: $black-10;
+$site-header-link-color: $black-40;
+$site-header-link-color-hover: $white;
 $site-header-link-background-hover: $black-80;
 $site-header-font-size: $large-font-size;
 $site-header-font-family: $header-font-family;
@@ -200,12 +202,17 @@ $navbar-item-2-background-hover: $blue;
 $navbar-item-2-background-active: $black-80;
 $navbar-link-padding:   0 1.25em;
 
+// Content
+// ----------
+
+$content-width:         75em;
+
 // Panel
 // --------
 
 $panel-background:      $black-80;
 $panel-padding:         4em;
-$panel-width:           75em;
+$panel-width:           $content-width;
 $panel-top-position:    $site-header-height;
 
 // Forms
@@ -233,13 +240,24 @@ $social-icon-spacing:   1em;
 // Tiles
 // --------
 
-$tile-background:        $blue-v-dark;
-$tile-caption-padding:   1.5em;
-$tile-caption-color:     $black-30;
+$tile-background:
+(
+  blue: $blue-v-dark,
+  green: $green-v-dark,
+  maroon: $maroon-v-dark,
+  orange: $orange-v-dark,
+);
+$tile-color:
+(
+  light: $black-30,
+  dark: $black-80,
+);
 $tile-title-color-hover: $white;
-$tile-title-font-size:   $global-font-size;
+$tile-title-font-size:  $global-font-size;
+$title-tagline-color:   $white;
 $title-tagline-font-family: $header-font-family;
 $title-tagline-font-size: $small-font-size;
+$tile-caption-padding:   1.5em;
 
 // Z-index
 // ----------
@@ -248,3 +266,5 @@ $close-zindex:          40;
 $site-header-zindex:    30;
 $panel-zindex:          20;
 $tile-zindex:           10;
+
+// sass-lint:disable no-color-keywords

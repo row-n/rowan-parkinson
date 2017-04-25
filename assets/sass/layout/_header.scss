@@ -30,7 +30,6 @@
     transition: background-color $global-duration ease, color $global-duration ease;
 
     &:hover {
-      background-color: $site-header-link-background-hover;
       color: $site-header-link-color-hover;
     }
   }
