@@ -14,7 +14,6 @@
   animation-duration: $global-duration * 2;
   animation-fill-mode: both;
   animation-name: tileAnimation;
-  background-color: $tile-background;
   height: calc(40vh - 2em);
   margin: 0;
   min-height: 20em;
@@ -33,17 +32,37 @@
     width: 33.33%;
   }
 
+  @each $name, $color in $tile-background {
+    &.tile--bg-#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @each $name, $color in $tile-color {
+    &.tile--fg-#{$name} {
+      &:hover {
+        .tile__title {
+          color: $tile-title-color-hover;
+        }
+      }
+
+      .tile__title {
+        @media #{$tablet} {
+          color: $color;
+        }
+      }
+    }
+  }
+
   &:hover {
     .tile__image {
       @media #{$tablet} {
-        opacity: .4;
+        opacity: .3;
         transform: translate3d(-49%, -50%, 0);
       }
     }
 
     .tile__title {
-      color: $tile-title-color-hover;
-
       &:after {
         @media #{$tablet} {
           transform: translate3d(0, 0, 0);
@@ -93,15 +112,20 @@
     left: 50%;
     margin: inherit;
     min-height: 100%;
+    opacity: .3;
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
     transition: opacity $global-duration, transform  $global-duration;
     width: calc(100% + 1.25em);
+
+    @media #{$tablet} {
+      opacity: 1;
+    }
   }
 
   .tile__title {
-    color: $tile-caption-color;
+    color: $title-tagline-color;
     font-size: $tile-title-font-size;
     margin: 0;
     overflow: hidden;
@@ -127,7 +151,7 @@
   }
 
   .tile__tagline {
-    color: $tile-caption-color;
+    color: $title-tagline-color;
     font-family: $title-tagline-font-family;
     font-size: $title-tagline-font-size;
     text-transform: uppercase;
