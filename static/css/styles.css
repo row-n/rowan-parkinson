@@ -909,8 +909,8 @@ a:active,a:focus,a:hover {
   text-decoration: none;
 }
 
-.social .social__link:hover .icon--npm {
-  fill: #cb3837;
+.social .social__link:hover .icon--codepen {
+  fill: #fff;
 }
 
 .social .social__link:hover .icon--github {
@@ -925,6 +925,10 @@ a:active,a:focus,a:hover {
   fill: #0976b4;
 }
 
+.social .social__link:hover .icon--npm {
+  fill: #cb3837;
+}
+
 .social .social__link:hover .icon--stackoverflow {
   fill: #f4842c;
 }
@@ -936,6 +940,403 @@ a:active,a:focus,a:hover {
 .social .icon {
   fill: #666;
   transition: fill .4s ease;
+}
+
+.skills {
+  list-style: none;
+  margin-bottom: 2em;
+  margin-left: 0;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.skills .skills__item {
+  margin-bottom: 1em;
+  padding-left: 0;
+}
+
+.skills .skills__item:hover .icon--css {
+  fill: #008dd2;
+}
+
+.skills .skills__item:hover .icon--html,.skills .skills__item:hover .icon--html-2 {
+  fill: #f16529;
+}
+
+.skills .skills__item:hover .icon--javascript {
+  fill: #f0db4f;
+}
+
+.skills .skills__item:hover .icon--git {
+  fill: gray;
+}
+
+.skills .skills__item:hover .icon--illustrator {
+  fill: #f5901f;
+}
+
+.skills .skills__item:hover .icon--photoshop {
+  fill: #00c8ff;
+}
+
+.skills .skills__item:hover .icon--terminal,.skills .skills__item:hover .icon--terminal-2 {
+  fill: #000;
+}
+
+.content-active .skills .skills__expertise-0 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-1 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-1 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-2 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-2 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-2 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-3 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-3 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-3 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-3 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-4 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-4 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-4 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-4 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-4 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-5 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-6 .skills__range-6 {
+  background-color: gray;
+  transition-delay: .8s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-6 {
+  background-color: gray;
+  transition-delay: .8s;
+}
+
+.content-active .skills .skills__expertise-7 .skills__range-7 {
+  background-color: gray;
+  transition-delay: .93333s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-6 {
+  background-color: gray;
+  transition-delay: .8s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-7 {
+  background-color: gray;
+  transition-delay: .93333s;
+}
+
+.content-active .skills .skills__expertise-8 .skills__range-8 {
+  background-color: gray;
+  transition-delay: 1.06667s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-6 {
+  background-color: gray;
+  transition-delay: .8s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-7 {
+  background-color: gray;
+  transition-delay: .93333s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-8 {
+  background-color: gray;
+  transition-delay: 1.06667s;
+}
+
+.content-active .skills .skills__expertise-9 .skills__range-9 {
+  background-color: gray;
+  transition-delay: 1.2s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-0 {
+  background-color: gray;
+  transition-delay: 0s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-1 {
+  background-color: gray;
+  transition-delay: .13333s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-2 {
+  background-color: gray;
+  transition-delay: .26667s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-3 {
+  background-color: gray;
+  transition-delay: .4s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-4 {
+  background-color: gray;
+  transition-delay: .53333s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-5 {
+  background-color: gray;
+  transition-delay: .66667s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-6 {
+  background-color: gray;
+  transition-delay: .8s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-7 {
+  background-color: gray;
+  transition-delay: .93333s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-8 {
+  background-color: gray;
+  transition-delay: 1.06667s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-9 {
+  background-color: gray;
+  transition-delay: 1.2s;
+}
+
+.content-active .skills .skills__expertise-10 .skills__range-10 {
+  background-color: gray;
+  transition-delay: 1.33333s;
+}
+
+.content-active .skills .skills__range {
+  transition: background-color .4s ease,border-color .4s ease;
+}
+
+.skills .skills__expertise {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.skills .skills__range {
+  background-color: transparent;
+  border: 0.0625em solid gray;
+  border-radius: 50%;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+.skills .icon {
+  fill: #666;
+  float: left;
+  margin-right: 1em;
 }
 
 @media only screen and (min-width: 30em) {
@@ -995,6 +1396,10 @@ a:active,a:focus,a:hover {
   .tile .tile__tagline {
     opacity: 0;
     transform: translate3d(100%, 0, 0);
+  }
+
+  .skills .icon {
+    margin-right: 2em;
   }
 }
 

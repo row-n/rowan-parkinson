@@ -16,8 +16,8 @@
     text-decoration: none;
 
     &:hover {
-      .icon--npm {
-        fill: $npm;
+      .icon--codepen {
+        fill: $codepen;
       }
 
       .icon--github {
@@ -30,6 +30,10 @@
 
       .icon--linkedin {
         fill: $linkedin;
+      }
+
+      .icon--npm {
+        fill: $npm;
       }
 
       .icon--stackoverflow {

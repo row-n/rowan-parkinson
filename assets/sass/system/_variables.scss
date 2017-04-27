@@ -50,6 +50,7 @@ $twitter:               #55acee;
 $lastfm:                #c3000d;
 $flickr:                #ff0084;
 $facebook:              #3b5998;
+$codepen:               $white;
 $github:                #800080;
 $github2:               #999;
 $behance:               #1769ff;
@@ -64,10 +65,13 @@ $stackoverflow:         #f4842c;
 $npm:                   #cb3837;
 
 // Skills
-$css3:                  #008dd2;
+$css:                   #008dd2;
 $git:                   $black-50;
-$html5:                 #f16529;
-$terminal:              $black-70;
+$html:                  #f16529;
+$javascript:            #f0db4f;
+$terminal:              $black;
+$illustrator:           #f5901f;
+$photoshop:             #00c8ff;
 
 
 // Global
@@ -236,6 +240,17 @@ $form-field-spacing:    1.5em;
 $social-margin:         2em;
 $social-icon-fill:      $black-60;
 $social-icon-spacing:   1em;
+
+// Skills
+// ---------
+
+$skills-margin:         2em;
+$skills-icon-fill:      $black-60;
+$skills-range-background: $black-50;
+$skills-range-border:   .0625em solid $skills-range-background;
+$skills-range-spacing:   1em;
+$skills-range-height:    1em;
+$skills-range-width:     $skills-range-height;
 
 // Tiles
 // --------
