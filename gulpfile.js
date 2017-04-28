@@ -27,25 +27,25 @@ var isProduction  = false;
 
 // Icons
 gulp.task('clean:icons', function() {
-  return del(['./static/icons/**/*']);
+  return del(['./static/assets/icons/**/*']);
 });
 
 gulp.task('icons', function() {
   return gulp.src(['./assets/icons/spinner.svg'])
     .pipe(imagemin())
-    .pipe(gulp.dest('./static/icons'));
+    .pipe(gulp.dest('./static/assets/icons'));
 });
 
 // Images
 gulp.task('images', function() {
-  return gulp.src(['./static/images/**/*'])
+  return gulp.src(['./static/assets/images/**/*'])
     .pipe(imagemin())
     .pipe(gulp.dest('../../public/images/**/*'));
 });
 
 // Styles
 gulp.task('clean:styles', function() {
-  return del(['./static/css/**/*']);
+  return del(['./static/assets/css/**/*']);
 });
 
 gulp.task('styles:lint', ['clean:styles'], function() {
@@ -59,7 +59,7 @@ gulp.task('styles:lint', ['clean:styles'], function() {
 
 gulp.task('styles', ['styles:lint'], function() {
   return gulp.src('./assets/sass/styles.s+(a|c)ss')
-    .pipe(changed('./static/css'))
+    .pipe(changed('./static/assets/css'))
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
@@ -67,20 +67,20 @@ gulp.task('styles', ['styles:lint'], function() {
       browsers: ['last 2 versions', 'ie 9', 'ie 10'],
     }))
     .pipe(combineMq())
-    .pipe(gulp.dest('./static/css'))
+    .pipe(gulp.dest('./static/assets/css'))
     .pipe(gulpif(isProduction, sourcemaps.init({loadMaps: true})))
     .pipe(gulpif(isProduction, cssnano()))
     .pipe(gulpif(isProduction, sourcemaps.write()))
     .pipe(gulpif(isProduction, rename('styles.min.css')))
     .pipe(gulpif(isProduction, hash()))
-    .pipe(gulpif(isProduction, gulp.dest('./static/css')))
+    .pipe(gulpif(isProduction, gulp.dest('./static/assets/css')))
     .pipe(gulpif(isProduction, hash.manifest('hash.json')))
     .pipe(gulpif(isProduction, gulp.dest('../../data/css')));
 });
 
 // Scripts
 gulp.task('clean:scripts', function() {
-  return del(['./static/js/**/*']);
+  return del(['./static/assets/js/**/*']);
 });
 
 gulp.task('scripts:lint', ['clean:scripts'], function() {
@@ -99,13 +99,13 @@ gulp.task('scripts', ['scripts:lint'], function() {
   return b.bundle()
     .pipe(vinylSource('scripts.js'))
     .pipe(vinylBuffer())
-    .pipe(gulp.dest('./static/js'))
+    .pipe(gulp.dest('./static/assets/js'))
     .pipe(gulpif(isProduction, sourcemaps.init({loadMaps: true})))
     .pipe(gulpif(isProduction, uglify()))
     .pipe(gulpif(isProduction, sourcemaps.write()))
     .pipe(gulpif(isProduction, rename('scripts.min.js')))
     .pipe(gulpif(isProduction, hash()))
-    .pipe(gulpif(isProduction, gulp.dest('./static/js')))
+    .pipe(gulpif(isProduction, gulp.dest('./static/assets/js')))
     .pipe(gulpif(isProduction, hash.manifest('hash.json')))
     .pipe(gulpif(isProduction, gulp.dest('../../data/js')));
 });
