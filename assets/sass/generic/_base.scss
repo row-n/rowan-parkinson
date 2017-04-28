@@ -23,7 +23,8 @@ body {
   &.content-active {
     overflow-y: hidden;
 
-    .content {
+    .content,
+    .tile-list {
       filter: blur(6px);
 
       &:after {

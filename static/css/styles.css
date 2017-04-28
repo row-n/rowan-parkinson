@@ -225,11 +225,11 @@ body.content-active {
   overflow-y: hidden;
 }
 
-body.content-active .content {
+body.content-active .content,body.content-active .tile-list {
   filter: blur(6px);
 }
 
-body.content-active .content:after {
+body.content-active .content:after,body.content-active .tile-list:after {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
