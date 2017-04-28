@@ -1,5 +1,5 @@
 {{ if .Site.BuildDrafts }}
-<script src="{{ .Site.BaseURL }}js/scripts.js"></script>
+<script src="{{ .Site.BaseURL }}assets/js/scripts.js"></script>
 {{ else }}
-<script src="{{ .Site.BaseURL }}js/{{ index .Site.Data.js.hash "scripts.min.js" }}"></script>
+<script src="{{ .Site.BaseURL }}assets/js/{{ index .Site.Data.js.hash "scripts.min.js" }}"></script>
 {{ end }}
