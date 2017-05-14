@@ -17,6 +17,7 @@
   &:hover {
     background-color: $button-background-color-hover;
     border-color: $button-border-color-hover;
+    color: $button-color-hover;
   }
 
   &.btn--bordered {

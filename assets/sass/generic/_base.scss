@@ -63,22 +63,22 @@ body {
     pointer-events: none;
   }
 
-  .content__body {
-    @include container($content-width);
+  .content__intro {
+    margin-bottom: 3em;
 
-    > .content__col {
-
-      &:last-child {
-        @include last;
-      }
-
-      @media #{$desktop} {
-        @include span(6 of 12);
-      }
+    h1 {
+      text-align: center;
     }
 
-    > .content__footer {
-      @include span(12 of 12);
+    .content__link {
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    @media #{$desktop} {
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
     }
   }
 }

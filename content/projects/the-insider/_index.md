@@ -1,13 +1,14 @@
 +++
 
-date = "2017-04-25T12:53:54+10:00"
+date = "2011-04-25T12:53:54+10:00"
 title = "The Insider"
 tagline = "Mobile Application Showcase"
-thumbnail = "/uploads/the-insider.jpg"
+link = "http://www.theinsiderapp.co.nz/"
+thumbnail = "/uploads/insider-thumb.jpg"
 thumbnailBackground = "green"
 thumbnailForeground = "light"
-iphone = "/uploads/insider-iphone.png"
-ipad = "/uploads/insider-ipad.png"
+iphone = ""
+ipad = ""
 laptop = "/uploads/insider-laptop.png"
 
 +++

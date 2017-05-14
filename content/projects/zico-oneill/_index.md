@@ -1,13 +1,14 @@
 +++
 
-date = "2017-04-25T13:04:31+10:00"
+date = "2016-04-25T13:04:31+10:00"
 title = "Zico O'Neill"
 tagline = "Photographer Gallery"
-thumbnail = "/uploads/zico-oneill.jpg"
+link = "http://zicooneill.com/"
+thumbnail = "/uploads/zico-thumb.jpg"
 thumbnailBackground = "blue"
 thumbnailForeground = "dark"
-iphone = "/uploads/zico-iphone.png"
-ipad = "/uploads/zico-ipad.png"
+iphone = ""
+ipad = ""
 laptop = "/uploads/zico-laptop.png"
 
 +++

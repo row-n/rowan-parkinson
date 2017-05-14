@@ -1,12 +1,13 @@
 +++
 
-date = "2017-04-25T13:02:24+10:00"
+date = "2013-04-25T13:02:24+10:00"
 title = "Kelvie & Brown"
 tagline = "Hairdresser Display"
-thumbnail = "/uploads/kelvie-brown.jpg"
+link = "http://www.kelvie-brown-hairdressers.co.uk/"
+thumbnail = "/uploads/kelvie-thumb.jpg"
 thumbnailBackground = "orange"
 thumbnailForeground = "light"
-iphone = "/uploads/kelvie-iphone.png"
+iphone = ""
 ipad = ""
 laptop = "/uploads/kelvie-laptop.png"
 
