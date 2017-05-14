@@ -16,7 +16,6 @@
   animation-name: tileAnimation;
   height: calc(40vh - 2em);
   margin: 0;
-  min-height: 20em;
   overflow: hidden;
   pointer-events: auto;
   position: relative;
@@ -25,6 +24,7 @@
   z-index: $tile-zindex;
 
   @media #{$tablet} {
+    min-height: 20em;
     width: 50%;
   }
 
@@ -121,6 +121,15 @@
 
     @media #{$tablet} {
       opacity: 1;
+      width: calc(100% + 10em);
+    }
+
+    @media #{$desktop} {
+      width: calc(100% + 7em);
+    }
+
+    @media #{$screen} {
+      width: calc(100% + 3em);
     }
   }
 

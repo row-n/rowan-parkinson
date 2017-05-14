@@ -1,7 +1,6 @@
 var $ = require('jquery');
-var imagesloaded = require('imagesloaded');
+// var imagesloaded = require('imagesloaded');
 var skel = require('skel-framework-npm');
-var jquery = $;
 var jQuery = $;
 
 (function($) {
@@ -56,12 +55,6 @@ var jQuery = $;
           });
 
       }
-
-    // Scroll back to top.
-      $window.scrollTop(0);
-
-    // Fix: Placeholder polyfill.
-      // $('form').placeholder();
 
     // Panels.
       var $panels = $('.panel');
@@ -152,15 +145,6 @@ var jQuery = $;
             });
 
         });
-
-        // Hack: Set margins to 0 when 'xsmall' activates.
-          skel
-            .on('-xsmall', function() {
-              $main[0]._poptrox.windowMargin = 50;
-            })
-            .on('+xsmall', function() {
-              $main[0]._poptrox.windowMargin = 0;
-            });
 
   });
 
