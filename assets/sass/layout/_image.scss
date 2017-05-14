@@ -1,0 +1,27 @@
+@keyframes image {
+  from {
+    opacity: 0;
+    transform: translate3d(2em, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.image {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: image;
+  max-width: 100%;
+  opacity: 1;
+  transition: opacity .35s ease-out, visibility .35s;
+  visibility: visible;
+
+  .is-loading & {
+    opacity: 0;
+    transition: none;
+    visibility: hidden;
+  }
+}
