@@ -2,20 +2,20 @@
     <section id="about" class="panel">
         <div class="row">
             <section class="col">
-                <h2>{{ with .Site.Params.about.headline }}{{ . | markdownify }}{{ end }}</h2>
-                <p class="panel__intro x-large">{{ with .Site.Params.about.paragraph.textIntro }}{{ . | markdownify }}{{ end }}</p>
-                <p>{{ with .Site.Params.about.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
+                <h2>{{ with .Site.Params.panelOne.about.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <p class="panel__intro x-large">{{ with .Site.Params.panelOne.about.textIntro }}{{ . | markdownify }}{{ end }}</p>
+                <p>{{ with .Site.Params.panelOne.about.text }}{{ . | markdownify }}{{ end }}</p>
             </section>
             <section class="col">
-                <h2>{{ with .Site.Params.skills.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <h2>{{ with .Site.Params.panelOne.skills.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <ul class="skills">
-                {{ range .Site.Params.skills.icons }}
+                {{ range .Site.Params.panelOne.skills.icons }}
                     <li class="skills__item clearfix">
-                        <span class="skills__label sr-only" aria-label="{{ .name }}">{{ .name }}</span>
-                        <svg role="img" class="icon icon--{{ .icon }} icon--md">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
+                        <span class="skills__label sr-only" aria-label="{{ .label }}">{{ .label }}</span>
+                        <svg role="img" class="icon icon--{{ .svgIcon }} icon--md">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .svgIcon }}"></use>
                         </svg>
-                        <div class="skills__expertise skills__expertise--{{ .icon }} skills__expertise-{{ .expertise }}">
+                        <div class="skills__expertise skills__expertise--{{ .svgIcon }} skills__expertise-{{ .proficiency }}">
                             <div class="skills__range skills__range-1"></div>
                             <div class="skills__range skills__range-2"></div>
                             <div class="skills__range skills__range-3"></div>
