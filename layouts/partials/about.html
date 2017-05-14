@@ -11,7 +11,7 @@
                 <ul class="skills">
                 {{ range .Site.Params.skills.icons }}
                     <li class="skills__item clearfix">
-                        <span class="skills__label sr-only" aria-label="{{ .label }}">{{ .label }}</span>
+                        <span class="skills__label sr-only" aria-label="{{ .name }}">{{ .name }}</span>
                         <svg role="img" class="icon icon--{{ .icon }} icon--md">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
                         </svg>
