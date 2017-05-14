@@ -10,7 +10,6 @@ config/runtime.json
 dist
 static
 data
-public
 .ruby-version
 .sass-cache
 .jekyll-metadata
