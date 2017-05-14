@@ -1,0 +1,27 @@
+.panel {
+  background-color: $panel-background;
+  left: 0;
+  max-height: calc(100vh - calc(#{$panel-top-position} - 1px));
+  overflow-y: scroll;
+  padding: $panel-padding / 2;
+  position: fixed;
+  top: calc(#{$panel-top-position} - 1px);
+  transform: translateY(-100vh);
+  transition: transform $global-duration ease;
+  width: 100%;
+  z-index: $panel-zindex;
+
+  @media #{$screen} {
+    padding: $panel-padding;
+  }
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  > .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

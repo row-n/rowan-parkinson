@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <div class="tile-list">
+        {{ range $index, $element := (where .Site.Pages "Kind" "section").ByDate.Reverse }}
+            <figure class="tile {{ if .Params.thumbnailBackground }}tile--bg-{{ .Params.thumbnailBackground }}{{ end }} {{ if .Params.thumbnailForeground }}tile--fg-{{ .Params.thumbnailForeground }}{{ end }}" id="tile-{{ $index }}">
+                <a href="{{ .Permalink }}" class="tile__link">
+                  <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="tile__image" />
+                    <figcaption class="tile__caption">
+                        <h2 class="tile__title">{{ .Title }}<span class="tile__sub-title"></span></h2>
+                        <p class="tile__tagline">{{ .Params.tagline }}</p>
+                    </figcaption>
+                </a>
+            </figure>
+        {{ end }}
+    </div>
+{{ end }}

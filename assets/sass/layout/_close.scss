@@ -1,0 +1,21 @@
+.close {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: $close-height;
+  outline: none;
+  padding: 0;
+  width: $close-width;
+  z-index: $close-zindex;
+
+  &:hover {
+    .icon {
+      fill: $close-color-hover;
+    }
+  }
+
+  .icon {
+    fill: $close-color;
+    transition: fill $global-duration ease-in-out;
+  }
+}

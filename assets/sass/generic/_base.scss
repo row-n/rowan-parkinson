@@ -1,0 +1,105 @@
+* {
+  &,
+  &:before,
+  &:after {
+    @if ($body-border-box) {
+      box-sizing: border-box;
+    }
+  }
+}
+
+html,
+body {
+  background-color: $body-background;
+}
+
+body {
+  color: $body-font-colour;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  line-height: $global-lineheight;
+  padding-top: 4em;
+
+  &.content-active {
+    overflow-y: hidden;
+
+    .content,
+    .tile-list {
+      filter: blur(6px);
+
+      &:after {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.is-loading {
+    .header,
+    .content,
+    .tile {
+      animation: none;
+      transition: none;
+    }
+  }
+}
+
+.tile-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  padding: $panel-padding / 2;
+  transition: opacity 1s ease;
+
+  @media #{$screen} {
+    padding: $panel-padding;
+  }
+
+  .is-loading & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .content__body {
+    @include container($content-width);
+
+    > .content__col {
+
+      &:last-child {
+        @include last;
+      }
+
+      @media #{$desktop} {
+        @include span(6 of 12);
+      }
+
+      @media #{$screen} {
+      }
+    }
+
+    > .content__footer {
+      @include span(12 of 12);
+    }
+  }
+}
+
+.global-icons {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

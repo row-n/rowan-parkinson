@@ -1,0 +1,30 @@
+.icon,
+%icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+
+  > * {
+    fill: inherit;
+  }
+}
+
+.icon--sm,
+%icon--sm {
+  height: 1rem;
+  width: 1rem;
+}
+
+.icon--md,
+%icon--md {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.icon--lg,
+%icon--lg {
+  height: 2rem;
+  width: 2rem;
+}

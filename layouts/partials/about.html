@@ -1,0 +1,40 @@
+{{ "<!-- About -->" | safeHTML }}
+    <section id="about" class="panel">
+        <div class="row">
+            <section class="col">
+                <h2>{{ with .Site.Params.about.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <p class="panel__intro x-large">{{ with .Site.Params.about.paragraph.textIntro }}{{ . | markdownify }}{{ end }}</p>
+                <p>{{ with .Site.Params.about.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
+            </section>
+            <section class="col">
+                <h2>{{ with .Site.Params.skills.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <ul class="skills">
+                {{ range .Site.Params.skills.icons }}
+                    <li class="skills__item clearfix">
+                        <span class="skills__label sr-only" aria-label="{{ .label }}">{{ .label }}</span>
+                        <svg role="img" class="icon icon--{{ .icon }} icon--md">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
+                        </svg>
+                        <div class="skills__expertise skills__expertise--{{ .icon }} skills__expertise-{{ .expertise }}">
+                            <div class="skills__range skills__range-1"></div>
+                            <div class="skills__range skills__range-2"></div>
+                            <div class="skills__range skills__range-3"></div>
+                            <div class="skills__range skills__range-4"></div>
+                            <div class="skills__range skills__range-5"></div>
+                            <div class="skills__range skills__range-6"></div>
+                            <div class="skills__range skills__range-7"></div>
+                            <div class="skills__range skills__range-8"></div>
+                            <div class="skills__range skills__range-9"></div>
+                            <div class="skills__range skills__range-10"></div>
+                        </div>
+                    </li>
+                {{ end }}
+                </ul>
+            </section>
+        </div>
+        <button class="close">
+            <svg role="img" class="icon icon--cross icon--md">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use>
+            </svg>
+        </button>
+    </section>

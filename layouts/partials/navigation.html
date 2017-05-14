@@ -1,0 +1,14 @@
+	<nav class="navbar">
+		<ul class="navbar__list">
+		{{ range .Site.Params.header.links }}
+			<li class="navbar__item">
+        <a href="{{ .url }}" class="navbar__link">
+          <span class="sr-only">{{ .name }}</span>
+          <svg role="img" class="icon icon--{{ .icon }} icon--md">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ .icon }}"></use>
+          </svg>
+        </a>
+      </li>
+		{{ end }}
+		</ul>
+	</nav>

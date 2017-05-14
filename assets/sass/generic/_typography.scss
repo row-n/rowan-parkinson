@@ -1,0 +1,103 @@
+// Headings
+// -----------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-color;
+  font-family: $header-font-family;
+  letter-spacing: $header-letter-spacing;
+  line-height: $header-lineheight;
+  margin-bottom: $header-margin-bottom;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  font-weight: $header-x-light-font-weight;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $header-x-light-font-weight;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $header-x-light-font-weight;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  font-weight: $header-light-font-weight;
+}
+
+h5 {
+  font-size: $h5-font-size;
+  font-weight: $header-light-font-weight;
+}
+
+h6 {
+  font-size: $h6-font-size;
+  font-weight: $header-light-font-weight;
+}
+
+// Additional sizes
+// -------------------
+
+.x-small,
+%x-small {
+  font-size: $x-small-font-size;
+}
+
+.small,
+%small {
+  font-size: $small-font-size;
+}
+
+.large,
+%large {
+  font-size: $large-font-size;
+}
+
+.x-large,
+%x-large {
+  font-size: $x-large-font-size;
+}
+
+// Subscripts & Superscripts
+// ----------------------------
+
+sub,
+sup {
+  font-size: $x-small-font-size;
+}
+
+sub {
+  bottom: -.3em;
+}
+
+sup {
+  top: -.6em;
+}
+
+// Links
+// --------
+
+a {
+  color: $anchor-color;
+  outline: none;
+  text-decoration: $anchor-text-decoration;
+  transition: color $global-duration ease;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $anchor-color-hover;
+    outline: inherit;
+    text-decoration: $anchor-text-decoration-hover;
+  }
+}

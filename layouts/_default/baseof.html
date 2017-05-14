@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
+<head>
+<body>
+  <main class="page">
+
+    {{ partial "header.html" . }}
+
+    {{ block "main" . }}
+
+    {{ end }}
+
+    {{ partial "about.html" . }}
+    {{ partial "contact.html" . }}
+
+  </main>
+
+  <div class="spinner"></div>
+  {{ partial "icons.html" . }}
+  {{ partial "scripts.html" . }}
+
+</body>
+</html>

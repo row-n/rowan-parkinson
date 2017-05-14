@@ -1,0 +1,7 @@
+// Alpha transparency
+// ---------------------
+//## Adds colour as a rgba alpha value. Can be used with borders, fonts etc.
+
+@function alpha($color, $alpha: 1) {
+  @return rgba($color, $alpha);
+}

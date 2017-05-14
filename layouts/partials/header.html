@@ -1,0 +1,11 @@
+<header class="header">
+  {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+  {{ $.Scratch.Add "path" .Site.BaseURL }}
+  <div class="header__title">
+    <a href="{{ .Site.BaseURL }}" class="header__home-link">
+      {{ .Site.Title }}
+    </a>
+  </div>
+  {{ partial "navigation.html" . }}
+
+</header>

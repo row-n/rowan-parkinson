@@ -1,0 +1,30 @@
+.btn {
+  appearance: none;
+  background-color: $button-background-color;
+  border: $button-border;
+  color: $button-color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $button-font-family;
+  letter-spacing: $button-letter-spacing;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $global-duration ease-in-out, border-color $global-duration ease-in-out, color $global-duration ease-in-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $button-background-color-hover;
+    border-color: $button-border-color-hover;
+  }
+
+  &.btn--bordered {
+    background-color: $button-bordered-background-color;
+
+    &:hover {
+      background-color: $button-bordered-background-color-hover;
+      color: $button-bordered-color-hover;
+    }
+  }
+}

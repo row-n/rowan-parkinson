@@ -1,0 +1,40 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.spinner {
+  animation: spinner 1s infinite linear;
+  background-image: url('../icons/spinner.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  font-size: 2em;
+  height: 2em;
+  left: 50%;
+  line-height: 2em;
+  margin: -1em 0 0 -1em;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  top: 75%;
+  transition: top .75s ease-in-out, opacity .35s ease-out, visibility .35s;
+  visibility: hidden;
+  width: 2em;
+
+  .is-loading & {
+    opacity: 1;
+    top: 50%;
+    transition: none;
+    // transition: opacity 1s ease-out;
+    // transition-delay: .5s;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,165 @@
+@keyframes tileAnimation {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 65em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tile {
+  animation-duration: $global-duration * 2;
+  animation-fill-mode: both;
+  animation-name: tileAnimation;
+  height: calc(40vh - 2em);
+  margin: 0;
+  min-height: 20em;
+  overflow: hidden;
+  pointer-events: auto;
+  position: relative;
+  transition: opacity ($global-duration * 3) ease-in-out;
+  width: 100%;
+  z-index: $tile-zindex;
+
+  @media #{$tablet} {
+    width: 50%;
+  }
+
+  @media #{$desktop} {
+    width: 33.33%;
+  }
+
+  @each $name, $color in $tile-background {
+    &.tile--bg-#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @each $name, $color in $tile-color {
+    &.tile--fg-#{$name} {
+      &:hover {
+        .tile__title {
+          color: $tile-title-color-hover;
+        }
+      }
+
+      .tile__title {
+        @media #{$tablet} {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .tile__image {
+      @media #{$tablet} {
+        opacity: .3;
+        transform: translate3d(-49%, -50%, 0);
+      }
+    }
+
+    .tile__title {
+      &:after {
+        @media #{$tablet} {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+
+    .tile__tagline {
+      @media #{$tablet} {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .is-loading & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @for $i from 0 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * ($global-duration / 2);
+    }
+  }
+
+  .tile__caption {
+    height: 100%;
+    left: 0;
+    padding: $tile-caption-padding;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $tile-zindex;
+  }
+
+  .tile__link {
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tile__image {
+    backface-visibility: hidden;
+    border: 0;
+    display: block;
+    left: 50%;
+    margin: inherit;
+    min-height: 100%;
+    opacity: .3;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: opacity $global-duration, transform  $global-duration;
+    width: calc(100% + 1.25em);
+
+    @media #{$tablet} {
+      opacity: 1;
+    }
+  }
+
+  .tile__title {
+    color: $title-tagline-color;
+    font-size: $tile-title-font-size;
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: $tile-caption-padding;
+    pointer-events: none;
+    position: relative;
+    transition: color $global-duration ease;
+
+    &:after {
+      background-color: $white;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      left: 0;
+      position: absolute;
+      transition: transform $global-duration;
+      width: 100%;
+
+      @media #{$tablet} {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+  }
+
+  .tile__tagline {
+    color: $title-tagline-color;
+    font-family: $title-tagline-font-family;
+    font-size: $title-tagline-font-size;
+    text-transform: uppercase;
+    transition: opacity $global-duration, transform $global-duration;
+
+    @media #{$tablet} {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+}

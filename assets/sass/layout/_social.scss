@@ -1,0 +1,53 @@
+.social {
+  list-style: none;
+  margin-bottom: $social-margin;
+  margin-left: 0;
+  margin-top: $social-margin / 2;
+  padding: 0;
+
+  .social__item {
+    display: inline;
+    margin-right: $social-icon-spacing;
+    padding-left: 0;
+  }
+
+  .social__link {
+    border-bottom: 0;
+    text-decoration: none;
+
+    &:hover {
+      .icon--codepen {
+        fill: $codepen;
+      }
+
+      .icon--github {
+        fill: $github2;
+      }
+
+      .icon--lastfm {
+        fill: $lastfm;
+      }
+
+      .icon--linkedin {
+        fill: $linkedin;
+      }
+
+      .icon--npm {
+        fill: $npm;
+      }
+
+      .icon--stackoverflow {
+        fill: $stackoverflow;
+      }
+
+      .icon--twitter {
+        fill: $twitter;
+      }
+    }
+  }
+
+  .icon {
+    fill: $social-icon-fill;
+    transition: fill $global-duration ease;
+  }
+}
