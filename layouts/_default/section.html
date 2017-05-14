@@ -4,14 +4,14 @@
 
 {{ define "main" }}
   <div id="main" class="content">
-    <div class="row">
-      <div class="col">
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-      </div>
-      <div class="col">
-
-      </div>
+    <div class="content__intro">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+      {{ if .Params.link }}
+        <div class="content__link">
+          <a href="{{ .Params.link }}" class="btn" target="_blank">Visit the website</a>
+        </div>
+      {{ end }}
     </div>
     {{ if .Params.laptop }}
       <div class="row">

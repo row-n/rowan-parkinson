@@ -1,13 +1,14 @@
 +++
 
-date = "2017-04-25T15:22:09+10:00"
+date = "2014-04-25T15:22:09+10:00"
 title = "Rob Tucker"
 tagline = "Artist Portfolio"
-thumbnail = "/uploads/rob-tucker.jpg"
+link = "http://rob-tucker.com/"
+thumbnail = "/uploads/rob-thumb.jpg"
 thumbnailBackground = "maroon"
 thumbnailForeground = "dark"
-iphone = "/uploads/rob-iphone.png"
-ipad = "/uploads/rob-ipad.png"
+iphone = ""
+ipad = ""
 laptop = "/uploads/rob-laptop.png"
 
 +++
