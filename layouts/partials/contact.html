@@ -18,7 +18,7 @@
                 {{ end }}
                 </ul>
                 <p class="copyright small">
-                    Copyright &copy; {{ with .Site.Params.panelTwo.copyright.name }}{{ . | markdownify }}{{ end }} {{ .Now.Year }}. All rights reserved.
+                    Copyright &copy; {{ .Now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
                 </p>
             </section>
             <section class="col">

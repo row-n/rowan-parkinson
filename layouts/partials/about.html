@@ -3,7 +3,7 @@
         <div class="row">
             <section class="col">
                 <h2>{{ with .Site.Params.panelOne.about.headline }}{{ . | markdownify }}{{ end }}</h2>
-                <p class="panel__intro x-large">{{ with .Site.Params.panelOne.about.textIntro }}{{ . | markdownify }}{{ end }}</p>
+                <p class="panel__intro x-large">{{ with .Site.Params.panelOne.about.intro }}{{ . | markdownify }}{{ end }}</p>
                 <p>{{ with .Site.Params.panelOne.about.text }}{{ . | markdownify }}{{ end }}</p>
             </section>
             <section class="col">

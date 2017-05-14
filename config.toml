@@ -39,7 +39,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
         [params.panelOne.about]
             headline = "About"
-            textIntro = "Hi, I'm Rowan, a problem-solving, UX-focussed front-end developer with over 6 years of commercial experience and an excellent eye for detail."
+            intro = "Hi, I'm Rowan, a problem-solving, UX-focussed front-end developer with over 6 years of commercial experience and an excellent eye for detail."
             text = "I enjoy making things with Javascript, HTML and CSS. I live in Melbourne and am curently a senior developer at MYOB. If you'd like to get in touch, please check the contact panel."
 
         # Skills
@@ -177,7 +177,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
         # ------------
 
         [params.panelTwo.copyright]
-            name = "Rowan Parkinson"
+            text = "Rowan Parkinson. All rights reserved."
 
     # Meta
     # -------
