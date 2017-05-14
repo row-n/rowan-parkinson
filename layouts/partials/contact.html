@@ -2,8 +2,8 @@
     <section id="contact" class="panel">
         <div class="row">
             <section class="col">
-                <h2>{{ with .Site.Params.contact.paragraph.headline }}{{ . | markdownify }}{{ end }}</h2>
-                <p>{{ with .Site.Params.contact.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
+                <h2>{{ with .Site.Params.info.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <p>{{ with .Site.Params.info.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
                 <h2>{{ with .Site.Params.social.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <ul class="social">
                 {{ range .Site.Params.social.links }}

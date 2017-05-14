@@ -1,0 +1,177 @@
+# Settings
+baseurl = "http://rowanparkinson.com/"
+languageCode = "en-us"
+title = "Rowan Parkinson"
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+canonifyurls = true
+theme = ""
+googleAnalytics = "UA-XXXXXXX-Y"
+
+[params]
+
+    # Meta
+    # -------
+
+    description = "Hugo theme for rowanparkinson.com"
+    author = "row-n"
+    keywords = "hugo, photogallery, photoblog, hugo theme"
+
+    # Header
+    # ---------
+
+    [params.header]
+
+        [[params.header.links]]
+            name = "Contact"
+            url = "#contact"
+            icon = "chat"
+
+        [[params.header.links]]
+            name = "About"
+            url = "#about"
+            icon = "info"
+
+    # About
+    # --------
+
+    [params.about]
+        headline = "About"
+
+        [params.about.paragraph]
+            textIntro = "Hi, I'm Rowan, a problem-solving, UX-focussed front-end developer with over 6 years of commercial experience and an excellent eye for detail."
+            text = "I enjoy making things with Javascript, HTML and CSS. I live in Melbourne and am curently a senior developer at MYOB. If you'd like to get in touch, please check the contact panel."
+
+    # Skills
+    # ---------
+    # Skills expertise is a range from 0 - 10.
+
+    [params.skills]
+        headline = "Skills"
+
+        [[params.skills.icons]]
+            label = "CSS"
+            expertise = "9"
+            icon = "css"
+
+        [[params.skills.icons]]
+            label = "HTML"
+            expertise = "10"
+            icon = "html"
+
+        [[params.skills.icons]]
+            label = "JavaScript"
+            expertise = "6"
+            icon = "javascript"
+
+        [[params.skills.icons]]
+            label = "Git"
+            expertise = "7"
+            icon = "git"
+
+        [[params.skills.icons]]
+            label = "Illustrator"
+            expertise = "2"
+            icon = "illustrator"
+
+        [[params.skills.icons]]
+            label = "Photoshop"
+            expertise = "5"
+            icon = "photoshop"
+
+        [[params.skills.icons]]
+            label = "Terminal"
+            expertise = "7"
+            icon = "terminal"
+
+    # Info
+    # -------
+
+    [params.info]
+        headline = "Get in touch"
+
+        [params.info.paragraph]
+            text = "If you are interested in a new project, collaboration, or a reason to get a beer don't hesitate to shoot me an email via the contact form."
+
+    # Social
+    # ---------
+
+    [params.social]
+        headline = "Follow me"
+
+        [[params.social.links]]
+            label = "Codepen"
+            url = "http://codepen.io/row-n/"
+            icon = "codepen"
+
+        [[params.social.links]]
+            label = "Twitter"
+            url = "https://twitter.com/rowanparkinson"
+            icon = "twitter"
+
+        [[params.social.links]]
+            label = "Github"
+            url = "https://github.com/row-n"
+            icon = "github"
+
+        [[params.social.links]]
+            label = "Lastfm"
+            url = "https://www.last.fm/user/mispic"
+            icon = "lastfm"
+
+        [[params.social.links]]
+            label = "NPM"
+            url = "https://www.npmjs.com/~row-n"
+            icon = "npm"
+
+        [[params.social.links]]
+            label = "Stack Overflow"
+            url = "https://stackexchange.com/users/1894495/row-n"
+            icon = "stackoverflow"
+
+        [[params.social.links]]
+            label = "LinkedIn"
+            url = "https://www.linkedin.com/in/rowan-parkinson-87419a30/"
+            icon = "linkedin"
+
+    # Contact
+    # ----------
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'realEmail' below
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+
+    [params.contact]
+        headline = "Get in touch"
+        realEmail = "example@examle.org"
+        buttonText = "Send"
+        resetText = "Reset"
+
+        [params.contact.name]
+            text = "Name *"
+            warning = "Please, enter your name"
+
+        [params.contact.email]
+            text = "Email *"
+            warning = "Please, enter your email."
+
+        [params.contact.message]
+            text = "Message *"
+            warning = "Please, enter your message"
+
+    # Footer
+    # ---------
+
+    [params.footer]
+
+        [params.footer.copyright]
+            name = "Rowan Parkinson"

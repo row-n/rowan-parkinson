@@ -2,7 +2,7 @@
     <section id="about" class="panel">
         <div class="row">
             <section class="col">
-                <h2>{{ with .Site.Params.about.paragraph.headline }}{{ . | markdownify }}{{ end }}</h2>
+                <h2>{{ with .Site.Params.about.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <p class="panel__intro x-large">{{ with .Site.Params.about.paragraph.textIntro }}{{ . | markdownify }}{{ end }}</p>
                 <p>{{ with .Site.Params.about.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
             </section>

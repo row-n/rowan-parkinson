@@ -40,7 +40,7 @@ gulp.task('icons', function() {
 gulp.task('images', function() {
   return gulp.src(['./static/assets/images/**/*'])
     .pipe(imagemin())
-    .pipe(gulp.dest('../../public/images/**/*'));
+    .pipe(gulp.dest('./public/images/**/*'));
 });
 
 // Styles
@@ -76,7 +76,7 @@ gulp.task('styles', ['styles:lint'], function() {
     .pipe(gulpif(isProduction, hash()))
     .pipe(gulpif(isProduction, gulp.dest('./static/assets/css')))
     .pipe(gulpif(isProduction, hash.manifest('hash.json')))
-    .pipe(gulpif(isProduction, gulp.dest('../../data/css')));
+    .pipe(gulpif(isProduction, gulp.dest('./data/css')));
 });
 
 // Scripts
@@ -108,22 +108,22 @@ gulp.task('scripts', ['scripts:lint'], function() {
     .pipe(gulpif(isProduction, hash()))
     .pipe(gulpif(isProduction, gulp.dest('./static/assets/js')))
     .pipe(gulpif(isProduction, hash.manifest('hash.json')))
-    .pipe(gulpif(isProduction, gulp.dest('../../data/js')));
+    .pipe(gulpif(isProduction, gulp.dest('./data/js')));
 });
 
 // Markup
 gulp.task('html', function() {
-  return gulp.src('../../public/**/*.html')
+  return gulp.src('./public/**/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true,
       useShortDoctype: true,
     }))
-    .pipe(gulp.dest('../../public'));
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('clean:assets', function(){
-  return del(['../../public/css/**/*.css', '../../public/js/**/*.js', '../../public/images/**/*'], {
+  return del(['./public/css/**/*.css', './public/js/**/*.js', './public/images/**/*'], {
     force: true,
   });
 });
@@ -139,11 +139,11 @@ gulp.task('watch', function() {
 
 // Server
 gulp.task('hugo:server', shell.task([
-  'cd ../../ && hugo server -D'
+  'hugo server -D'
 ]));
 
 gulp.task('hugo:build', shell.task([
-  'cd ../../ && hugo'
+  'hugo'
 ]));
 
 // Environment Build
