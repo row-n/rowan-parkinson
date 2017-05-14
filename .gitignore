@@ -8,6 +8,8 @@ config/runtime.json
 
 # Ignore docs files
 dist
+static
+data
 public
 .ruby-version
 .sass-cache
