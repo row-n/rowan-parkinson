@@ -9,29 +9,25 @@ canonifyurls = true
 theme = ""
 googleAnalytics = "UA-XXXXXXX-Y"
 
+[[menu.main]]
+    name = "About"
+    url = "about"
+    pre = "info"
+
+[[menu.main]]
+    name = "Contact"
+    url = "contact"
+    pre = "chat"
+
 [params]
 
     # Meta
     # -------
+    [params.meta]
 
-    description = "Hugo theme for rowanparkinson.com"
-    author = "row-n"
-    keywords = "hugo, photogallery, photoblog, hugo theme"
-
-    # Header
-    # ---------
-
-    [params.header]
-
-        [[params.header.links]]
-            name = "Contact"
-            url = "#contact"
-            icon = "chat"
-
-        [[params.header.links]]
-            name = "About"
-            url = "#about"
-            icon = "info"
+        description = "The work of Melbourne based Web Developer, Rowan Parkinson."
+        author = "Rowan Parkinson"
+        keywords = "Websites, JavaScript, HTML, CSS, Front-End Developer, Front End Developer, Web Developer, Web Development, Developer"
 
     # About
     # --------
@@ -51,37 +47,37 @@ googleAnalytics = "UA-XXXXXXX-Y"
         headline = "Skills"
 
         [[params.skills.icons]]
-            label = "CSS"
+            name = "CSS"
             expertise = "9"
             icon = "css"
 
         [[params.skills.icons]]
-            label = "HTML"
+            name = "HTML"
             expertise = "10"
             icon = "html"
 
         [[params.skills.icons]]
-            label = "JavaScript"
+            name = "JavaScript"
             expertise = "6"
             icon = "javascript"
 
         [[params.skills.icons]]
-            label = "Git"
+            name = "Git"
             expertise = "7"
             icon = "git"
 
         [[params.skills.icons]]
-            label = "Illustrator"
+            name = "Illustrator"
             expertise = "2"
             icon = "illustrator"
 
         [[params.skills.icons]]
-            label = "Photoshop"
+            name = "Photoshop"
             expertise = "5"
             icon = "photoshop"
 
         [[params.skills.icons]]
-            label = "Terminal"
+            name = "Terminal"
             expertise = "7"
             icon = "terminal"
 

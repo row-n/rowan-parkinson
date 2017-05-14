@@ -75,9 +75,6 @@ body {
       @media #{$desktop} {
         @include span(6 of 12);
       }
-
-      @media #{$screen} {
-      }
     }
 
     > .content__footer {

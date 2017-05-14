@@ -1,8 +1,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
-<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
-<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}">
+<meta name="description" content="{{ with .Site.Params.meta.description }}{{ . }}{{ end }}">
+<meta name="author" content="{{ with .Site.Params.meta.author }}{{ . }}{{ end }}">
+<meta name="keywords" content="{{ with .Site.Params.meta.keywords }}{{ . }}{{ end }}">
 {{ .Hugo.Generator }}
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Source+Sans+Pro:200,300" rel="stylesheet">
 {{ if .Site.BuildDrafts }}
