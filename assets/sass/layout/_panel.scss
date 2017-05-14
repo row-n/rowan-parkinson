@@ -19,35 +19,6 @@
     transform: translateY(0);
   }
 
-  > .panel__body {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: $panel-width;
-
-    @media #{$desktop} {
-      flex-direction: initial;
-    }
-
-    > .panel__col {
-      margin-left: 0;
-      width: 100%;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      @media #{$desktop} {
-        margin-left: $panel-padding / 2;
-        width: 50%;
-      }
-
-      @media #{$screen} {
-        margin-left: $panel-padding;
-      }
-    }
-  }
-
   > .close {
     position: absolute;
     right: 0;

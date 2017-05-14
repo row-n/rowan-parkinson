@@ -205,19 +205,42 @@ template {
   display: none;
 }
 
+.row {
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.col {
+  width: 47.82609%;
+  float: left;
+  margin-right: 4.34783%;
+}
+
+.col:last-child {
+  float: right;
+  margin-right: 0;
+}
+
 *,*:before,*:after {
   box-sizing: border-box;
 }
 
 html,body {
   background-color: #4d4d4d;
-  color: gray;
-  font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
 }
 
 body {
+  color: #b3b3b3;
+  font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
   padding-top: 4em;
 }
 
@@ -249,21 +272,36 @@ body.is-loading .header,body.is-loading .content,body.is-loading .tile {
 
 .content {
   padding: 2em;
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  transition: transform 1s ease;
+  transition: opacity 1s ease;
 }
 
 .is-loading .content {
   opacity: 0;
   pointer-events: none;
-  -ms-transform: translateY(2em);
-  transform: translateY(2em);
 }
 
 .content .content__body {
-  margin: 0 auto;
   max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content .content__body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.content .content__body>.content__col:last-child {
+  float: right;
+  margin-right: 0;
+}
+
+.content .content__body>.content__footer {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .global-icons {
@@ -285,7 +323,7 @@ body.is-loading .header,body.is-loading .content,body.is-loading .tile {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  color: gray;
+  color: #b3b3b3;
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: .1em;
   line-height: 1.4;
@@ -575,7 +613,7 @@ a:active,a:focus,a:hover {
   background-color: #4d4d4d;
   border: 0.125em solid #4d4d4d;
   border-radius: 0;
-  color: #ccc;
+  color: #e6e6e6;
   display: block;
   font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
   outline: 0;
@@ -602,7 +640,7 @@ a:active,a:focus,a:hover {
 }
 
 .form input[type='checkbox']+label,.form input[type='radio']+label {
-  color: #ccc;
+  color: #e6e6e6;
   cursor: pointer;
   display: inline-block;
   font-size: 87.5%;
@@ -620,7 +658,7 @@ a:active,a:focus,a:hover {
   background-color: #4d4d4d;
   border: 0.125em solid #4d4d4d;
   border-radius: 0;
-  color: #ccc;
+  color: #e6e6e6;
   display: block;
   font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
   outline: 0;
@@ -866,28 +904,33 @@ a:active,a:focus,a:hover {
   transform: translateY(0);
 }
 
-.panel>.panel__body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: 75em;
-}
-
-.panel>.panel__body>.panel__col {
-  margin-left: 0;
-  width: 100%;
-}
-
-.panel>.panel__body>.panel__col:first-child {
-  margin-left: 0;
-}
-
 .panel>.close {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.image {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: image;
+  max-width: 100%;
+  opacity: 1;
+  transition: opacity .35s ease-out, visibility .35s;
+  visibility: visible;
+}
+
+.is-loading .image {
+  opacity: 0;
+  transition: none;
+  visibility: hidden;
+}
+
+.image-container {
+  background-color: rgba(0,0,0,0.3);
+  margin: 0;
+  padding: 2em;
+  width: 100%;
 }
 
 .social {
@@ -938,7 +981,7 @@ a:active,a:focus,a:hover {
 }
 
 .social .icon {
-  fill: #666;
+  fill: gray;
   transition: fill .4s ease;
 }
 
@@ -1334,7 +1377,7 @@ a:active,a:focus,a:hover {
 }
 
 .skills .icon {
-  fill: #666;
+  fill: gray;
   float: left;
   margin-right: 1em;
 }
@@ -1404,18 +1447,14 @@ a:active,a:focus,a:hover {
 }
 
 @media only screen and (min-width: 62em) {
+  .content .content__body>.content__col {
+    width: 47.82609%;
+    float: left;
+    margin-right: 4.34783%;
+  }
+
   .tile {
     width: 33.33%;
-  }
-
-  .panel>.panel__body {
-    -ms-flex-direction: initial;
-    flex-direction: initial;
-  }
-
-  .panel>.panel__body>.panel__col {
-    margin-left: 2em;
-    width: 50%;
   }
 }
 
@@ -1426,10 +1465,6 @@ a:active,a:focus,a:hover {
 
   .panel {
     padding: 4em;
-  }
-
-  .panel>.panel__body>.panel__col {
-    margin-left: 4em;
   }
 }
 
@@ -1450,6 +1485,18 @@ a:active,a:focus,a:hover {
   }
 
   100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes image {
+  from {
+    opacity: 0;
+    transform: translate3d(2em, 0, 0);
+  }
+
+  to {
     opacity: 1;
     transform: none;
   }

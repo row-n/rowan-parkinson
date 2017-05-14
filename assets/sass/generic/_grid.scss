@@ -1,0 +1,11 @@
+.row {
+  @include container($content-width);
+}
+
+.col {
+  @include span(6 of 12);
+
+  &:last-child {
+    @include last;
+  }
+}

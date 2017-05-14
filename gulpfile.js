@@ -61,7 +61,8 @@ gulp.task('styles', ['styles:lint'], function() {
   return gulp.src('./assets/sass/styles.s+(a|c)ss')
     .pipe(changed('./static/assets/css'))
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'compressed',
+      includePaths: ['node_modules/susy/sass']
     }).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie 9', 'ie 10'],

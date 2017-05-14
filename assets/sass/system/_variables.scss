@@ -1,5 +1,15 @@
 // sass-lint:disable no-color-keywords
 
+// Susy
+// -------
+
+$susy: (
+  columns: 12,
+  gutters: 1,
+  global-box-sizing: border-box
+);
+
+
 // Colours
 // ----------
 
@@ -83,8 +93,9 @@ $global-weight-normal:  normal;
 $global-weight-bold:    bold;
 $global-duration:       .4s;
 $body-background:       $black-70;
-$body-font-colour:      $black-50;
+$body-font-colour:      $black-30;
 $body-font-family:      'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font-size:        $global-font-size;
 $body-border-box:       true;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
@@ -97,7 +108,7 @@ $header-x-light-font-weight: 200;
 $header-light-font-weight: 300;
 $header-font-style:     normal;
 $font-family-monospace: $font-family-monospace;
-$header-color:          $black-50;
+$header-color:          $black-30;
 $header-lineheight:     1.4;
 $header-letter-spacing: .1em;
 $header-margin-bottom:  .5rem;
@@ -226,7 +237,7 @@ $form-label-font-family: $header-font-family;;
 $form-label-font-size:  $small-font-size;
 $form-label-font-weight: $header-x-light-font-weight;
 $form-input-font-family: $body-font-family;
-$form-input-color:      $black-20;
+$form-input-color:      $black-10;
 $form-input-background: $black-70;
 $form-input-border-color: $black-70;
 $form-input-border-hover: $orange;
@@ -238,14 +249,14 @@ $form-field-spacing:    1.5em;
 // ---------
 
 $social-margin:         2em;
-$social-icon-fill:      $black-60;
+$social-icon-fill:      $black-50;
 $social-icon-spacing:   1em;
 
 // Skills
 // ---------
 
 $skills-margin:         2em;
-$skills-icon-fill:      $black-60;
+$skills-icon-fill:      $black-50;
 $skills-range-background: $black-50;
 $skills-range-border:   .0625em solid $skills-range-background;
 $skills-range-spacing:   1em;

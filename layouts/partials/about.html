@@ -1,12 +1,12 @@
 {{ "<!-- About -->" | safeHTML }}
     <section id="about" class="panel">
-        <div class="panel__body">
-            <section class="panel__col">
-                <h2 class="panel__title">{{ with .Site.Params.about.paragraph.headline }}{{ . | markdownify }}{{ end }}</h2>
+        <div class="row">
+            <section class="col">
+                <h2>{{ with .Site.Params.about.paragraph.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <p class="panel__intro x-large">{{ with .Site.Params.about.paragraph.textIntro }}{{ . | markdownify }}{{ end }}</p>
                 <p>{{ with .Site.Params.about.paragraph.text }}{{ . | markdownify }}{{ end }}</p>
             </section>
-            <section class="panel__col">
+            <section class="col">
                 <h2>{{ with .Site.Params.skills.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <ul class="skills">
                 {{ range .Site.Params.skills.icons }}

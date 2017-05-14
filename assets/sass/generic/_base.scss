@@ -11,13 +11,13 @@
 html,
 body {
   background-color: $body-background;
-  color: $body-font-colour;
-  font-family: $body-font-family;
-  font-size: $global-font-size;
-  line-height: $global-lineheight;
 }
 
 body {
+  color: $body-font-colour;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  line-height: $global-lineheight;
   padding-top: 4em;
 
   &.content-active {
@@ -52,8 +52,7 @@ body {
 
 .content {
   padding: $panel-padding / 2;
-  transform: translateY(0);
-  transition: transform 1s ease;
+  transition: opacity 1s ease;
 
   @media #{$screen} {
     padding: $panel-padding;
@@ -62,12 +61,28 @@ body {
   .is-loading & {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(2em);
   }
 
   .content__body {
-    margin: 0 auto;
-    max-width: $content-width;
+    @include container($content-width);
+
+    > .content__col {
+
+      &:last-child {
+        @include last;
+      }
+
+      @media #{$desktop} {
+        @include span(6 of 12);
+      }
+
+      @media #{$screen} {
+      }
+    }
+
+    > .content__footer {
+      @include span(12 of 12);
+    }
   }
 }
 
