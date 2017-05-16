@@ -9,7 +9,12 @@
       {{ .Content }}
       {{ if .Params.link }}
         <div class="content__link">
-          <a href="{{ .Params.link }}" class="btn" target="_blank">Visit the website</a>
+          <a href="{{ .Params.link }}" class="btn" target="_blank">
+            <svg role="img" class="icon icon--info icon--sm">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#link"></use>
+            </svg>
+            Visit the website
+          </a>
         </div>
       {{ end }}
     </div>

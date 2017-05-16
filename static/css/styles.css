@@ -475,6 +475,12 @@ a:active,a:focus,a:hover {
   color: #a47f53;
 }
 
+.btn .icon {
+  fill: #fff;
+  margin-right: .5em;
+  margin-top: -.4em;
+}
+
 .btn-group .btn {
   margin-bottom: .5em;
   width: 100%;
