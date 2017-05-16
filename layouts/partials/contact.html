@@ -17,7 +17,7 @@
                     </li>
                 {{ end }}
                 </ul>
-                <p class="copyright small">
+                <p class="copyright small visible-desktop">
                     Copyright &copy; {{ .Now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
                 </p>
             </section>
@@ -38,6 +38,9 @@
                         <input type="reset" value="{{ .Site.Params.panelTwo.contact.button.reset }}" class="btn btn--bordered" />
                     </div>
                 </form>
+                <p class="copyright small visible-mobile">
+                    Copyright &copy; {{ .Now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
+                </p>
             </section>
         </div>
         <button class="close">

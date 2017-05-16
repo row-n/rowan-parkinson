@@ -1,3 +1,4 @@
+
 * {
   &,
   &:before,
@@ -99,4 +100,21 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.visible-mobile,
+.visible-desktop {
+  display: none;
+}
+
+.visible-mobile {
+  @media only screen and (max-width: #{$screen-xs-max}) {
+    display: block;
+  }
+}
+
+.visible-desktop {
+  @media only screen and (min-width: #{$screen-sm}) {
+    display: block;
+  }
 }
