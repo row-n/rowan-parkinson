@@ -8,7 +8,7 @@
 {{ if .Site.BuildDrafts }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/styles.css" />
 {{ else }}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/{{ index .Site.Data.css.hash "styles.min.css" }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/styles.min.css" />
 {{ end }}
 <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico">
 {{ template "_internal/google_analytics_async.html" . }}
