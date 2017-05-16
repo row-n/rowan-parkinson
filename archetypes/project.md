@@ -1,7 +1,7 @@
 +++
 
 tagline = "project description"
-link = ""
+externalLink = ""
 thumbnail = ""
 thumbnailBackground = "blue, green, maroon, orange"
 thumbnailForeground = "dark, light"
