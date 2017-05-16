@@ -9,11 +9,12 @@ thumbnail = "/uploads/insider-thumb.jpg"
 thumbnailBackground = "green"
 thumbnailForeground = "light"
 title = "The Insider"
+type = "project"
 
 +++
 
 
-I was approached by [Elevator App Development](http://elevatorappdevelopment.com/) to create a site which showcases a The Insider, a fresh new app they had created.
+I was approached by [Elevator App Development](http://elevatorappdevelopment.com/) to create a site which showcases *The Insider*, a fresh new app they had created.
 
 Working closely with the team we came up with the design and UX. I was responsible front and back end builds.
 
