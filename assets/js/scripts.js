@@ -1,6 +1,8 @@
 var $ = require('jquery');
 var jQuery = $;
 
+var imagesLoaded = require('imagesloaded');
+
 (function($) {
 
   $(function() {
@@ -9,7 +11,7 @@ var jQuery = $;
       $body = $('body'),
       $wrapper = $('.page');
 
-      $window.on('load', function() {
+      new imagesLoaded($wrapper, function() {
         window.setTimeout(function() {
           $body.removeClass('is-loading');
         }, 100);
