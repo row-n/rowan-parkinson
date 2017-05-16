@@ -29,4 +29,10 @@
       color: $button-bordered-color-hover;
     }
   }
+
+  .icon {
+    fill: $button-color;
+    margin-right: .5em;
+    margin-top: -.4em;
+  }
 }
