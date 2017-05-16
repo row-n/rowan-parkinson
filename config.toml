@@ -71,7 +71,7 @@ warning = "Please, enter your name"
 [params.paneltwo.copyright]
 text = "Rowan Parkinson. All rights reserved."
 [params.paneltwo.info]
-headline = "Get in touch testing"
+headline = "Get in touch"
 text = "If you are interested in a new project, collaboration, or a reason to get a beer don't hesitate to shoot me an email via the contact form."
 [params.paneltwo.social]
 headline = "Follow me"
