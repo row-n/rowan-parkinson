@@ -9,7 +9,7 @@ Portfolio for rowanparkinson.com, built with [Hugo](https://gohugo.io) and conte
 
 ## Installation and Setup
 
-* Clone the site from the repo `git clone git@github.com:row-n/rowan-parkinson.git`
+* Clone the site from the repository: `git clone git@github.com:row-n/rowan-parkinson.git`
 * Install with [npm](https://www.npmjs.com): `npm install`.
 
 ## Configuration
