@@ -54,7 +54,7 @@ label = "Terminal"
 proficiency = "7"
 svgIcon = "terminal"
 [params.paneltwo.contact]
-headline = "Get in touch"
+headline = "Contact"
 realemail = "rowan.parkinson@gmail.com"
 [params.paneltwo.contact.button]
 reset = "Reset"
