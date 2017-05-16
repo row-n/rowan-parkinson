@@ -3,7 +3,7 @@
 date = "2014-04-25T15:22:09+10:00"
 title = "Rob Tucker"
 tagline = "Artist Portfolio"
-link = "http://rob-tucker.com/"
+externalLink = "http://rob-tucker.com/"
 thumbnail = "/uploads/rob-thumb.jpg"
 thumbnailBackground = "maroon"
 thumbnailForeground = "dark"

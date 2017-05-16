@@ -3,7 +3,7 @@
 date = "2013-04-25T13:02:24+10:00"
 title = "Kelvie & Brown"
 tagline = "Hairdresser Display"
-link = "http://www.kelvie-brown-hairdressers.co.uk/"
+externalLink = "http://www.kelvie-brown-hairdressers.co.uk/"
 thumbnail = "/uploads/kelvie-thumb.jpg"
 thumbnailBackground = "orange"
 thumbnailForeground = "light"
