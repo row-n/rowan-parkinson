@@ -6,9 +6,9 @@
 {{ .Hugo.Generator }}
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Source+Sans+Pro:200,300" rel="stylesheet">
 {{ if .Site.BuildDrafts }}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/styles.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css" />
 {{ else }}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/styles.min.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.min.css" />
 {{ end }}
 <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico">
 {{ template "_internal/google_analytics_async.html" . }}
