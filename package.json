@@ -1,7 +1,7 @@
 {
   "name": "rowan-parkinson",
   "version": "1.1.1",
-  "description": "Hugo theme for rowanparkinson.com",
+  "description": "Personal portfolio site, built with Hugo for rowanparkinson.com",
   "main": "gulpfile.js",
   "dependencies": {
     "imagesloaded": "^4.1.1",
@@ -42,14 +42,14 @@
   },
   "keywords": [
     "hugo",
-    "photogallery",
-    "photoblog",
-    "hugo theme"
+    "gulp",
+    "browserify",
+    "portfolio"
   ],
   "author": "Rowan Parkinson <rowan.parkinson@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/row-n/rowan-parkinson/issues"
   },
-  "homepage": "https://github.com/row-n/rowan-parkinson#readme"
+  "homepage": "http://rowanparkinson.com"
 }
