@@ -1,9 +1,9 @@
 +++
 date = "2011-04-25T12:53:54+10:00"
+externalLink = ""
 ipad = ""
 iphone = ""
 laptop = "/uploads/insider-laptop.png"
-externalLink = ""
 tagline = "Mobile Application Showcase"
 thumbnail = "/uploads/insider-thumb.jpg"
 thumbnailBackground = "green"
@@ -12,8 +12,6 @@ title = "The Insider"
 type = "project"
 
 +++
-
-
 I was approached by [Elevator App Development](http://elevatorappdevelopment.com/) to create a site which showcases *The Insider*, a fresh new app they had created.
 
 Working closely with the team we came up with the design and UX. I was responsible front and back end builds.
