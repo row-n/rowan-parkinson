@@ -1,17 +1,7 @@
 var $ = require('jquery');
-// var imagesloaded = require('imagesloaded');
-var skel = require('skel-framework-npm');
 var jQuery = $;
 
 (function($) {
-
-  skel.breakpoints({
-    xlarge: '(max-width: 1680px)',
-    large: '(max-width: 1280px)',
-    medium: '(max-width: 980px)',
-    small: '(max-width: 736px)',
-    xsmall: '(max-width: 480px)'
-  });
 
   $(function() {
 
@@ -19,42 +9,11 @@ var jQuery = $;
       $body = $('body'),
       $wrapper = $('.page');
 
-    // Hack: Enable IE workarounds.
-      if (skel.vars.IEVersion < 12)
-        $body.addClass('ie');
-
-    // Touch?
-      if (skel.vars.mobile)
-        $body.addClass('touch');
-
-    // Transitions supported?
-      if (skel.canUse('transition')) {
-
-        // Add (and later, on load, remove) "is-loading" class.
-          $body.addClass('is-loading');
-
-          $window.on('load', function() {
-            window.setTimeout(function() {
-              $body.removeClass('is-loading');
-            }, 100);
-          });
-
-        // Prevent transitions/animations on resize.
-          var resizeTimeout;
-
-          $window.on('resize', function() {
-
-            window.clearTimeout(resizeTimeout);
-
-            $body.addClass('resizing');
-
-            resizeTimeout = window.setTimeout(function() {
-              $body.removeClass('resizing');
-            }, 100);
-
-          });
-
-      }
+      $window.on('load', function() {
+        window.setTimeout(function() {
+          $body.removeClass('is-loading');
+        }, 100);
+      });
 
     // Panels.
       var $panels = $('.panel');
@@ -123,28 +82,6 @@ var jQuery = $;
             });
 
       });
-
-    // Footer.
-      var $footer = $('.panel');
-
-      // Copyright.
-      // This basically just moves the copyright line to the end of the *last* sibling of its current parent
-      // when the "medium" breakpoint activates, and moves it back when it deactivates.
-        $footer.find('.copyright').each(function() {
-
-          var $this = $(this),
-            $parent = $this.parent(),
-            $lastParent = $parent.parent().children().last();
-
-          skel
-            .on('+medium', function() {
-              $this.appendTo($lastParent);
-            })
-            .on('-medium', function() {
-              $this.appendTo($parent);
-            });
-
-        });
 
   });
 
