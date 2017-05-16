@@ -1,18 +1,17 @@
 +++
-
 date = "2014-04-25T15:22:09+10:00"
-title = "Rob Tucker"
-tagline = "Artist Portfolio"
+ipad = ""
+iphone = ""
+laptop = "/uploads/rob-laptop.png"
 link = "http://rob-tucker.com/"
+tagline = "Artist Portfolio"
 thumbnail = "/uploads/rob-thumb.jpg"
 thumbnailBackground = "maroon"
 thumbnailForeground = "dark"
-iphone = ""
-ipad = ""
-laptop = "/uploads/rob-laptop.png"
+title = "Rob Tucker"
+type = "project"
 
 +++
-
 I was asked by Rob Tucker to redesign his existing online photography portfolio to showcase his work in a clean and simple layout.
 
 I was wholly responsible for the design, UX, content migration and front and back end builds for the responsive site.
