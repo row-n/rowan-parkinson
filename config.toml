@@ -1,7 +1,7 @@
 baseurl = "http://rowanparkinson.com/"
 canonifyurls = true
 contentdir = "content"
-googleAnalytics = "UA-XXXXXXX-Y"
+googleAnalytics = "UA-100132496-1"
 languageCode = "en-us"
 layoutdir = "layouts"
 publishdir = "public"
