@@ -16,7 +16,7 @@ I was asked by Rob Tucker to redesign his existing online photography portfolio 
 
 I was wholly responsible for the design, UX, content migration and front and back end builds for the responsive site.
 
-The site is built on the HTML5 boilerplate using LESS. Site assets comiled using CodeKit. The front end uses various jQuery plugins - Isotope, Fancybox and WaitForImages. The site uses CSS3 animations.
+The site is built on the HTML5 boilerplate using LESS. Site assets compiled using CodeKit. The front end uses various jQuery plugins - Isotope, Fancybox and WaitForImages. The site uses CSS3 animations.
 
 Fonts are News Cycle served by Google Fonts.
 

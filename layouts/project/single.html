@@ -1,0 +1,33 @@
+{{ define "title" }}
+  {{ .Title }} - {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+  <div id="main" class="content">
+    <div class="content__intro">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+      {{ if .Params.externalLink }}
+        <div class="content__link">
+          <a href="{{ .Params.externalLink }}" class="btn" target="_blank">
+            <svg role="img" class="icon icon--info icon--sm">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#link"></use>
+            </svg>
+            Visit the website
+          </a>
+        </div>
+      {{ end }}
+    </div>
+    {{ if .Params.laptop }}
+      <div class="row">
+        {{ if .Params.ipad }}
+          <img src="{{ .Params.ipad }}" alt="{{ .Title }} iPad display" class="image image--ipad">
+        {{ end }}
+        {{ if .Params.iphone }}
+          <img src="{{ .Params.iphone }}" alt="{{ .Title }} iPhone display" class="image image--iphone">
+        {{ end }}
+        <img src="{{ .Params.laptop }}" alt="{{ .Title }} laptop display" class="image image--laptop">
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

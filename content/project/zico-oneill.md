@@ -16,7 +16,7 @@ type = "project"
 
 This site is a photography portfolio of Zico O'Neill.
 
-<span style="font-size: 1rem;">Zico worked hard to create a design and UX through numerous previous iterations. I was responsible for content migration and front and back end builds for the responsive site.</span>
+Zico worked hard to create a design and UX through numerous previous iterations. I was responsible for content migration and front and back end builds for the responsive site.
 
 The site is built using Bootstrap 3. Site assets compiled using Grunt task manager. The front end uses jQuery with custom built plugins. The site uses CSS3 animations.
 
