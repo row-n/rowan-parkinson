@@ -1,4 +1,4 @@
-baseurl = "http://rowanparkinson.com/"
+baseurl = "https://rowanparkinson.com/"
 canonifyurls = true
 contentdir = "content"
 googleAnalytics = "UA-100132496-1"
