@@ -1,0 +1,50 @@
+---
+hide_body: false
+fields:
+- name: tagline
+  label: Tagline
+  type: text
+  hidden: false
+  default: project description
+- name: thumbnail
+  label: Thumbnail
+  type: file
+  hidden: false
+  default: ''
+- name: thumbnailBackground
+  label: Thumbnail background
+  type: select
+  hidden: false
+  default: blue, green, maroon, orange
+  config:
+    source:
+      type: simple
+    options:
+    - blue
+    - orange
+    - maroon
+    - green
+- name: thumbnailForeground
+  label: Thumbnail foreground
+  type: select
+  hidden: false
+  default: dark
+  config:
+    options:
+    - light
+    - dark
+- name: iphone
+  label: Iphone
+  type: file
+  hidden: false
+  default: ''
+- name: ipad
+  label: Ipad
+  type: file
+  hidden: false
+  default: ''
+- name: laptop
+  label: Laptop
+  type: file
+  hidden: false
+  default: ''
