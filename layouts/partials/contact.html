@@ -18,7 +18,7 @@
                 {{ end }}
                 </ul>
                 <p class="copyright small visible-desktop">
-                    Copyright &copy; {{ .Now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
+                    Copyright &copy; {{ now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
                 </p>
             </section>
             <section class="col">
@@ -39,7 +39,7 @@
                     </div>
                 </form>
                 <p class="copyright small visible-mobile">
-                    Copyright &copy; {{ .Now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
+                    Copyright &copy; {{ now.Year }} {{ with .Site.Params.panelTwo.copyright.text }}{{ . | markdownify }}{{ end }}
                 </p>
             </section>
         </div>
