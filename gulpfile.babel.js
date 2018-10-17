@@ -142,7 +142,7 @@ gulp.task('dev', () => {
 
 gulp.task('prod', () => {
   isProduction = true;
-  $.runSequence('clean', 'icons', 'styles', 'scripts', 'html', 'images');
+  $.runSequence('clean', 'icons', 'styles', 'scripts', 'html', 'images', 'hugo');
 });
 
 // Default Task
