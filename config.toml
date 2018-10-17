@@ -18,10 +18,10 @@ url = "about"
 [params.meta]
 author = "Rowan Parkinson"
 description = "The work of Melbourne based Web Developer, Rowan Parkinson."
-keywords = "Websites, JavaScript, HTML, CSS, Front-End Developer, Front End Developer, Web Developer, Web Development, Developer"
+keywords = "Websites, JavaScript, HTML, CSS, Front-End Developer, Front End Developer, Web Developer, Web Development, Senior Developer, Developer"
 [params.panelone.about]
 headline = "About"
-intro = "Hi, I'm Rowan, a problem-solving, UX-focussed front-end developer with over 6 years of commercial experience and an excellent eye for detail."
+intro = "Hi, I'm Rowan, a problem-solving, UX-focussed front-end developer with over 7 years of commercial experience and an excellent eye for detail."
 text = "I enjoy making things with Javascript, HTML and CSS. I live in Melbourne and am curently a senior developer at MYOB. If you'd like to get in touch, please check the contact panel."
 [params.panelone.skills]
 headline = "Skills"
@@ -80,10 +80,6 @@ label = "Codepen"
 svgIcon = "codepen"
 url = "http://codepen.io/row-n/"
 [[params.paneltwo.social.links]]
-label = "Twitter"
-svgIcon = "twitter"
-url = "https://twitter.com/rowanparkinson"
-[[params.paneltwo.social.links]]
 label = "Github"
 svgIcon = "github"
 url = "https://github.com/row-n"
@@ -95,10 +91,6 @@ url = "https://www.last.fm/user/mispic"
 label = "NPM"
 svgIcon = "npm"
 url = "https://www.npmjs.com/~row-n"
-[[params.paneltwo.social.links]]
-label = "Stack Overflow"
-svgIcon = "stackoverflow"
-url = "https://stackexchange.com/users/1894495/row-n"
 [[params.paneltwo.social.links]]
 label = "LinkedIn"
 svgIcon = "linkedin"
