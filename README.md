@@ -1,7 +1,5 @@
 # Rowan Parkinson
 
-[![Build status](https://badge.buildkite.com/a2282062c6f4aeaf10c472359a14c2b9694b09816298042a07.svg)](https://buildkite.com/myob/astridd)
-
 Portfolio for rowanparkinson.com, built with [Hugo](https://gohugo.io) and content updated through [Forestry.io](https://forestry.io). It takes inspiration from HTML5 UP [Multiverse template](https://html5up.net/multiverse).
 
 ## Development dependencies
